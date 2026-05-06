@@ -49,7 +49,7 @@ export default function Hero() {
         className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none z-0 select-none overflow-hidden opacity-30" 
       >
          <h1 className="text-[12vw] sm:text-[10vw] leading-[1.1] font-bold text-white text-center tracking-tighter w-full whitespace-nowrap">
-           Sculpt <span className="text-brand-red">Your</span> Body,<br />
+           Sculpt <span className="text-brand-red">Your</span> Body<br />
            Elevate <span className="text-brand-red">Your</span> Spirit
          </h1>
       </motion.div>
@@ -78,10 +78,10 @@ export default function Hero() {
         >
           <a
             href="/register"
-            className="group relative inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-brand-red to-red-700 hover:from-red-600 hover:to-brand-red text-white font-black text-sm sm:text-base rounded-full transition-all duration-500 hover:scale-[1.05] shadow-[0_0_30px_rgba(230,57,70,0.4)] hover:shadow-[0_0_50px_rgba(230,57,70,0.7)] cursor-pointer overflow-hidden border border-brand-red/50 hover:border-white/50 uppercase tracking-widest"
+            className="group relative inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-brand-red to-red-700 hover:from-red-600 hover:to-brand-red text-white font-black text-sm sm:text-base rounded-full transition-all duration-500 hover:scale-[1.05] shadow-[0_0_30px_rgba(230,57,70,0.4)] hover:shadow-[0_0_50px_rgba(230,57,70,0.7)] cursor-pointer overflow-hidden border border-brand-red/50 hover:border-white/50 uppercase tracking-widest font-['Source_Sans_Pro',sans-serif]"
           >
             {/* Shimmer effect */}
-            <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:animate-shimmer" />
+            <div className="absolute inset-0 w-[150%] -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent animate-shimmer" />
             
             <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.8)] animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />

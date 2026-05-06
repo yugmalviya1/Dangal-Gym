@@ -18,6 +18,22 @@
   body {
     @apply bg-brand-dark text-white font-sans overflow-x-hidden antialiased;
   }
+  
+  html.lenis, html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+  .lenis.lenis-scrolling iframe {
+    pointer-events: none;
+  }
 }
 
 @layer utilities {
@@ -83,6 +99,14 @@
     100% { transform: translateX(-100%); }
   }
 
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(200%); }
+  }
+  .animate-shimmer {
+    animation: shimmer 2.5s infinite linear;
+  }
+
   .animated-border-content {
     position: relative;
     z-index: 1;
@@ -99,5 +123,15 @@
     pointer-events: none;
     z-index: 50;
     opacity: 0.4;
+  }
+
+  /* Disable heavy continuous animations on mobile for performance */
+  @media (max-width: 768px) {
+    .animated-border-container::before {
+      display: none !important;
+    }
+    .animate-shimmer {
+      animation: none !important;
+    }
   }
 }

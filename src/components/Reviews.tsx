@@ -20,9 +20,6 @@ export default function Reviews() {
              {[...Array(review.stars)].map((_, i) => <Star key={i} size={14} fill="currentColor" />)}
            </div>
          </div>
-         <span className="bg-white text-black px-2 py-1 text-[10px] font-black uppercase tracking-widest rounded-sm flex items-center gap-1">
-            <span className="text-[#4285F4] text-xs leading-none">G</span>oogle
-         </span>
        </div>
        <p className="text-gray-400 text-sm leading-relaxed mb-8 h-[60px]">"{review.text}"</p>
        <div className="text-[10px] text-brand-red font-bold uppercase tracking-widest bg-brand-red/10 inline-block px-3 py-1.5 rounded-full">
@@ -35,7 +32,7 @@ export default function Reviews() {
     <section id="reviews" className="py-32 bg-black border-y border-white/5 relative z-10 text-white overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-8 md:px-12 mb-20 text-center relative z-20">
         <h2 className="font-display font-light text-5xl md:text-7xl tracking-tighter uppercase leading-none mb-6">
-          Google <br /><span className="font-bold text-brand-red">Reviews</span>
+          Member <br /><span className="font-bold text-brand-red">Reviews</span>
         </h2>
         <p className="text-gray-400 max-w-md mx-auto text-sm leading-relaxed font-medium">
           Real feedback from real members. See why Dangal Gym is the highest-rated fitness facility in Bhopal.
@@ -46,10 +43,10 @@ export default function Reviews() {
         <div className="absolute inset-y-0 left-0 w-12 sm:w-32 z-10 pointer-events-none bg-gradient-to-r from-black to-transparent"></div>
         <div className="absolute inset-y-0 right-0 w-12 sm:w-32 z-10 pointer-events-none bg-gradient-to-l from-black to-transparent"></div>
         
-        <div className="flex animate-[marquee_30s_linear_infinite] group-hover:[animation-play-state:paused]">
+        <div className="flex animate-[marquee_60s_linear_infinite] group-hover:[animation-play-state:paused]">
           {content}
         </div>
-        <div className="flex animate-[marquee_30s_linear_infinite] group-hover:[animation-play-state:paused]" aria-hidden="true">
+        <div className="flex animate-[marquee_60s_linear_infinite] group-hover:[animation-play-state:paused]" aria-hidden="true">
           {content}
         </div>
       </div>

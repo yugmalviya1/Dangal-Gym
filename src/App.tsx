@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Lenis from '@studio-freight/lenis';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import VideoShowcase from './components/VideoShowcase';
 import Marquee from './components/Marquee';
 import Facilities from './components/Facilities';
 import Programs from './components/Programs';
@@ -22,6 +23,7 @@ function Home() {
         <Hero />
         <Marquee />
         <Facilities />
+        <VideoShowcase />
         <Programs />
         <Pricing />
         <Reviews />
@@ -37,9 +39,10 @@ function Home() {
 function App() {
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 1.0,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
+      wheelMultiplier: 1.05,
     });
 
     function raf(time: number) {
@@ -55,8 +58,7 @@ function App() {
   }, []);
 
   return (
-    <div className="relative min-h-screen">
-      <div className="fixed inset-0 noise"></div>
+    <div className="relative min-h-screen bg-brand-dark">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />

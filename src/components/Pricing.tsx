@@ -109,7 +109,7 @@ export default function Pricing() {
                   state={{ selectedPlan: plan.name }}
                   className="w-full py-4 text-xs font-bold uppercase tracking-widest transition-all z-10 rounded-full border border-white/20 hover:bg-brand-red hover:border-brand-red hover:text-white flex items-center justify-center bg-transparent text-white"
                 >
-                  Get a Free Trial
+                  Select This Plan
                 </Link>
               </div>
             </motion.div>
