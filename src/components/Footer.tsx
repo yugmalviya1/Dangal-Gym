@@ -7,8 +7,8 @@ export default function Footer() {
       <div className="max-w-[1400px] mx-auto px-8 md:px-12">
         <div className="grid lg:grid-cols-4 gap-12 mb-24">
           <div className="lg:col-span-1">
-            <a href="#" className="font-display font-bold text-3xl tracking-widest text-white mb-6 inline-block">
-              DANGAL
+            <a href="#" className="mb-6 inline-block">
+              <img src="/dangal led board-1.png" alt="Dangal Gym" className="h-16 w-auto object-contain" />
             </a>
             <p className="text-gray-500 text-sm leading-relaxed mb-8 pr-4 font-medium">
               Bhopal's most elite fitness facility. Train hard. Stay hungry. Fight strong.

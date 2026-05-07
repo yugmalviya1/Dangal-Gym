@@ -34,6 +34,7 @@ export default function Hero() {
         <img 
           src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&q=80&w=2000" 
           alt="Athlete training background"
+          loading="eager"
           className="w-full h-full object-cover opacity-30 grayscale"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black" />

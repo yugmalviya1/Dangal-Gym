@@ -34,6 +34,16 @@
   .lenis.lenis-scrolling iframe {
     pointer-events: none;
   }
+
+  section {
+    content-visibility: auto;
+    contain-intrinsic-size: 1000px;
+  }
+
+  img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
 }
 
 @layer utilities {
@@ -133,5 +143,16 @@
     .animate-shimmer {
       animation: none !important;
     }
+  }
+
+  /* Text Reveal Animation */
+  .reveal-text-container {
+    overflow: hidden;
+    display: block;
+  }
+  
+  .reveal-text-content {
+    display: block;
+    will-change: transform;
   }
 }

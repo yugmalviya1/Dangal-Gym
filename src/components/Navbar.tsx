@@ -31,8 +31,14 @@ export default function Navbar() {
             <a href="#programs" className="text-xs font-semibold tracking-[0.2em] uppercase text-white hover:text-gray-400 transition-colors">Programs</a>
           </div>
 
-          <a href="#" className="font-display font-bold text-3xl tracking-widest text-brand-red flex-shrink-0 mx-auto md:mx-0">
-            DANGAL GYM
+          {/* Desktop logo (visible on md and up) */}
+          <a href="#" className="flex-shrink-0 hidden md:inline-block">
+            <img src="/dangal led board-1.png" alt="Dangal Gym" className="h-16 w-auto object-contain" />
+          </a>
+
+          {/* Mobile logo (visible on small screens) */}
+          <a href="#" className="md:hidden flex-shrink-0">
+            <img src="/dangal logo.jpeg" alt="Dangal Gym Logo" className="h-12 w-auto object-contain" />
           </a>
 
           <div className="hidden md:flex items-center gap-12 flex-1 justify-end">
@@ -40,7 +46,7 @@ export default function Navbar() {
             <a href="#reviews" className="text-xs font-semibold tracking-[0.2em] uppercase text-white hover:text-gray-400 transition-colors">Reviews</a>
           </div>
 
-          <button className="md:hidden text-white absolute right-8" onClick={() => setMobileOpen(true)}>
+          <button className="md:hidden text-white ml-auto" onClick={() => setMobileOpen(true)}>
             <Menu size={24} />
           </button>
         </div>

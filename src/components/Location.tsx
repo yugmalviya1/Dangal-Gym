@@ -14,18 +14,20 @@ export default function Location() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-          <div className="lg:col-span-2 bg-zinc-900/50 p-2 rounded-2xl border border-white/5 h-[400px]">
+          <div className="lg:col-span-2 bg-zinc-900/50 p-2 rounded-2xl border border-white/5 h-[400px] overflow-hidden relative">
             <iframe 
-              src="https://maps.google.com/maps?q=Dangal%20Gym,%20Awadhpuri,%20Bhopal&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.3881475713437!2d77.4878235750953!3d23.23805997902444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c419145788ce9%3A0x45f1f6b503db134b!2sDangal%20Gym%20-%20Family%20Fitness%20Club%20%7C%20Aerobic%20%7C%20Cardio%20%7C%20Gym!5e0!3m2!1sen!2sin!4v1778161303156!5m2!1sen!2sin" 
               width="100%" 
               height="100%" 
-              style={{ border: 0, borderRadius: '12px' }} 
+              style={{ border: 0 }} 
               allowFullScreen={true} 
               loading="lazy" 
               referrerPolicy="no-referrer-when-downgrade"
               title="Gym Location"
+              className="transition-all duration-700"
             ></iframe>
           </div>
+
 
           <div className="flex flex-col gap-6">
             <div className="bg-zinc-900/50 p-6 rounded-2xl border border-white/5 hover:border-brand-red/30 transition-colors">

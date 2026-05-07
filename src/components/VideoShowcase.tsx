@@ -12,7 +12,7 @@ export default function VideoShowcase() {
     <section className="relative w-full h-screen overflow-hidden z-10 border-y border-white/5" ref={containerRef}>
       
       {/* Full Screen Background Video */}
-      <div className="absolute inset-0 z-0 bg-black">
+      <div className="absolute inset-0 z-0 bg-black will-change-transform">
         {isInView && !videoError ? (
           <video 
             src={videoSrc}
@@ -20,8 +20,9 @@ export default function VideoShowcase() {
             muted 
             loop 
             playsInline
+            preload="auto"
             onError={() => setVideoError(true)}
-            className="w-full h-full object-cover opacity-60"
+            className="w-full h-full object-cover opacity-60 transform-gpu"
           />
         ) : videoError ? (
            <div className="w-full h-full bg-black flex items-center justify-center">
