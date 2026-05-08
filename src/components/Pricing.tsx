@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { RevealText } from './RevealText';
 
 const plans = [
   {
@@ -52,7 +53,8 @@ export default function Pricing() {
       <div className="max-w-[1400px] mx-auto px-8 md:px-12">
         <div className="flex flex-col items-center text-center mb-20">
           <h2 className="font-display font-light text-5xl md:text-7xl tracking-tighter uppercase leading-none mb-6">
-            Membership <br /><span className="font-bold">Plans</span>
+            <RevealText>Membership</RevealText>
+            <RevealText delay={0.2}><span className="font-bold">Plans</span></RevealText>
           </h2>
           <p className="text-gray-400 max-w-md text-sm leading-relaxed font-medium">
             Clear pricing. No hidden fees. Select a membership that fits your commitment level.

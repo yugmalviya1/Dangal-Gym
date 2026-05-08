@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring, useMotionValue } from 'motion/react';
+import { RevealText } from './RevealText';
 
 export default function Hero() {
   const containerRef = useRef<HTMLElement>(null);
@@ -47,11 +48,11 @@ export default function Hero() {
           y: useSpring(useTransform(mouseY, (v) => v * -0.2), springConfig),
           top: '-5%'
         }}
-        className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none z-0 select-none overflow-hidden opacity-30" 
+        className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none z-0 select-none overflow-hidden opacity-30 will-change-transform" 
       >
          <h1 className="text-[12vw] sm:text-[10vw] leading-[1.1] font-bold text-white text-center tracking-tighter w-full whitespace-nowrap">
-           Sculpt <span className="text-brand-red">Your</span> Body<br />
-           Elevate <span className="text-brand-red">Your</span> Spirit
+            <RevealText>Sculpt <span className="text-brand-red">Your</span> Body</RevealText>
+            <RevealText delay={0.2}>Elevate <span className="text-brand-red">Your</span> Spirit</RevealText>
          </h1>
       </motion.div>
 

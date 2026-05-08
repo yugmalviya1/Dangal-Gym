@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Dumbbell, Users, Activity, Flame, Salad, Droplet, Wind, Droplets, Layers, LineChart } from 'lucide-react';
+import { RevealText } from './RevealText';
 
 const facilities = [
   { icon: Layers, title: '3-Floor Gym (3500 sqft)', desc: 'Massive training space spanning three dedicated floors.' },
@@ -21,7 +22,8 @@ export default function Facilities() {
         <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
           <div>
             <h2 className="font-display font-light text-5xl md:text-7xl tracking-tighter uppercase leading-none">
-              Modern <br /><span className="font-bold">Facilities</span>
+              <RevealText>Modern</RevealText>
+              <RevealText delay={0.2}><span className="font-bold">Facilities</span></RevealText>
             </h2>
           </div>
           <p className="text-gray-400 max-w-sm text-sm leading-relaxed mb-2 font-medium">

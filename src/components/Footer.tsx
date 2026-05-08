@@ -1,5 +1,4 @@
-import React from 'react';
-import { Instagram, Facebook, Twitter, Youtube } from 'lucide-react';
+import { Instagram, Facebook, Twitter } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -7,8 +6,12 @@ export default function Footer() {
       <div className="max-w-[1400px] mx-auto px-8 md:px-12">
         <div className="grid lg:grid-cols-4 gap-12 mb-24">
           <div className="lg:col-span-1">
-            <a href="#" className="mb-6 inline-block">
-              <img src="/dangal led board-1.png" alt="Dangal Gym" className="h-16 w-auto object-contain" />
+            <a href="#" className="mb-6 inline-block hover:scale-105 transition-transform duration-300">
+              <img 
+                src="/dangal gym led board.png" 
+                alt="Dangal Gym" 
+                className="h-14 w-auto object-contain drop-shadow-[0_0_10px_rgba(255,255,255,0.15)]" 
+              />
             </a>
             <p className="text-gray-500 text-sm leading-relaxed mb-8 pr-4 font-medium">
               Bhopal's most elite fitness facility. Train hard. Stay hungry. Fight strong.
@@ -17,7 +20,6 @@ export default function Footer() {
               <SocialLink icon={Instagram} />
               <SocialLink icon={Facebook} />
               <SocialLink icon={Twitter} />
-              <SocialLink icon={Youtube} />
             </div>
           </div>
 
@@ -48,7 +50,23 @@ export default function Footer() {
               <li>2 B, near SBI Bank, Awadhpuri, Bhopal</li>
               <li>+91 98765 43210</li>
               <li>info@dangalgym.in</li>
-              <li className="mt-4 pt-4 border-t border-white/5 text-xs">Mon–Sat: 5am–10pm<br/>Sun: 6am–8pm</li>
+              <li className="mt-6 pt-6 border-t border-white/5">
+                <span className="block text-white font-bold uppercase tracking-widest text-[10px] mb-3 text-brand-red">Gym Timings</span>
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="text-xs">Mon–Sat</span>
+                    <span className="text-xs text-white">6AM - 11AM</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-xs">Mon–Sat</span>
+                    <span className="text-xs text-white">5PM - 10PM</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-xs">Sunday</span>
+                    <span className="text-xs text-zinc-600 italic">Closed</span>
+                  </div>
+                </div>
+              </li>
             </ul>
           </div>
         </div>

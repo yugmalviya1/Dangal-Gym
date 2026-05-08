@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
+import { RevealText } from './RevealText';
 
 export default function Offer() {
   const [timeLeft, setTimeLeft] = useState({ hours: 48, minutes: 0, seconds: 0 });
@@ -27,7 +28,8 @@ export default function Offer() {
         >
           <div className="text-gray-500 font-bold text-[10px] uppercase tracking-widest mb-4">Limited Time</div>
           <h2 className="font-display font-light text-5xl md:text-7xl tracking-tighter uppercase text-black mb-6">
-            Exclusive <span className="font-bold">Offer</span>
+            <RevealText>Exclusive</RevealText>
+            <RevealText delay={0.2}><span className="font-bold">Offer</span></RevealText>
           </h2>
           <p className="text-gray-600 max-w-lg mx-auto font-medium mb-12 text-sm leading-relaxed">
             Lock in our lowest ever rate before it expires. 40% OFF Annual Membership + Free PT Onboarding Session.

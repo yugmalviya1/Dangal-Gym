@@ -1,6 +1,7 @@
 import React from 'react';
 import { MapPin, Phone, Clock } from 'lucide-react';
 import { motion } from 'motion/react';
+import { RevealText } from './RevealText';
 
 export default function Location() {
   return (
@@ -8,7 +9,7 @@ export default function Location() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter mb-4">
-            Find <span className="text-brand-red">Us</span>
+            <RevealText>Find <span className="text-brand-red">Us</span></RevealText>
           </h2>
           <p className="text-gray-400 font-bold uppercase tracking-widest text-sm">Where champions are made</p>
         </div>
@@ -53,7 +54,11 @@ export default function Location() {
                 </div>
                 <div>
                   <h3 className="text-white font-bold uppercase tracking-widest text-sm mb-2">Hours</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">Mon–Sat: 5:00 AM – 10:00 PM<br/>Sun: 6:00 AM – 8:00 PM</p>
+                  <div className="text-gray-400 text-sm leading-relaxed space-y-1">
+                    <p><span className="text-white font-bold">Mon–Sat:</span> 6AM – 11AM</p>
+                    <p><span className="text-white font-bold">Mon–Sat:</span> 5PM – 10PM</p>
+                    <p><span className="text-zinc-600 italic">Sunday: Closed</span></p>
+                  </div>
                 </div>
               </div>
             </div>

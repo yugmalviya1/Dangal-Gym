@@ -21,29 +21,37 @@ export default function Navbar() {
         animate={{ y: 0 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled ? 'bg-black/90 backdrop-blur-md py-4' : 'bg-transparent py-8'
+          scrolled ? 'bg-black/80 backdrop-blur-sm py-4' : 'bg-transparent pt-4 pb-8'
         }`}
       >
         <div className="max-w-[1400px] mx-auto px-8 md:px-12 flex items-center justify-between">
           
-          <div className="hidden md:flex items-center gap-12 flex-1">
-            <a href="#facilities" className="text-xs font-semibold tracking-[0.2em] uppercase text-white hover:text-gray-400 transition-colors">Facilities</a>
-            <a href="#programs" className="text-xs font-semibold tracking-[0.2em] uppercase text-white hover:text-gray-400 transition-colors">Programs</a>
+          <div className="hidden md:flex items-center gap-4 flex-1">
+            <a href="#facilities" className="text-[12px] font-bold tracking-[0.2em] uppercase text-white hover:text-black transition-all duration-300 bg-white/5 hover:bg-white px-5 py-2.5 rounded-full border border-white/5">Facilities</a>
+            <a href="#programs" className="text-[12px] font-bold tracking-[0.2em] uppercase text-white hover:text-black transition-all duration-300 bg-white/5 hover:bg-white px-5 py-2.5 rounded-full border border-white/5">Programs</a>
           </div>
 
           {/* Desktop logo (visible on md and up) */}
-          <a href="#" className="flex-shrink-0 hidden md:inline-block">
-            <img src="/dangal led board-1.png" alt="Dangal Gym" className="h-16 w-auto object-contain" />
+          <a href="#" className="flex-shrink-0 hidden md:inline-block hover:scale-105 transition-transform duration-300">
+            <img 
+              src="/dangal gym led board.png" 
+              alt="Dangal Gym" 
+              className="h-14 w-auto object-contain drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]" 
+            />
           </a>
 
           {/* Mobile logo (visible on small screens) */}
           <a href="#" className="md:hidden flex-shrink-0">
-            <img src="/dangal logo.jpeg" alt="Dangal Gym Logo" className="h-12 w-auto object-contain" />
+            <img 
+              src="/dangal gym led board.png" 
+              alt="Dangal Gym Logo" 
+              className="h-10 w-auto object-contain drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]" 
+            />
           </a>
 
-          <div className="hidden md:flex items-center gap-12 flex-1 justify-end">
-            <a href="#pricing" className="text-xs font-semibold tracking-[0.2em] uppercase text-white hover:text-gray-400 transition-colors">Memberships</a>
-            <a href="#reviews" className="text-xs font-semibold tracking-[0.2em] uppercase text-white hover:text-gray-400 transition-colors">Reviews</a>
+          <div className="hidden md:flex items-center gap-4 flex-1 justify-end">
+            <a href="#pricing" className="text-[12px] font-bold tracking-[0.2em] uppercase text-white hover:text-black transition-all duration-300 bg-white/5 hover:bg-white px-5 py-2.5 rounded-full border border-white/5">Memberships</a>
+            <a href="#reviews" className="text-[12px] font-bold tracking-[0.2em] uppercase text-white hover:text-black transition-all duration-300 bg-white/5 hover:bg-white px-5 py-2.5 rounded-full border border-white/5">Reviews</a>
           </div>
 
           <button className="md:hidden text-white ml-auto" onClick={() => setMobileOpen(true)}>

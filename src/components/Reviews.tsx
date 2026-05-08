@@ -1,5 +1,6 @@
 import React from 'react';
 import { Star } from 'lucide-react';
+import { RevealText } from './RevealText';
 
 const googleReviews = [
   { name: 'Priya S.', text: "Amazing environment and completely safe for women. Highly recommend for female fitness enthusiasts!", highlight: "Women Safety & Environment", stars: 5 },
@@ -32,7 +33,8 @@ export default function Reviews() {
     <section id="reviews" className="py-32 bg-black border-y border-white/5 relative z-10 text-white overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-8 md:px-12 mb-20 text-center relative z-20">
         <h2 className="font-display font-light text-5xl md:text-7xl tracking-tighter uppercase leading-none mb-6">
-          Member <br /><span className="font-bold text-brand-red">Reviews</span>
+          <RevealText>Member</RevealText>
+          <RevealText delay={0.2}><span className="font-bold text-brand-red">Reviews</span></RevealText>
         </h2>
         <p className="text-gray-400 max-w-md mx-auto text-sm leading-relaxed font-medium">
           Real feedback from real members. See why Dangal Gym is the highest-rated fitness facility in Bhopal.
