@@ -5,8 +5,8 @@ import { RevealText } from './RevealText';
 const programs = [
   { img: '/pic1.webp', title: 'Weight Loss', desc: 'HIIT circuits, cardio ladders, and metabolic conditioning designed to torch fat fast.', tag: '12-Week' },
   { img: '/pic2.webp', title: 'Muscle Gain', desc: 'Progressive overload, hypertrophy splits, and targeted recovery protocols.', tag: '16-Week' },
-  { img: '/pic3.webp', title: 'Strength', desc: 'Powerlifting fundamentals, compound movements, and raw functional strength.', tag: 'Ongoing' },
-  { img: '/pic 4 (1).webp', title: 'Coaching', desc: 'Full dedicated attention from our elite coaches with custom programming.', tag: '1-on-1' },
+  { img: '/pic3 (1).webp', title: 'Strength', desc: 'Powerlifting fundamentals, compound movements, and raw functional strength.', tag: 'Ongoing' },
+  { img: '/pic4.webp', title: 'Coaching', desc: 'Full dedicated attention from our elite coaches with custom programming.', tag: '1-on-1' },
 ];
 
 export default function Programs() {
@@ -23,10 +23,16 @@ export default function Programs() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 h-auto lg:h-[600px] w-full">
+        <div className="flex flex-col lg:flex-row gap-2 h-[400px] lg:h-[600px] w-full overflow-hidden group/container">
           {programs.map((prog, i) => (
             <ProgramCard key={prog.title} prog={prog} index={i} />
           ))}
+        </div>
+
+        <div className="mt-16 text-center">
+          <p className="text-gray-400 font-medium text-lg md:text-xl tracking-tight">
+            It's about identity. Progress. <span className="text-white font-bold">Getting unstuck.</span>
+          </p>
         </div>
       </div>
     </section>

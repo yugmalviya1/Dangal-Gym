@@ -12,7 +12,7 @@ const plans = [
     dailyPrice: '50',
     discount: '',
     period: 'per month',
-    features: ['Full Gym Access', 'CrossFit Zone Access', 'Basic Nutrition Tips', 'Free Wi-Fi'],
+    features: ['Full Gym Access', 'Diet Plan', 'CrossFit Zone Access', 'Cardio Access'],
     popular: false
   },
   {
@@ -22,7 +22,7 @@ const plans = [
     dailyPrice: '39',
     discount: 'SAVE ₹1,000',
     period: 'for 3 months',
-    features: ['Everything in 1 Month', '2 PT Sessions/Month', 'Nutrition Plan', 'Body Composition Test'],
+    features: ['Full Gym Access', 'Diet Plan', 'CrossFit Zone Access', 'Cardio Access'],
     popular: true
   },
   {
@@ -32,7 +32,7 @@ const plans = [
     dailyPrice: '36',
     discount: 'SAVE ₹2,500',
     period: 'for 6 months',
-    features: ['Everything in 3 Months', 'Advanced Body Metrics', 'Priority Booking', 'Guest Passes × 2'],
+    features: ['Full Gym Access', 'Diet Plan', 'CrossFit Zone Access', 'Cardio Access'],
     popular: false
   },
   {
@@ -42,7 +42,7 @@ const plans = [
     dailyPrice: '30',
     discount: 'SAVE ₹7,000',
     period: 'per year',
-    features: ['Everything in 6 Months', 'Custom Diet & Macro Plan', 'Guest Passes × 5', 'VIP Member Badge'],
+    features: ['Full Gym Access', 'Diet Plan', 'CrossFit Zone Access', 'Cardio Access'],
     popular: false
   }
 ];

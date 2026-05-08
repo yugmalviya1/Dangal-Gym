@@ -45,10 +45,10 @@ export default function Reviews() {
         <div className="absolute inset-y-0 left-0 w-12 sm:w-32 z-10 pointer-events-none bg-gradient-to-r from-black to-transparent"></div>
         <div className="absolute inset-y-0 right-0 w-12 sm:w-32 z-10 pointer-events-none bg-gradient-to-l from-black to-transparent"></div>
         
-        <div className="flex animate-[marquee_60s_linear_infinite] group-hover:[animation-play-state:paused]">
+        <div className="flex animate-[marquee_60s_linear_infinite] group-hover:[animation-play-state:paused] marquee-inner">
           {content}
         </div>
-        <div className="flex animate-[marquee_60s_linear_infinite] group-hover:[animation-play-state:paused]" aria-hidden="true">
+        <div className="flex animate-[marquee_60s_linear_infinite] group-hover:[animation-play-state:paused] marquee-inner" aria-hidden="true">
           {content}
         </div>
       </div>

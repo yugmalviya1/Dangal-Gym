@@ -30,14 +30,17 @@ export default function Hero() {
       onMouseLeave={handleMouseLeave}
       className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-black perspective-[1000px]"
     >
-      {/* Background Image */}
+      {/* Background Video/Image */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&q=80&w=2000" 
-          alt="Athlete training background"
-          loading="eager"
-          className="w-full h-full object-cover opacity-30 grayscale"
-        />
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover opacity-40 grayscale transform-gpu"
+        >
+          <source src="/Gym Dangal 1 1 Compressed.mp4" type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black" />
       </div>
 
@@ -46,14 +49,18 @@ export default function Hero() {
         style={{ 
           x: useSpring(useTransform(mouseX, (v) => v * -0.2), springConfig),
           y: useSpring(useTransform(mouseY, (v) => v * -0.2), springConfig),
-          top: '-5%'
         }}
-        className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none z-0 select-none overflow-hidden opacity-30 will-change-transform" 
+        className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none z-0 select-none overflow-hidden opacity-40 will-change-transform" 
       >
-         <h1 className="text-[12vw] sm:text-[10vw] leading-[1.1] font-bold text-white text-center tracking-tighter w-full whitespace-nowrap">
-            <RevealText>Sculpt <span className="text-brand-red">Your</span> Body</RevealText>
-            <RevealText delay={0.2}>Elevate <span className="text-brand-red">Your</span> Spirit</RevealText>
-         </h1>
+         <motion.h1 
+           initial={{ opacity: 0, scale: 0.95 }}
+           animate={{ opacity: 1, scale: 1 }}
+           transition={{ duration: 1.5, ease: "easeOut" }}
+           className="text-[12vw] sm:text-[10vw] leading-[1.1] font-bold text-white text-center tracking-tighter w-full whitespace-nowrap"
+         >
+            Sculpt <span className="text-brand-red">Your</span> Body<br/>
+            Elevate <span className="text-brand-red">Your</span> Spirit
+         </motion.h1>
       </motion.div>
 
       <div className="relative z-10 w-full flex flex-col items-center justify-center flex-1 px-4 mt-24">

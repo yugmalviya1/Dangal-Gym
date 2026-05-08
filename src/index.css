@@ -17,6 +17,8 @@
   }
   body {
     @apply bg-brand-dark text-white font-sans overflow-x-hidden antialiased;
+    transform: translateZ(0); /* Hardware acceleration */
+    backface-visibility: hidden;
   }
   
   html.lenis, html.lenis body {
@@ -37,12 +39,13 @@
 
   section {
     content-visibility: auto;
-    contain-intrinsic-size: 1000px;
+    contain-intrinsic-size: 1px 1000px;
+    transform: translateZ(0);
   }
 
   img {
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
+    image-rendering: auto;
+    content-visibility: auto;
   }
 }
 

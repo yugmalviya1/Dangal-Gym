@@ -6,7 +6,7 @@ export default function VideoShowcase() {
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: true, margin: "400px" });
   const [videoError, setVideoError] = useState(false);
-  const videoSrc = "/GYm dangal 1 1_compressed.webm";
+  const videoSrc = "/Gym Dangal 1 1 Compressed.mp4";
 
   return (
     <section className="relative w-full h-screen overflow-hidden z-10 border-y border-white/5" ref={containerRef}>
@@ -24,7 +24,7 @@ export default function VideoShowcase() {
             onError={() => setVideoError(true)}
             className="w-full h-full object-cover opacity-60 transform-gpu will-change-transform"
           >
-            <source src={videoSrc} type="video/webm" />
+            <source src={videoSrc} type="video/mp4" />
           </video>
         ) : videoError ? (
            <div className="w-full h-full bg-black flex items-center justify-center">

@@ -13,9 +13,9 @@ export const RevealText: React.FC<RevealTextProps> = ({ children, className = ''
       <motion.span
         initial={{ y: '100%' }}
         whileInView={{ y: 0 }}
-        viewport={{ once: true, margin: "-50px" }}
+        viewport={{ once: true, margin: "-20px" }}
         transition={{ duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] }}
-        className="reveal-text-content"
+        className="reveal-text-content transform-gpu will-change-transform"
       >
         {children}
       </motion.span>

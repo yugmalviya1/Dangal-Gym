@@ -6,6 +6,7 @@ import Hero from './components/Hero';
 import VideoShowcase from './components/VideoShowcase';
 import Marquee from './components/Marquee';
 import Facilities from './components/Facilities';
+import Transformation from './components/Transformation';
 import Programs from './components/Programs';
 import Pricing from './components/Pricing';
 import Reviews from './components/Reviews';
@@ -23,6 +24,7 @@ function Home() {
         <Hero />
         <Marquee />
         <Facilities />
+        <Transformation />
         <VideoShowcase />
         <Programs />
         <Pricing />
@@ -39,10 +41,12 @@ function Home() {
 function App() {
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.0,
+      duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
-      wheelMultiplier: 1.05,
+      wheelMultiplier: 1.1,
+      touchMultiplier: 2,
+      infinite: false,
     });
 
     function raf(time: number) {
