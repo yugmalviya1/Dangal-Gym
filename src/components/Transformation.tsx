@@ -13,7 +13,7 @@ export default function Transformation() {
     <section id="transformations" className="py-32 bg-black relative z-10 border-b border-white/5">
       <div className="max-w-[1400px] mx-auto px-8 md:px-12">
         <div className="flex flex-col items-start mb-20">
-          <h2 className="font-display font-light text-5xl md:text-7xl tracking-tighter uppercase leading-none text-white mb-6">
+          <h2 className="font-display font-light text-[11vw] sm:text-5xl md:text-7xl tracking-tighter uppercase leading-none text-white mb-6">
             <RevealText>Real</RevealText>
             <RevealText delay={0.2}><span className="font-bold text-brand-red">Transformations</span></RevealText>
           </h2>

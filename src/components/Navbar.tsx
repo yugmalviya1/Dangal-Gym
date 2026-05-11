@@ -32,20 +32,30 @@ export default function Navbar() {
           </div>
 
           {/* Desktop logo (visible on md and up) */}
-          <a href="#" className="flex-shrink-0 hidden md:inline-block hover:scale-105 transition-transform duration-300">
+          <a href="#" className="flex-shrink-0 hidden md:flex items-center justify-center gap-2 hover:scale-105 transition-transform duration-300">
             <img 
-              src="/dangal gym led board.png" 
-              alt="Dangal Gym" 
-              className="h-14 w-auto object-contain drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]" 
+              src="/dangal.png" 
+              alt="Dangal" 
+              className="h-7 lg:h-8 w-auto object-contain drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]" 
+            />
+            <img 
+              src="/dgym.png" 
+              alt="Gym" 
+              className="h-7 lg:h-8 w-auto object-contain drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]" 
             />
           </a>
 
           {/* Mobile logo (visible on small screens) */}
-          <a href="#" className="md:hidden flex-shrink-0">
+          <a href="#" className="md:hidden flex-shrink-0 flex items-center justify-center gap-1.5 max-w-[60vw]">
             <img 
-              src="/dangal gym led board.png" 
-              alt="Dangal Gym Logo" 
-              className="h-10 w-auto object-contain drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]" 
+              src="/dangal.png" 
+              alt="Dangal" 
+              className="h-5 w-auto max-w-[calc(50%-3px)] object-contain drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]" 
+            />
+            <img 
+              src="/dgym.png" 
+              alt="Gym" 
+              className="h-5 w-auto max-w-[calc(50%-3px)] object-contain drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]" 
             />
           </a>
 

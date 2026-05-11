@@ -31,16 +31,14 @@ export default function Hero() {
       className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-black perspective-[1000px]"
     >
       {/* Background Video/Image */}
-      <div className="absolute inset-0 z-0">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="w-full h-full object-cover opacity-40 grayscale transform-gpu"
-        >
-          <source src="/Gym Dangal 1 1 Compressed.mp4" type="video/mp4" />
-        </video>
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        <iframe
+          src="https://player.vimeo.com/video/1191307630?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1&background=1"
+          className="absolute top-1/2 left-1/2 w-[100vw] h-[56.25vw] min-h-[100vh] min-w-[177.77vh] -translate-x-1/2 -translate-y-1/2 opacity-40 grayscale"
+          frameBorder="0"
+          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+          title="GYm dangal +1 +1"
+        ></iframe>
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black" />
       </div>
 
@@ -56,7 +54,7 @@ export default function Hero() {
            initial={{ opacity: 0, scale: 0.95 }}
            animate={{ opacity: 1, scale: 1 }}
            transition={{ duration: 1.5, ease: "easeOut" }}
-           className="text-[12vw] sm:text-[10vw] leading-[1.1] font-bold text-white text-center tracking-tighter w-full whitespace-nowrap"
+           className="text-[14vw] sm:text-[10vw] leading-[1] font-bold text-white text-center tracking-tighter w-full max-w-[100vw] px-4"
          >
             Sculpt <span className="text-brand-red">Your</span> Body<br/>
             Elevate <span className="text-brand-red">Your</span> Spirit

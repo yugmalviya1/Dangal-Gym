@@ -6,11 +6,16 @@ export default function Footer() {
       <div className="max-w-[1400px] mx-auto px-8 md:px-12">
         <div className="grid lg:grid-cols-4 gap-12 mb-24">
           <div className="lg:col-span-1">
-            <a href="#" className="mb-6 inline-block hover:scale-105 transition-transform duration-300">
+            <a href="#" className="mb-6 flex items-center gap-2 hover:scale-105 transition-transform duration-300">
               <img 
-                src="/dangal gym led board.png" 
-                alt="Dangal Gym" 
-                className="h-14 w-auto object-contain drop-shadow-[0_0_10px_rgba(255,255,255,0.15)]" 
+                src="/dangal.png" 
+                alt="Dangal" 
+                className="h-7 lg:h-8 w-auto object-contain drop-shadow-[0_0_10px_rgba(255,255,255,0.15)]" 
+              />
+              <img 
+                src="/dgym.png" 
+                alt="Gym" 
+                className="h-7 lg:h-8 w-auto object-contain drop-shadow-[0_0_10px_rgba(255,255,255,0.15)]" 
               />
             </a>
             <p className="text-gray-500 text-sm leading-relaxed mb-8 pr-4 font-medium">
