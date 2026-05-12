@@ -45,17 +45,21 @@ export default function Navbar() {
             />
           </a>
 
-          {/* Mobile logo (visible on small screens) */}
-          <a href="#" className="md:hidden flex-shrink-0 flex items-center justify-center gap-1.5 max-w-[60vw]">
+          {/* Mobile logo (visible on small screens, aligned left) */}
+          <a href="#" className="md:hidden flex-shrink-0 flex items-center justify-start gap-1 mr-auto">
             <img 
               src="/dangal.png" 
               alt="Dangal" 
-              className="h-5 w-auto max-w-[calc(50%-3px)] object-contain drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]" 
+              loading="eager"
+              decoding="async"
+              className="h-5 w-auto object-contain drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]" 
             />
             <img 
               src="/dgym.png" 
               alt="Gym" 
-              className="h-5 w-auto max-w-[calc(50%-3px)] object-contain drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]" 
+              loading="eager"
+              decoding="async"
+              className="h-5 w-auto object-contain drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]" 
             />
           </a>
 

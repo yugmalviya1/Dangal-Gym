@@ -88,7 +88,7 @@ export default function Register() {
       } else if (rand < 99) {
         setTrialDays(4);
       } else {
-        setTrialDays(15);
+        setTrialDays(3);
       }
       setIsRevealed(false);
       setCopied(false);

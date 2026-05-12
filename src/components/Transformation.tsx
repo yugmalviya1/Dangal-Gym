@@ -1,6 +1,5 @@
-import React from 'react';
-import { motion } from 'motion/react';
-import { RevealText } from './RevealText';
+import React, { useRef } from 'react';
+import { motion, useInView } from 'motion/react';
 
 const transformations = [
   { id: 1, name: 'Person 1' },
@@ -9,13 +8,34 @@ const transformations = [
 ];
 
 export default function Transformation() {
+  const headingRef = useRef(null);
+  const isInView = useInView(headingRef, { once: true, margin: "-50px" });
+
   return (
-    <section id="transformations" className="py-32 bg-black relative z-10 border-b border-white/5">
+    <section id="transformations" className="py-32 bg-black relative z-10 border-b border-white/5" style={{ contentVisibility: 'visible' }}>
       <div className="max-w-[1400px] mx-auto px-8 md:px-12">
-        <div className="flex flex-col items-start mb-20">
-          <h2 className="font-display font-light text-[11vw] sm:text-5xl md:text-7xl tracking-tighter uppercase leading-none text-white mb-6">
-            <RevealText>Real</RevealText>
-            <RevealText delay={0.2}><span className="font-bold text-brand-red">Transformations</span></RevealText>
+        <div className="flex flex-col items-start mb-20" ref={headingRef}>
+          <h2 className="font-display font-light text-[8vw] sm:text-5xl md:text-7xl tracking-tighter uppercase leading-none text-white mb-6">
+            <span className="block overflow-hidden">
+              <motion.span
+                initial={{ y: '100%' }}
+                animate={isInView ? { y: 0 } : { y: '100%' }}
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                className="block transform-gpu will-change-transform"
+              >
+                Real
+              </motion.span>
+            </span>
+            <span className="block overflow-hidden">
+              <motion.span
+                initial={{ y: '100%' }}
+                animate={isInView ? { y: 0 } : { y: '100%' }}
+                transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+                className="block font-bold text-brand-red transform-gpu will-change-transform"
+              >
+                Transformations
+              </motion.span>
+            </span>
           </h2>
           <p className="text-gray-400 max-w-md text-sm leading-relaxed font-medium">
             Proof that dedication and the right environment deliver results. Our members are the living testimony of our training philosophy.

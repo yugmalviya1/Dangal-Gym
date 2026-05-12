@@ -21,7 +21,7 @@ export default function FloatingSocials() {
     { id: 'location', text: '📍 Location', answer: 'Dangal Gym is located at 2 B, near SBI Bank, Awadhpuri, Bhopal, MP 462022. You can click the Map pin icon below for direct Google Maps navigation!' },
     { id: 'timings', text: '🕒 Gym Timings', answer: 'Monday to Saturday: Morning (6:00 AM - 11:00 AM) & Evening (5:00 PM - 10:00 PM). Sunday: Closed.' },
     { id: 'pricing', text: '💰 Memberships', answer: 'Our standard 1-Month plan is ₹1,500. Our most popular 3-Month plan is ₹3,500 (just ₹39/day!), and the 1-Year plan is ₹11,000. You can also get massive discounts during checkout.' },
-    { id: 'trial', text: '🎁 Free Trial', answer: 'Yes! Click the "WIN UP TO 15 DAYS FREE" button at the top of our website to scratch a card and win up to 15 days of free premium access!' },
+    { id: 'trial', text: '🎁 Free Trial', answer: 'Yes! Click the "WIN UP TO 3 DAYS FREE" button at the top of our website to scratch a card and win up to 3 days of free premium access!' },
     { id: 'pt', text: '💪 Personal Training', answer: 'Absolutely. We offer 1-on-1 elite coaching where a certified trainer designs a custom diet and workout split specifically for your body type.' },
     { id: 'facilities', text: '🔥 Facilities', answer: 'We feature premium international-grade equipment, a dedicated CrossFit zone, massive free-weights section, and a safe, hygienic environment.' }
   ];

@@ -54,7 +54,7 @@ export default function Hero() {
            initial={{ opacity: 0, scale: 0.95 }}
            animate={{ opacity: 1, scale: 1 }}
            transition={{ duration: 1.5, ease: "easeOut" }}
-           className="text-[14vw] sm:text-[10vw] leading-[1] font-bold text-white text-center tracking-tighter w-full max-w-[100vw] px-4"
+           className="text-[20vw] sm:text-[10vw] leading-[0.9] font-bold text-white text-center tracking-tighter w-full max-w-[100vw] px-4"
          >
             Sculpt <span className="text-brand-red">Your</span> Body<br/>
             Elevate <span className="text-brand-red">Your</span> Spirit
@@ -85,24 +85,15 @@ export default function Hero() {
         >
           <a
             href="/register"
-            className="group relative inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-brand-red to-red-700 hover:from-red-600 hover:to-brand-red text-white font-black text-sm sm:text-base rounded-full transition-all duration-500 hover:scale-[1.05] shadow-[0_0_30px_rgba(230,57,70,0.4)] hover:shadow-[0_0_50px_rgba(230,57,70,0.7)] cursor-pointer overflow-hidden border border-brand-red/50 hover:border-white/50 uppercase tracking-widest font-['Source_Sans_Pro',sans-serif]"
+            className="group relative inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-gradient-to-r from-brand-red to-red-700 hover:from-red-600 hover:to-brand-red text-white font-black text-[11px] sm:text-xs rounded-full transition-all duration-500 hover:scale-[1.05] shadow-[0_0_30px_rgba(230,57,70,0.4)] hover:shadow-[0_0_50px_rgba(230,57,70,0.7)] cursor-pointer overflow-hidden border border-brand-red/50 hover:border-white/50 uppercase tracking-widest font-['Source_Sans_Pro',sans-serif]"
           >
             {/* Shimmer effect */}
             <div className="absolute inset-0 w-[150%] -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent animate-shimmer" />
             
-            <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.8)] animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-            </svg>
-            
             <span className="relative z-10 whitespace-nowrap flex items-center justify-center">
-              <span>WIN UP TO</span>
-              <span className="text-yellow-400 drop-shadow-[0_0_12px_rgba(250,204,21,0.6)] font-extrabold tracking-tighter text-base sm:text-lg mx-1.5 translate-y-[1px]">15 DAYS</span>
-              <span>FREE</span>
+              <span className="text-yellow-400 drop-shadow-[0_0_12px_rgba(250,204,21,0.6)] font-extrabold tracking-tighter text-xs sm:text-sm mr-1">3 DAYS</span>
+              <span>FREE TRIAL</span>
             </span>
-
-            <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.8)] animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-            </svg>
           </a>
         </motion.div>
       </div>
@@ -115,7 +106,7 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.5, ease: 'easeOut' }}
           className="text-white text-xs sm:text-sm font-semibold tracking-widest uppercase leading-loose"
         >
-          Embrace the<br/>power within
+          Embrace the power within
         </motion.div>
 
       </div>

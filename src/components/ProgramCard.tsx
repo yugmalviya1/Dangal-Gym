@@ -24,7 +24,7 @@ const ProgramCard: React.FC<ProgramCardProps> = ({ prog, index }) => {
     >
       {/* Inner wrapper counter-skews so content stays straight */}
       <div className="program-card-inner">
-        {/* Background Image — no scale on hover, just opacity shift */}
+        {/* Background Image */}
         <img
           src={prog.img}
           alt={prog.title}
@@ -37,21 +37,23 @@ const ProgramCard: React.FC<ProgramCardProps> = ({ prog, index }) => {
         <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500" />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80" />
 
-        {/* Content */}
-        <div className="absolute inset-0 flex flex-col justify-end p-8 sm:p-12 transition-transform duration-700 group-hover:translate-x-4 transform-gpu will-change-transform">
-          <div className="mb-4">
-            <span className="text-brand-red font-bold text-[10px] uppercase tracking-[0.3em] mb-2 block opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+        {/* Content — always visible on mobile, hover-reveal on desktop */}
+        <div className="absolute inset-0 flex flex-col justify-end p-6 sm:p-8 lg:p-12 transition-transform duration-700 group-hover:translate-x-4 transform-gpu will-change-transform">
+          <div className="mb-2 lg:mb-4">
+            {/* Tag: always visible on mobile, hover-reveal on desktop */}
+            <span className="text-brand-red font-bold text-[10px] uppercase tracking-[0.3em] mb-2 block opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 delay-100">
               {prog.tag}
             </span>
-            <h3 className="text-white font-['Oswald'] font-black text-3xl sm:text-4xl lg:text-5xl uppercase tracking-tighter leading-none transition-colors duration-700 group-hover:text-brand-red">
+            <h3 className="text-white font-['Oswald'] font-black text-2xl sm:text-3xl lg:text-5xl uppercase tracking-tighter leading-none transition-colors duration-700 group-hover:text-brand-red">
               {prog.title.split(' ').map((word, i) => (
                 <span key={i} className="block">{word}</span>
               ))}
             </h3>
           </div>
 
+          {/* Description: always visible on mobile, hover-reveal on desktop */}
           <div className="max-w-[280px] overflow-hidden">
-            <p className="text-gray-300 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-all duration-700 translate-y-4 group-hover:translate-y-0 delay-200 transform-gpu will-change-[transform,opacity]">
+            <p className="text-gray-300 text-xs sm:text-sm leading-relaxed opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-700 translate-y-0 lg:translate-y-4 lg:group-hover:translate-y-0 delay-200 transform-gpu will-change-[transform,opacity]">
               {prog.desc}
             </p>
           </div>

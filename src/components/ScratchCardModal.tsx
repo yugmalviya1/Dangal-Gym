@@ -24,7 +24,7 @@ export default function ScratchCardModal({ isOpen, onClose }: ScratchCardModalPr
       } else if (rand < 99) {
         setRewardDays(4);
       } else {
-        setRewardDays(15);
+        setRewardDays(3);
       }
       setIsRevealed(false);
       setCopied(false);
