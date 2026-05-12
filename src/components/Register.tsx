@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { ChevronLeft, Send, User, Phone, CheckCircle2, Ticket, Gift, Copy, ShoppingBag, ShieldCheck, Tag } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { motion } from 'motion/react';
+import { ChevronLeft, User, Phone, CheckCircle2, ShoppingBag, ShieldCheck, Tag } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 const PLAN_DATA: Record<string, { name: string, fakePrice: number, realPrice: number, originalValue: number, image: string }> = {
@@ -27,14 +27,8 @@ export default function Register() {
   });
   
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [trialDays, setTrialDays] = useState(0);
   const [isApplyingCode, setIsApplyingCode] = useState(false);
   const [codeApplied, setCodeApplied] = useState(false);
-
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [isRevealed, setIsRevealed] = useState(false);
-  const [isDrawing, setIsDrawing] = useState(false);
-  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     let initialPlan = '3 Months';
@@ -49,7 +43,6 @@ export default function Register() {
 
   const currentPlanData = PLAN_DATA[formData.plan as keyof typeof PLAN_DATA] || PLAN_DATA['3 Months'];
   
-  // Calculate pricing based on coupon
   const basePrice = currentPlanData.fakePrice;
   const finalPrice = codeApplied ? currentPlanData.realPrice : currentPlanData.fakePrice;
   const savings = basePrice - finalPrice;
@@ -57,16 +50,6 @@ export default function Register() {
   const discountPercent = basePrice > 0 && savings > 0 ? Math.round((savings / basePrice) * 100) : 0;
   
   const availableCoupons = COUPONS_BY_PLAN[formData.plan] || [];
-
-  const handleApplyCode = () => {
-    if (!formData.referralCode) return;
-    setIsApplyingCode(true);
-    
-    setTimeout(() => {
-      setIsApplyingCode(false);
-      setCodeApplied(true);
-    }, 800);
-  };
 
   const handleRemoveCode = () => {
     setCodeApplied(false);
@@ -77,128 +60,6 @@ export default function Register() {
     setFormData({ ...formData, plan: e.target.value });
     setCodeApplied(false);
     setFormData(prev => ({ ...prev, referralCode: '' }));
-  };
-
-  // Setup scratch card when submitted
-  useEffect(() => {
-    if (isSubmitted) {
-      const rand = Math.random() * 100;
-      if (rand < 80) {
-        setTrialDays(Math.random() < 0.5 ? 2 : 3);
-      } else if (rand < 99) {
-        setTrialDays(4);
-      } else {
-        setTrialDays(3);
-      }
-      setIsRevealed(false);
-      setCopied(false);
-      initCanvas();
-    }
-  }, [isSubmitted]);
-
-  const initCanvas = () => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d', { willReadFrequently: true });
-    if (!ctx) return;
-
-    setTimeout(() => {
-      canvas.width = canvas.offsetWidth;
-      canvas.height = canvas.offsetHeight;
-      
-      ctx.fillStyle = '#111111';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      
-      ctx.font = 'bold 24px Inter, sans-serif';
-      ctx.fillStyle = '#ffffff';
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      ctx.fillText('SCRATCH HERE', canvas.width / 2, canvas.height / 2);
-      
-      ctx.globalCompositeOperation = 'destination-out';
-    }, 50);
-  };
-
-  const getPointerPos = (e: React.MouseEvent | React.TouchEvent | MouseEvent | TouchEvent) => {
-    const canvas = canvasRef.current;
-    if (!canvas) return { x: 0, y: 0 };
-    const rect = canvas.getBoundingClientRect();
-    let clientX, clientY;
-    if ('touches' in e) {
-      clientX = e.touches[0].clientX;
-      clientY = e.touches[0].clientY;
-    } else {
-      clientX = (e as React.MouseEvent).clientX;
-      clientY = (e as React.MouseEvent).clientY;
-    }
-    return { x: clientX - rect.left, y: clientY - rect.top };
-  };
-
-  const handlePointerDown = (e: React.MouseEvent | React.TouchEvent) => {
-    if (isRevealed) return;
-    setIsDrawing(true);
-    scratch(e);
-  };
-
-  const handlePointerMove = (e: React.MouseEvent | React.TouchEvent | MouseEvent | TouchEvent) => {
-    if (!isDrawing || isRevealed) return;
-    scratch(e);
-  };
-
-  const handlePointerUp = () => {
-    setIsDrawing(false);
-    checkReveal();
-  };
-
-  useEffect(() => {
-    const handleGlobalUp = () => {
-      setIsDrawing(false);
-      checkReveal();
-    };
-    window.addEventListener('mouseup', handleGlobalUp);
-    window.addEventListener('touchend', handleGlobalUp);
-    return () => {
-      window.removeEventListener('mouseup', handleGlobalUp);
-      window.removeEventListener('touchend', handleGlobalUp);
-    };
-  }, [isDrawing]);
-
-  const scratch = (e: React.MouseEvent | React.TouchEvent | MouseEvent | TouchEvent) => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d', { willReadFrequently: true });
-    if (!ctx) return;
-
-    const { x, y } = getPointerPos(e);
-    ctx.beginPath();
-    ctx.arc(x, y, 30, 0, Math.PI * 2);
-    ctx.fill();
-  };
-
-  const checkReveal = () => {
-    if (isRevealed) return;
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d', { willReadFrequently: true });
-    if (!ctx) return;
-
-    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-    const pixels = imageData.data;
-    let transparentPixels = 0;
-    for (let i = 3; i < pixels.length; i += 4) {
-      if (pixels[i] === 0) transparentPixels++;
-    }
-    const totalPixels = pixels.length / 4;
-    if (transparentPixels / totalPixels > 0.4) {
-      setIsRevealed(true);
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-    }
-  };
-
-  const copyCode = () => {
-    navigator.clipboard.writeText(`DANGAL-TRIAL-${trialDays}`);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -223,64 +84,23 @@ export default function Register() {
           >
             <CheckCircle2 className="w-8 h-8 text-white" />
           </motion.div>
-          <h2 className="font-display text-3xl font-bold mb-2 uppercase tracking-tighter">Order Confirmed!</h2>
-          <p className="text-gray-400 mb-6 text-sm">Welcome to the Dangal family, <span className="text-white font-bold">{formData.name}</span>.</p>
+          <h2 className="font-display text-3xl font-bold mb-2 uppercase tracking-tighter">Registration Successful!</h2>
+          <p className="text-gray-400 mb-8 text-sm">Welcome to the Dangal family, <span className="text-white font-bold">{formData.name}</span>.</p>
           
-          <div className="bg-zinc-900 border border-white/10 p-6 rounded-2xl mb-8 relative overflow-hidden shadow-lg">
-            <h3 className="font-display text-xl font-bold uppercase tracking-tighter mb-2 text-white">
-              Mystery <span className="text-brand-red">Trial</span>
+          <div className="bg-zinc-900 border border-white/10 p-6 rounded-2xl mb-8 shadow-lg">
+            <h3 className="font-display text-xl font-bold uppercase tracking-tighter mb-4 text-white">
+              Next <span className="text-brand-red">Steps</span>
             </h3>
-            <p className="text-gray-400 text-xs mb-4">Scratch below to reveal your free trial days!</p>
-
-            <div className="relative w-full h-32 rounded-xl overflow-hidden bg-zinc-800 border border-white/10 select-none touch-none shadow-inner">
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-4 bg-gradient-to-br from-zinc-800 to-black">
-                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-red mb-1">You Won</span>
-                <div className="text-4xl font-display font-bold text-white mb-1 leading-none drop-shadow-md">
-                  {trialDays} DAYS
+            <div className="text-left">
+              <div className="flex gap-4 items-center bg-zinc-950/50 p-4 rounded-xl border border-white/5">
+                <div className="w-10 h-10 rounded-full bg-brand-red/20 flex items-center justify-center flex-shrink-0">
+                  <ShieldCheck className="w-5 h-5 text-brand-red" />
                 </div>
-                <span className="text-xs text-gray-400 font-bold uppercase tracking-widest">Free Trial</span>
+                <p className="text-sm text-gray-300 leading-relaxed font-medium">Please visit the gym within the next 48 hours to complete your physical verification and start training!</p>
               </div>
-
-              <canvas
-                ref={canvasRef}
-                className={`absolute inset-0 w-full h-full cursor-crosshair transition-opacity duration-500 ${isRevealed ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
-                onMouseDown={handlePointerDown}
-                onMouseMove={handlePointerMove}
-                onMouseUp={handlePointerUp}
-                onMouseLeave={handlePointerUp}
-                onTouchStart={handlePointerDown}
-                onTouchMove={handlePointerMove}
-                onTouchEnd={handlePointerUp}
-              />
             </div>
-
-            <AnimatePresence>
-              {isRevealed && (
-                <motion.div 
-                  className="mt-4"
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: 'auto' }}
-                  exit={{ opacity: 0, height: 0 }}
-                >
-                  <div className="bg-black/50 border border-white/10 p-3 rounded-xl flex items-center justify-between">
-                    <div className="text-left">
-                      <span className="block text-[10px] text-gray-500 uppercase tracking-widest mb-1">Promo Code</span>
-                      <span className="font-mono font-bold text-white text-sm">DANGAL-TRIAL-{trialDays}</span>
-                    </div>
-                    <button 
-                      onClick={copyCode}
-                      className="p-2 bg-white/5 hover:bg-white/10 rounded-lg text-brand-red transition-colors"
-                    >
-                      {copied ? <CheckCircle2 size={16} /> : <Copy size={16} />}
-                    </button>
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
           </div>
 
-          <p className="text-gray-400 mb-6 text-sm">Please visit the gym to finalize your setup. Your registered phone is <span className="text-white font-bold">{formData.phone}</span>.</p>
-          
           <Link 
             to="/" 
             className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-brand-red hover:text-white transition-colors"
@@ -309,14 +129,14 @@ export default function Register() {
         
         <div className="flex items-center gap-2">
           <ShieldCheck className="w-5 h-5 text-brand-red" />
-          <span className="text-xs font-bold uppercase tracking-widest text-gray-400">Secure Checkout</span>
+          <span className="text-xs font-bold uppercase tracking-widest text-gray-400">Secure Registration</span>
         </div>
       </header>
 
       <main className="flex-1 relative z-10 w-full max-w-7xl mx-auto p-6 md:p-8">
         <div className="flex items-center gap-3 mb-8 md:mb-12">
           <ShoppingBag className="w-8 h-8 text-brand-red" />
-          <h1 className="font-display text-3xl md:text-5xl font-bold uppercase tracking-tighter">Your Cart</h1>
+          <h1 className="font-display text-3xl md:text-5xl font-bold uppercase tracking-tighter">Your Plan</h1>
         </div>
 
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12">
@@ -371,8 +191,8 @@ export default function Register() {
               {/* Cart Item */}
               <div className="p-6 md:p-8 bg-zinc-800/30">
                 <h2 className="text-sm font-bold uppercase tracking-widest mb-6 flex items-center justify-between">
-                  Order Summary
-                  <span className="bg-white/10 text-xs px-2 py-1 rounded-md">1 Item</span>
+                  Plan Summary
+                  <span className="bg-white/10 text-xs px-2 py-1 rounded-md">1 Plan</span>
                 </h2>
                 
                 <div className="flex gap-4 items-center bg-zinc-950 p-4 rounded-2xl border border-white/5">
@@ -509,12 +329,12 @@ export default function Register() {
                   type="submit"
                   className="w-full bg-brand-red hover:bg-brand-red/90 text-white py-5 rounded-2xl font-bold text-sm uppercase tracking-widest transition-all hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 shadow-xl"
                 >
-                  Proceed to Checkout <ChevronLeft className="w-4 h-4 rotate-180" />
+                  Confirm Registration <ChevronLeft className="w-4 h-4 rotate-180" />
                 </button>
                 <div className="flex items-center justify-center gap-2 mt-4 text-[10px] text-gray-500 font-bold uppercase tracking-widest">
-                  <span>7 Days Risk Free Returns</span>
+                  <span>Elite Membership Access</span>
                   <span className="w-1 h-1 rounded-full bg-gray-500"></span>
-                  <span>Instant Activation</span>
+                  <span>Instant Confirmation</span>
                 </div>
               </div>
             </div>
