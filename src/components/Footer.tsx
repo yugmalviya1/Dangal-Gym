@@ -1,4 +1,4 @@
-import { Instagram, Facebook, Twitter } from 'lucide-react';
+import { Instagram, Facebook, Youtube } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -24,7 +24,7 @@ export default function Footer() {
             <div className="flex gap-4">
               <SocialLink icon={Instagram} />
               <SocialLink icon={Facebook} />
-              <SocialLink icon={Twitter} />
+              <SocialLink icon={Youtube} />
             </div>
           </div>
 
