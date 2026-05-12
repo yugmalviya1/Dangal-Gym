@@ -17,8 +17,6 @@
   }
   body {
     @apply bg-brand-dark text-white font-sans overflow-x-hidden antialiased;
-    transform: translateZ(0); /* Hardware acceleration */
-    backface-visibility: hidden;
   }
   
   html.lenis, html.lenis body {
@@ -149,5 +147,45 @@
   .reveal-text-content {
     display: block;
     will-change: transform;
+  }
+
+  /* ─── Program Cards: GPU-Optimized ─── */
+  .program-card {
+    position: relative;
+    flex: 1 1 0%;
+    min-width: 0;
+    overflow: hidden;
+    transform: skewX(-5deg) translateZ(0);
+    transition: flex 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: flex-grow;
+    contain: layout style;
+    margin-left: -2%;
+  }
+
+  .program-card:first-child {
+    margin-left: 0;
+  }
+
+  .program-card:hover {
+    flex: 2 1 0%;
+  }
+
+  .program-card-inner {
+    position: absolute;
+    inset: 0;
+    /* Counter-skew so images/content stay upright */
+    transform: skewX(5deg) scale(1.15) translateZ(0);
+    overflow: hidden;
+  }
+
+  /* On mobile, stack vertically without skew */
+  @media (max-width: 1023px) {
+    .program-card {
+      transform: skewX(0) translateZ(0);
+      margin-left: 0;
+    }
+    .program-card-inner {
+      transform: skewX(0) scale(1) translateZ(0);
+    }
   }
 }
