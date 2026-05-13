@@ -14,7 +14,8 @@ const transformations = [
     id: 2,  
     name: 'Person 2',
     beforeImage: 'https://res.cloudinary.com/df5q9ujfh/image/upload/q_auto/f_auto/v1778706974/WhatsApp_Image_2026-05-07_at_9.43.43_PM_dfnzcw.jpg',
-    afterImage: 'https://res.cloudinary.com/df5q9ujfh/image/upload/q_auto/f_auto/v1778706974/WhatsApp_Image_2026-05-07_at_9.43.43_PM_1_holdnw.jpg'
+    afterImage: 'https://res.cloudinary.com/df5q9ujfh/image/upload/q_auto/f_auto/v1778706974/WhatsApp_Image_2026-05-07_at_9.43.43_PM_1_holdnw.jpg',
+    objectPosition: 'object-top'
   }
 ];
 
@@ -40,7 +41,7 @@ function TransformationCard({ item }: { item: any }) {
 
   const hasImages = item.beforeImage || item.afterImage;
   const isSlider = item.beforeImage && item.afterImage;
-  const fitClass = item.objectFit === 'contain' ? 'object-contain' : 'object-cover object-top';
+  const fitClass = item.objectFit === 'contain' ? 'object-contain' : `object-cover ${item.objectPosition || 'object-center'}`;
 
   if (!hasImages) {
     return (
