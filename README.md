@@ -7,8 +7,7 @@ Designed with smooth animations, premium UI interactions, and a fully responsive
 
 ## 🚀 Live Preview
 
-🌐 Website:  
-https://dangalgym.xyz/
+🌐 Website: https://dangalgym.xyz/
 
 ---
 
