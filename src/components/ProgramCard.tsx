@@ -52,7 +52,7 @@ const ProgramCard: React.FC<ProgramCardProps> = ({ prog, index }) => {
           </div>
 
           {/* Description: always visible on mobile, hover-reveal on desktop */}
-          <div className="max-w-[280px] overflow-hidden">
+          <div className="w-full lg:w-[280px] h-[60px] sm:h-[80px] overflow-hidden">
             <p className="text-gray-300 text-xs sm:text-sm leading-relaxed opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-700 translate-y-0 lg:translate-y-4 lg:group-hover:translate-y-0 delay-200 transform-gpu will-change-[transform,opacity]">
               {prog.desc}
             </p>

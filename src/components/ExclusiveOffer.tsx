@@ -42,6 +42,7 @@ export default function ExclusiveOffer() {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 1, ease: [0.32, 0.72, 0, 1] }}
             className="text-4xl md:text-5xl font-display font-black uppercase tracking-wider text-white skew-headline italic"
           >
             Limited Time <span className="text-black">Offer</span>
@@ -50,7 +51,7 @@ export default function ExclusiveOffer() {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
+            transition={{ duration: 1, delay: 0.2, ease: [0.32, 0.72, 0, 1] }}
             className="mt-4 text-xl text-white/90 font-medium"
           >
             Get 30% off on all Yearly Plans. Don't wait for tomorrow.
@@ -61,6 +62,7 @@ export default function ExclusiveOffer() {
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
+          transition={{ duration: 1, ease: [0.32, 0.72, 0, 1] }}
           className="flex flex-col items-center gap-6 glass p-8"
         >
           <div className="flex gap-4">

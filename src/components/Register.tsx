@@ -6,15 +6,15 @@ import { Link, useLocation } from 'react-router-dom';
 const PLAN_DATA: Record<string, { name: string, fakePrice: number, realPrice: number, originalValue: number, image: string }> = {
   '1 Month': { name: '1 Month Membership', fakePrice: 1500, realPrice: 1500, originalValue: 1500, image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=300&auto=format&fit=crop' },
   '3 Months': { name: '3 Months Membership', fakePrice: 3500, realPrice: 3000, originalValue: 4500, image: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=300&auto=format&fit=crop' },
-  '6 Months': { name: '6 Months Membership', fakePrice: 6500, realPrice: 5000, originalValue: 9000, image: 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=300&auto=format&fit=crop' },
-  '1 Year': { name: '1 Year Membership', fakePrice: 11000, realPrice: 7500, originalValue: 18000, image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=300&auto=format&fit=crop' }
+  '6 Months': { name: '6 Months Membership', fakePrice: 6000, realPrice: 5000, originalValue: 9000, image: 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=300&auto=format&fit=crop' },
+  '1 Year': { name: '1 Year Membership', fakePrice: 9000, realPrice: 7500, originalValue: 18000, image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=300&auto=format&fit=crop' }
 };
 
 const COUPONS_BY_PLAN: Record<string, { code: string, description: string }[]> = {
   '1 Month': [],
   '3 Months': [{ code: 'SAVE500', description: 'Flat ₹500 Off' }],
-  '6 Months': [{ code: 'SAVE1500', description: 'Flat ₹1,500 Off' }],
-  '1 Year': [{ code: 'SAVE3500', description: 'Flat ₹3,500 Off' }]
+  '6 Months': [{ code: 'SAVE1000', description: 'Flat ₹1,000 Off' }],
+  '1 Year': [{ code: 'SAVE1500', description: 'Flat ₹1,500 Off' }]
 };
 
 export default function Register() {

@@ -23,8 +23,8 @@ export default function Hero() {
   const springConfig = { damping: 25, stiffness: 150 };
 
   return (
-    <section 
-      id="home" 
+    <section
+      id="home"
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
@@ -62,11 +62,11 @@ export default function Hero() {
       </motion.div>
 
       <div className="relative z-10 w-full flex flex-col items-center justify-center flex-1 px-4 mt-24">
-        <motion.div 
+        <motion.div
           className="relative w-full max-w-4xl h-[60vh] md:h-[70vh] flex justify-center items-center pointer-events-none"
         >
-          <motion.img 
-            style={{ 
+          <motion.img
+            style={{
               x: useSpring(useTransform(mouseX, (v) => v * -0.5), springConfig),
               y: useSpring(useTransform(mouseY, (v) => v * -0.5), springConfig),
               scale: 1.05
@@ -77,7 +77,7 @@ export default function Hero() {
           />
         </motion.div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
@@ -89,7 +89,7 @@ export default function Hero() {
           >
             {/* Shimmer effect */}
             <div className="absolute inset-0 w-[150%] -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent animate-shimmer" />
-            
+
             <span className="relative z-10 whitespace-nowrap flex items-center justify-center">
               <span className="text-yellow-400 drop-shadow-[0_0_12px_rgba(250,204,21,0.6)] font-extrabold tracking-tighter text-xs sm:text-sm mr-1">3 DAYS</span>
               <span>FREE TRIAL</span>
@@ -100,7 +100,7 @@ export default function Hero() {
 
       {/* Bottom Elements */}
       <div className="relative z-10 w-full px-8 md:px-12 pb-12 flex justify-between items-end mt-auto max-w-[1400px] mx-auto">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5, ease: 'easeOut' }}

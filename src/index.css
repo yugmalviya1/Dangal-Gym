@@ -9,6 +9,17 @@
 
   --font-display: "Montserrat", sans-serif;
   --font-sans: "Inter", sans-serif;
+
+  --ease-in: cubic-bezier(.42, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, .58, 1);
+  --ease-out-gentle: cubic-bezier(.32, .72, 0, 1);
+  --ease-out-quad: cubic-bezier(.25, .46, .45, .94);
+  --ease-out-back: cubic-bezier(0, 0, .85, 1.25);
+  --ease-out-cubic: cubic-bezier(.215, .61, .355, 1);
+  --ease-in-out: cubic-bezier(.45, 0, .55, 1);
+  --ease-in-out-sharp: cubic-bezier(.83, 0, .17, 1);
+  --ease-in-out-quad: cubic-bezier(.455, .03, .515, .955);
+  --ease-in-out-gentle: cubic-bezier(.42, 0, .58, 1);
 }
 
 @layer base {

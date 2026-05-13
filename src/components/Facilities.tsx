@@ -40,7 +40,7 @@ export default function Facilities() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.8, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 0.8, delay: i * 0.1, ease: [0.32, 0.72, 0, 1] }}
                 className="group flex flex-col items-start w-full animated-border-container h-full"
               >
                 <div className="animated-border-content p-8 flex flex-col items-start w-full flex-1">

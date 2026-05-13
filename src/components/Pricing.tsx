@@ -27,20 +27,20 @@ const plans = [
   },
   {
     name: '6 Months',
-    originalPrice: '9,000',
-    price: '6,500',
-    dailyPrice: '36',
-    discount: 'SAVE ₹2,500',
+    originalPrice: '6,000',
+    price: '5,000',
+    dailyPrice: '28',
+    discount: 'SAVE ₹1,000',
     period: 'for 6 months',
     features: ['Full Gym Access', 'Diet Plan', 'CrossFit Zone Access', 'Cardio Access'],
     popular: false
   },
   {
     name: '1 Year',
-    originalPrice: '18,000',
-    price: '11,000',
-    dailyPrice: '30',
-    discount: 'SAVE ₹7,000',
+    originalPrice: '9,000',
+    price: '7,500',
+    dailyPrice: '21',
+    discount: 'SAVE ₹1,500',
     period: 'per year',
     features: ['Full Gym Access', 'Diet Plan', 'CrossFit Zone Access', 'Cardio Access'],
     popular: false
@@ -68,7 +68,7 @@ export default function Pricing() {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.8, delay: i * 0.15, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.8, delay: i * 0.1, ease: [0.32, 0.72, 0, 1] }}
               className="animated-border-container transition-all duration-300 ease-out flex flex-col h-full w-full hover:scale-105 hover:z-10"
             >
               <div className={`relative p-8 flex flex-col w-full h-full items-center text-center animated-border-content border ${

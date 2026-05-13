@@ -2,10 +2,10 @@ import React from 'react';
 import { motion } from 'motion/react';
 
 const stats = [
-  { label: 'Members', value: '500+' },
-  { label: 'Transformations', value: '50+' },
-  { label: 'Trainers', value: '10+' },
-  { label: 'Years Experience', value: '5+' },
+  { label: 'Members', value: '1,200+' },
+  { label: 'Transformations', value: '300+' },
+  { label: 'Trainers', value: '15+' },
+  { label: 'Years Experience', value: '8+' },
 ];
 
 export default function Stats() {
@@ -19,7 +19,7 @@ export default function Stats() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              transition={{ duration: 0.8, delay: idx * 0.1, ease: [0.32, 0.72, 0, 1] }}
               className="flex flex-col items-center justify-center text-center px-4"
             >
               <span className="text-3xl sm:text-4xl md:text-[28px] font-display font-black text-brand-red text-glow">

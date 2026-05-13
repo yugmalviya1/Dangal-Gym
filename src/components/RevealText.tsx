@@ -5,20 +5,33 @@ interface RevealTextProps {
   children: React.ReactNode;
   className?: string;
   delay?: number;
+  duration?: number;
+  show?: boolean;
 }
 
-export const RevealText: React.FC<RevealTextProps> = ({ children, className = '', delay = 0 }) => {
+export const RevealText: React.FC<RevealTextProps> = ({
+  children,
+  className = '',
+  delay = 0,
+  duration = 1.2,
+  show = false
+}) => {
   return (
-    <div className={`reveal-text-container ${className}`}>
+    <span className={`reveal-text-container inline-block overflow-hidden ${className}`}>
       <motion.span
-        initial={{ y: '100%' }}
-        whileInView={{ y: 0 }}
-        viewport={{ once: true, margin: "-20px" }}
-        transition={{ duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] }}
-        className="reveal-text-content transform-gpu will-change-transform"
+        initial={{ y: '100%', opacity: 0 }}
+        animate={show ? { y: 0, opacity: 1 } : undefined}
+        whileInView={!show ? { y: 0, opacity: 1 } : undefined}
+        viewport={{ once: true, margin: "0px" }}
+        transition={{
+          duration,
+          delay,
+          ease: [0.32, 0.72, 0, 1] // Matches --ease-out-gentle
+        }}
+        className="reveal-text-content inline-block transform-gpu will-change-transform"
       >
         {children}
       </motion.span>
-    </div>
+    </span>
   );
 };

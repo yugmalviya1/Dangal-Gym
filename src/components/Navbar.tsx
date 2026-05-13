@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, ShoppingCart } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -66,11 +67,19 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-4 flex-1 justify-end">
             <a href="#pricing" className="text-[12px] font-bold tracking-[0.2em] uppercase text-white hover:text-black transition-all duration-300 bg-white/5 hover:bg-white px-5 py-2.5 rounded-full border border-white/5">Memberships</a>
             <a href="#reviews" className="text-[12px] font-bold tracking-[0.2em] uppercase text-white hover:text-black transition-all duration-300 bg-white/5 hover:bg-white px-5 py-2.5 rounded-full border border-white/5">Reviews</a>
+            <Link to="/register" className="text-white hover:text-brand-red transition-colors ml-2" aria-label="Checkout">
+              <ShoppingCart size={20} />
+            </Link>
           </div>
 
-          <button className="md:hidden text-white ml-auto" onClick={() => setMobileOpen(true)}>
-            <Menu size={24} />
-          </button>
+          <div className="md:hidden flex items-center gap-6 ml-auto">
+            <Link to="/register" className="text-white hover:text-brand-red transition-colors" aria-label="Checkout">
+              <ShoppingCart size={20} />
+            </Link>
+            <button className="text-white" onClick={() => setMobileOpen(true)} aria-label="Menu">
+              <Menu size={24} />
+            </button>
+          </div>
         </div>
       </motion.nav>
 

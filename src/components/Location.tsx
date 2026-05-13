@@ -40,7 +40,7 @@ export default function Location() {
                   <h3 className="text-white font-bold uppercase tracking-widest text-sm mb-2">Address</h3>
                   <p className="text-gray-400 text-sm leading-relaxed">
                     Dangal Gym - Family Fitness Club<br/>
-                    2 B, near SBI Bank<br/>
+                    House No 2 B, near SBI Bank<br/>
                     Awadhpuri, Bhopal, MP 462022
                   </p>
                 </div>
@@ -70,7 +70,7 @@ export default function Location() {
                 </div>
                 <div>
                   <h3 className="text-white font-bold uppercase tracking-widest text-sm mb-2">Contact</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">+91 98765 43210<br/>info@dangalgym.in</p>
+                  <p className="text-gray-400 text-sm leading-relaxed">+91 9977437487<br/>info@dangalgym.in</p>
                 </div>
               </div>
             </div>
