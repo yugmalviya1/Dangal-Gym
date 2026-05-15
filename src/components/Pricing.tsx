@@ -27,20 +27,20 @@ const plans = [
   },
   {
     name: '6 Months',
-    originalPrice: '6,000',
-    price: '5,000',
-    dailyPrice: '28',
-    discount: 'SAVE ₹1,000',
+    originalPrice: null,
+    price: '6,000',
+    dailyPrice: '33',
+    discount: '',
     period: 'for 6 months',
     features: ['Full Gym Access', 'Diet Plan', 'CrossFit Zone Access', 'Cardio Access'],
     popular: false
   },
   {
     name: '1 Year',
-    originalPrice: '9,000',
-    price: '7,500',
-    dailyPrice: '21',
-    discount: 'SAVE ₹1,500',
+    originalPrice: null,
+    price: '9,000',
+    dailyPrice: '25',
+    discount: '',
     period: 'per year',
     features: ['Full Gym Access', 'Diet Plan', 'CrossFit Zone Access', 'Cardio Access'],
     popular: false
