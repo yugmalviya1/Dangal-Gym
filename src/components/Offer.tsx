@@ -27,12 +27,12 @@ export default function Offer() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
           <div className="text-gray-500 font-bold text-[10px] uppercase tracking-widest mb-4">Limited Time</div>
-          <h2 className="font-display font-light text-5xl md:text-7xl tracking-tighter uppercase text-black mb-6">
-            <RevealText>Exclusive</RevealText>
-            <RevealText delay={0.2}><span className="font-bold">Offer</span></RevealText>
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-normal sm:tracking-[0.8px] uppercase text-black mb-6 flex flex-col items-center leading-[0.9]">
+            <RevealText className="text-black font-semibold sm:font-normal">Exclusive</RevealText>
+            <RevealText delay={0.1} className="text-brand-red font-bold sm:font-medium">Offer</RevealText>
           </h2>
-          <p className="text-gray-600 max-w-lg mx-auto font-medium mb-12 text-sm leading-relaxed">
-            Lock in our lowest ever rate before it expires. 40% OFF Annual Membership + Free PT Onboarding Session.
+          <p className="max-w-lg mx-auto text-gray-500 text-sm md:text-lg leading-tight md:leading-snug mb-12 font-semibold md:font-medium font-['Inter']">
+            <strong className="text-black font-bold md:font-semibold">Lock in our lowest ever rate before it expires.</strong> 40% OFF Annual Membership + Free PT Onboarding Session.
           </p>
 
           <div className="flex justify-center gap-4 md:gap-8 mb-16">

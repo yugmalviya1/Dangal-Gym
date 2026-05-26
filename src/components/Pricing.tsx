@@ -52,12 +52,12 @@ export default function Pricing() {
     <section id="pricing" className="py-32 bg-black relative z-10 text-white">
       <div className="max-w-[1400px] mx-auto px-8 md:px-12">
         <div className="flex flex-col items-center text-center mb-20">
-          <h2 className="font-display font-light text-5xl md:text-7xl tracking-tighter uppercase leading-none mb-6">
-            <RevealText>Membership</RevealText>
-            <RevealText delay={0.2}><span className="font-bold">Plans</span></RevealText>
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-normal sm:tracking-[0.8px] uppercase mb-4 flex flex-col items-center leading-[0.9]">
+            <RevealText className="text-white font-semibold sm:font-normal">Membership</RevealText>
+            <RevealText delay={0.1} className="text-brand-red font-bold sm:font-medium">Plans</RevealText>
           </h2>
-          <p className="text-gray-400 max-w-md text-sm leading-relaxed font-medium">
-            Clear pricing. No hidden fees. Select a membership that fits your commitment level.
+          <p className="max-w-2xl text-gray-400 text-sm md:text-lg leading-tight md:leading-snug font-semibold md:font-medium font-['Inter']">
+            <strong className="text-white font-bold md:font-semibold">Clear pricing. No hidden fees.</strong> Select a membership that fits your commitment level.
           </p>
         </div>
 
@@ -71,11 +71,10 @@ export default function Pricing() {
               transition={{ duration: 0.8, delay: i * 0.1, ease: [0.32, 0.72, 0, 1] }}
               className="animated-border-container transition-all duration-300 ease-out flex flex-col h-full w-full hover:scale-105 hover:z-10"
             >
-              <div className={`relative p-8 flex flex-col w-full h-full items-center text-center animated-border-content border ${
-                plan.popular ? 'border-white/20' : 'border-white/10'
-              } hover:border-white/30 transition-colors duration-300`}>
+              <div className={`relative p-8 flex flex-col w-full h-full items-center text-center animated-border-content border ${plan.popular ? 'border-white/20' : 'border-white/10'
+                } hover:border-white/30 transition-colors duration-300`}>
                 <h3 className="font-bold text-[10px] tracking-widest uppercase text-gray-400 mb-6">{plan.name}</h3>
-                
+
                 {plan.originalPrice ? (
                   <div className="flex flex-col items-center gap-1 mb-4 justify-center h-12">
                     <div className="flex items-center gap-2">
@@ -89,15 +88,15 @@ export default function Pricing() {
                   </div>
                 )}
 
-                <div className="font-display text-4xl md:text-5xl text-brand-red mb-2 tracking-tighter flex items-start justify-center">
-                  <span className="text-lg text-brand-red/70 mt-1 mr-1">₹</span>
+                <div className="font-display text-5xl md:text-5xl text-brand-red mb-2 tracking-tighter flex items-start justify-center">
+                  <span className="text-xl text-brand-red/70 mt-1.5 mr-1">₹</span>
                   {plan.price}
                 </div>
                 <div className="mb-8 pb-8 border-b border-white/10 w-full">
                   <p className="text-[9px] text-gray-500 uppercase tracking-widest mb-2">{plan.period}</p>
                   <p className="text-xs text-brand-red font-bold uppercase tracking-wider">Just ₹{plan.dailyPrice} / day</p>
                 </div>
-                
+
                 <ul className="flex-1 w-full space-y-4 mb-12">
                   {plan.features.map(f => (
                     <li key={f} className="flex items-center justify-center gap-3 text-sm text-gray-300 font-medium">
@@ -105,9 +104,9 @@ export default function Pricing() {
                     </li>
                   ))}
                 </ul>
-                
-                <Link 
-                  to="/register" 
+
+                <Link
+                  to="/register"
                   state={{ selectedPlan: plan.name }}
                   className="w-full py-4 text-xs font-bold uppercase tracking-widest transition-all z-10 rounded-full border border-white/20 hover:bg-brand-red hover:border-brand-red hover:text-white flex items-center justify-center bg-transparent text-white"
                 >

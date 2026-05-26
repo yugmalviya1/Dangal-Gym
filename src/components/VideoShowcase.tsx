@@ -6,7 +6,6 @@ import { RevealText } from './RevealText';
 export default function VideoShowcase() {
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: true, margin: "400px" });
-  const [videoError, setVideoError] = useState(false);
   const videoSrc = "/Gym Dangal 1 1 Compressed.mp4";
 
   return (
@@ -15,12 +14,12 @@ export default function VideoShowcase() {
       {/* Full Screen Background Video */}
       <div className="absolute inset-0 z-0 bg-black overflow-hidden pointer-events-none">
         <iframe
-          src="https://player.vimeo.com/video/1191307630?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1&background=1"
-          className="absolute top-1/2 left-1/2 w-[100vw] h-[56.25vw] min-h-[100vh] min-w-[177.77vh] -translate-x-1/2 -translate-y-1/2 opacity-60"
+          src="https://player.vimeo.com/video/1195547947?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1&amp;background=1"
+          className="absolute top-1/2 left-1/2 w-[100vw] h-[75vw] min-h-[100vh] min-w-[133.33vh] -translate-x-1/2 -translate-y-1/2 opacity-60"
           frameBorder="0"
           allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
           loading="lazy"
-          title="GYm dangal +1 +1"
+          title="WhatsApp Video"
         ></iframe>
         
         {/* Simple top and bottom gradients to blend into adjacent black sections */}

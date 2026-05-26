@@ -35,12 +35,12 @@ export default function Reviews() {
   return (
     <section id="reviews" className="py-32 bg-black border-y border-white/5 relative z-10 text-white overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-8 md:px-12 mb-20 text-center relative z-20">
-        <h2 className="font-display font-light text-5xl md:text-7xl tracking-tighter uppercase leading-none mb-6">
-          <RevealText>Member</RevealText>
-          <RevealText delay={0.2}><span className="font-bold text-brand-red">Reviews</span></RevealText>
+        <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-normal sm:tracking-[0.8px] uppercase mb-4 flex flex-col justify-center items-center gap-0 leading-[0.9]">
+          <RevealText className="text-white font-semibold sm:font-normal">Member</RevealText>
+          <RevealText delay={0.1} className="text-brand-red font-bold sm:font-medium">Reviews</RevealText>
         </h2>
-        <p className="text-gray-400 max-w-md mx-auto text-sm leading-relaxed font-medium">
-          Real feedback from real members. See why Dangal Gym is the highest-rated fitness facility in Bhopal.
+        <p className="max-w-2xl mx-auto text-gray-400 text-sm md:text-lg leading-tight md:leading-snug font-semibold md:font-medium font-['Inter']">
+          <strong className="text-white font-bold md:font-semibold">Real feedback from real members.</strong> See why Dangal Gym is the highest-rated fitness facility in Bhopal.
         </p>
       </div>
 

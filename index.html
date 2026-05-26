@@ -6,6 +6,16 @@
     <title>Dangal Gym - Build Strength. Become Unstoppable.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700;800;900&family=Oswald:wght@400;700&display=swap" rel="stylesheet"/>
+    
+    <!-- Preload critical fonts to prevent layout shifts (FOUT) -->
+    <link rel="preload" href="/fonts/Neue Montreal/NeueMontreal-Regular.otf" as="font" type="font/otf" crossorigin="anonymous" />
+    <link rel="preload" href="/fonts/Neue Montreal/NeueMontreal-Medium.otf" as="font" type="font/otf" crossorigin="anonymous" />
+    <link rel="preload" href="/fonts/Neue Montreal/NeueMontreal-Bold.otf" as="font" type="font/otf" crossorigin="anonymous" />
+    
+    <!-- Preload key branding images for smooth first-paint rendering -->
+    <link rel="preload" href="/dangal.png" as="image" type="image/png" />
+    <link rel="preload" href="/dgym.png" as="image" type="image/png" />
+    <link rel="preload" href="/muscle-man-no-bg.png" as="image" type="image/png" />
   </head>
   <body>
     <div id="root"></div>

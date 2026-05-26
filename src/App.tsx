@@ -4,6 +4,7 @@ import Lenis from '@studio-freight/lenis';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import VideoShowcase from './components/VideoShowcase';
+import GymGallery from './components/GymGallery';
 import Marquee from './components/Marquee';
 import Facilities from './components/Facilities';
 import Transformation from './components/Transformation';
@@ -26,6 +27,7 @@ function Home() {
         <Facilities />
         <Transformation />
         <VideoShowcase />
+        <GymGallery />
         <Programs />
         <Pricing />
         <Reviews />
@@ -41,11 +43,11 @@ function Home() {
 function App() {
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      duration: 1.6,
+      easing: (t) => 1 - Math.pow(1 - t, 4), // Quartic ease-out, Apple-like deceleration
       smoothWheel: true,
-      wheelMultiplier: 1.1,
-      touchMultiplier: 2,
+      wheelMultiplier: 0.9,
+      touchMultiplier: 1.8,
       infinite: false,
     });
 

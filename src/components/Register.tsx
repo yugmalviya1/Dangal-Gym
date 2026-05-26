@@ -27,6 +27,8 @@ export default function Register() {
   });
   
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
   const [isApplyingCode, setIsApplyingCode] = useState(false);
   const [codeApplied, setCodeApplied] = useState(false);
 
@@ -62,9 +64,42 @@ export default function Register() {
     setFormData(prev => ({ ...prev, referralCode: '' }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitted(true);
+    setIsSubmitting(true);
+    setSubmitError('');
+
+    try {
+      const scriptUrl = import.meta.env.VITE_GOOGLE_SHEETS_URL;
+      
+      if (scriptUrl) {
+        // Create FormData to send as POST request
+        const data = new FormData();
+        data.append('Name', formData.name);
+        data.append('Phone', formData.phone);
+        data.append('Plan', PLAN_DATA[formData.plan as keyof typeof PLAN_DATA]?.name || formData.plan);
+        data.append('ReferralCode', codeApplied ? formData.referralCode : 'None');
+        data.append('FinalPrice', finalPrice.toString());
+        data.append('Date', new Date().toISOString());
+
+        await fetch(scriptUrl, {
+          method: 'POST',
+          body: data,
+          mode: 'no-cors' // Google Apps Script requires no-cors mode for cross-origin POST
+        });
+      } else {
+        // Simulate a network request if the URL is not set yet
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        console.warn('VITE_GOOGLE_SHEETS_URL is not set. Simulating form submission.');
+      }
+      
+      setIsSubmitted(true);
+    } catch (err) {
+      console.error('Error submitting form:', err);
+      setSubmitError('Failed to submit the form. Please try again or contact us directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isSubmitted) {
@@ -327,10 +362,21 @@ export default function Register() {
                 <button
                   form="checkout-form"
                   type="submit"
-                  className="w-full bg-brand-red hover:bg-brand-red/90 text-white py-5 rounded-2xl font-bold text-sm uppercase tracking-widest transition-all hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 shadow-xl"
+                  disabled={isSubmitting}
+                  className="w-full bg-brand-red hover:bg-brand-red/90 text-white py-5 rounded-2xl font-bold text-sm uppercase tracking-widest transition-all hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 shadow-xl disabled:opacity-70 disabled:hover:scale-100 disabled:cursor-not-allowed"
                 >
-                  Confirm Registration <ChevronLeft className="w-4 h-4 rotate-180" />
+                  {isSubmitting ? (
+                    <span className="flex items-center gap-2">
+                      <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                      Processing...
+                    </span>
+                  ) : (
+                    <>Confirm Registration <ChevronLeft className="w-4 h-4 rotate-180" /></>
+                  )}
                 </button>
+                {submitError && (
+                  <p className="text-brand-red text-xs mt-3 text-center font-medium">{submitError}</p>
+                )}
                 <div className="flex items-center justify-center gap-2 mt-4 text-[10px] text-gray-500 font-bold uppercase tracking-widest">
                   <span>Elite Membership Access</span>
                   <span className="w-1 h-1 rounded-full bg-gray-500"></span>

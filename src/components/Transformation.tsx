@@ -4,14 +4,14 @@ import { RevealText } from './RevealText';
 import { GripVertical } from 'lucide-react';
 
 const transformations = [
-  { 
-    id: 1, 
+  {
+    id: 1,
     name: 'Person 1',
     beforeImage: 'https://res.cloudinary.com/df5q9ujfh/image/upload/q_auto/f_auto/v1778706996/WhatsApp_Image_2026-05-09_at_8.45.02_PM_vb5usg.jpg',
     afterImage: 'https://res.cloudinary.com/df5q9ujfh/image/upload/q_auto/f_auto/v1778706997/WhatsApp_Image_2026-05-09_at_8.45.01_PM_ymzmmu.jpg'
   },
-  { 
-    id: 2,  
+  {
+    id: 2,
     name: 'Person 2',
     beforeImage: 'https://res.cloudinary.com/df5q9ujfh/image/upload/q_auto/f_auto/v1778706974/WhatsApp_Image_2026-05-07_at_9.43.43_PM_dfnzcw.jpg',
     afterImage: 'https://res.cloudinary.com/df5q9ujfh/image/upload/q_auto/f_auto/v1778706974/WhatsApp_Image_2026-05-07_at_9.43.43_PM_1_holdnw.jpg',
@@ -27,7 +27,7 @@ function TransformationCard({ item }: { item: any }) {
     if (!containerRef.current) return;
     const rect = containerRef.current.getBoundingClientRect();
     let clientX = 0;
-    
+
     if ('touches' in e) {
       clientX = (e as React.TouchEvent).touches[0].clientX;
     } else {
@@ -58,7 +58,7 @@ function TransformationCard({ item }: { item: any }) {
   }
 
   return (
-    <div 
+    <div
       ref={containerRef}
       className={`absolute inset-0 w-full h-full ${isSlider ? 'cursor-ew-resize select-none' : ''}`}
       onMouseMove={(e) => {
@@ -73,9 +73,9 @@ function TransformationCard({ item }: { item: any }) {
       {/* After Image (Background) */}
       {item.afterImage && (
         <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
-          <img 
-            src={item.afterImage} 
-            alt={`${item.name} After`} 
+          <img
+            src={item.afterImage}
+            alt={`${item.name} After`}
             draggable={false}
             className={`w-full h-full ${fitClass} bg-zinc-900`}
           />
@@ -88,13 +88,13 @@ function TransformationCard({ item }: { item: any }) {
 
       {/* Before Image (Clipped if slider) */}
       {item.beforeImage && (
-        <div 
+        <div
           className="absolute inset-0 w-full h-full pointer-events-none z-10"
           style={isSlider ? { clipPath: `polygon(0 0, ${sliderPos}% 0, ${sliderPos}% 100%, 0 100%)` } : {}}
         >
-          <img 
-            src={item.beforeImage} 
-            alt={`${item.name} Before`} 
+          <img
+            src={item.beforeImage}
+            alt={`${item.name} Before`}
             draggable={false}
             className={`w-full h-full ${fitClass} bg-zinc-900`}
           />
@@ -107,7 +107,7 @@ function TransformationCard({ item }: { item: any }) {
 
       {/* Slider Handle */}
       {isSlider && (
-        <div 
+        <div
           className="absolute top-0 bottom-0 bg-brand-red flex items-center justify-center pointer-events-none z-20"
           style={{ left: `${sliderPos}%`, transform: 'translateX(-50%)', width: '3px' }}
         >
@@ -133,12 +133,12 @@ export default function Transformation() {
     <section id="transformations" className="py-32 bg-black relative z-10 border-b border-white/5" style={{ contentVisibility: 'visible' }}>
       <div className="max-w-[1400px] mx-auto px-8 md:px-12">
         <div className="flex flex-col items-start mb-20" ref={headingRef}>
-          <h2 className="font-display font-light text-[8vw] sm:text-5xl md:text-7xl tracking-tighter uppercase leading-none text-white mb-6">
-            <RevealText delay={0} duration={1.2}>Real</RevealText>
-            <RevealText delay={0.15} duration={1.2} className="font-bold text-brand-red">Transformations</RevealText>
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-normal sm:tracking-[0.8px] uppercase mb-4 flex flex-col items-start leading-[0.9]">
+            <RevealText delay={0} duration={1.2} className="text-white font-semibold sm:font-normal">Real</RevealText>
+            <RevealText delay={0.1} duration={1.2} className="text-brand-red font-bold sm:font-medium">Transformations</RevealText>
           </h2>
-          <p className="text-gray-400 max-w-md text-sm leading-relaxed font-medium">
-            Proof that dedication and the right environment deliver results. Our members are the living testimony of our training philosophy.
+          <p className="max-w-2xl text-gray-400 text-sm md:text-lg leading-tight md:leading-snug font-semibold md:font-medium font-['Inter']">
+            <strong className="text-white font-bold md:font-semibold">Proof that dedication and the right environment deliver results.</strong> Our members are the living testimony of our training philosophy.
           </p>
         </div>
 
@@ -153,7 +153,7 @@ export default function Transformation() {
               className="group relative bg-zinc-900/30 rounded-3xl overflow-hidden border border-white/5 hover:border-brand-red/30 transition-all duration-500 flex flex-col items-center justify-center min-h-[350px] md:min-h-[450px]"
             >
               <TransformationCard item={item} />
-              
+
               {/* Decorative accent */}
               <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-brand-red/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </motion.div>

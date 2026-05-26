@@ -19,7 +19,7 @@ const ProgramCard: React.FC<ProgramCardProps> = ({ prog, index }) => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: "0px" }}
-      transition={{ duration: 0.8, delay: index * 0.1 }}
+      transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
       className="program-card group cursor-pointer"
     >
       {/* Inner wrapper counter-skews so content stays straight */}
@@ -52,8 +52,8 @@ const ProgramCard: React.FC<ProgramCardProps> = ({ prog, index }) => {
           </div>
 
           {/* Description: always visible on mobile, hover-reveal on desktop */}
-          <div className="w-full lg:w-[280px] h-[60px] sm:h-[80px] overflow-hidden">
-            <p className="text-gray-300 text-xs sm:text-sm leading-relaxed opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-700 translate-y-0 lg:translate-y-4 lg:group-hover:translate-y-0 delay-200 transform-gpu will-change-[transform,opacity]">
+          <div className="w-full lg:w-[280px] overflow-hidden">
+            <p className="text-gray-300 text-xs sm:text-sm leading-relaxed opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-700 translate-y-0 lg:translate-y-4 lg:group-hover:translate-y-0 delay-200 transform-gpu will-change-[transform,opacity] pb-1">
               {prog.desc}
             </p>
           </div>

@@ -22,9 +22,9 @@ export default function Footer() {
               Bhopal's most elite fitness facility. Train hard. Stay hungry. Fight strong.
             </p>
             <div className="flex gap-4">
-              <SocialLink icon={Instagram} />
+              <SocialLink icon={Instagram} href="https://www.instagram.com/dangal_gym_?igsh=c3hrdmIxenE4MWM=" />
               <SocialLink icon={Facebook} />
-              <SocialLink icon={Youtube} />
+              <SocialLink icon={Youtube} href="https://youtube.com/@dangalgym09?si=B0Sv8UHQaU6VZP_A" />
             </div>
           </div>
 
@@ -88,9 +88,9 @@ export default function Footer() {
   );
 }
 
-function SocialLink({ icon: Icon }: { icon: any }) {
+function SocialLink({ icon: Icon, href }: { icon: any, href?: string }) {
   return (
-    <a href="#" className="w-10 h-10 border border-white/10 flex items-center justify-center text-gray-400 hover:bg-brand-red hover:border-brand-red hover:text-white transition-all rounded-full">
+    <a href={href || "#"} target={href ? "_blank" : undefined} rel={href ? "noopener noreferrer" : undefined} className="w-10 h-10 border border-white/10 flex items-center justify-center text-gray-400 hover:bg-brand-red hover:border-brand-red hover:text-white transition-all rounded-full">
       <Icon size={18} />
     </a>
   );
