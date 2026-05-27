@@ -33,7 +33,9 @@ export default function FloatingSocials() {
       </a>
       
       <a
-        href="#"
+        href="https://www.instagram.com/dangal_gym_?igsh=c3hrdmIxenE4MWM="
+        target="_blank"
+        rel="noopener noreferrer"
         className="w-14 h-14 bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-500 text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform hover:shadow-pink-500/50 hover:shadow-2xl"
         aria-label="Instagram"
       >
