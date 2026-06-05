@@ -53,15 +53,6 @@ export default function Hero({ isAppLoaded = true }: HeroProps) {
     >
       {/* Background Video/Image */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none bg-black">
-        <iframe
-          src="https://player.vimeo.com/video/1195536044?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1&amp;background=1"
-          className={`absolute top-1/2 left-1/2 w-[100vw] h-[56.25vw] min-h-[100vh] min-w-[177.77vh] -translate-x-1/2 -translate-y-1/2 grayscale opacity-40`}
-          frameBorder="0"
-          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-          referrerPolicy="strict-origin-when-cross-origin"
-          title="Dangal_Gym 4k"
-          fetchPriority="high"
-        ></iframe>
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black" />
       </div>
 

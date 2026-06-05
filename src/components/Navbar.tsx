@@ -15,6 +15,20 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = 'hidden';
+      document.documentElement.classList.add('lenis-stopped');
+    } else {
+      document.body.style.overflow = '';
+      document.documentElement.classList.remove('lenis-stopped');
+    }
+    return () => {
+      document.body.style.overflow = '';
+      document.documentElement.classList.remove('lenis-stopped');
+    };
+  }, [mobileOpen]);
+
   return (
     <>
       <motion.nav
@@ -29,7 +43,8 @@ export default function Navbar() {
           
           <div className="hidden md:flex items-center gap-4 flex-1">
             <a href="#facilities" className="text-[12px] font-bold tracking-[0.2em] uppercase text-white hover:text-black transition-all duration-300 bg-white/5 hover:bg-white px-5 py-2.5 rounded-full border border-white/5">Facilities</a>
-            <a href="#programs" className="text-[12px] font-bold tracking-[0.2em] uppercase text-white hover:text-black transition-all duration-300 bg-white/5 hover:bg-white px-5 py-2.5 rounded-full border border-white/5">Programs</a>
+            <a href="#interior" className="text-[12px] font-bold tracking-[0.2em] uppercase text-white hover:text-black transition-all duration-300 bg-white/5 hover:bg-white px-5 py-2.5 rounded-full border border-white/5">Interior</a>
+            <a href="#gallery" className="text-[12px] font-bold tracking-[0.2em] uppercase text-white hover:text-black transition-all duration-300 bg-white/5 hover:bg-white px-5 py-2.5 rounded-full border border-white/5">Gallery</a>
           </div>
 
           {/* Desktop logo (visible on md and up) */}
@@ -46,23 +61,37 @@ export default function Navbar() {
             />
           </a>
 
-          {/* Mobile logo (visible on small screens, aligned left) */}
-          <a href="#" className="md:hidden flex-shrink-0 flex items-center justify-start gap-1 mr-auto pl-2">
-            <img 
-              src="/dangal.png" 
-              alt="Dangal" 
-              loading="eager"
-              decoding="async"
-              className="h-3.5 sm:h-4 w-auto object-contain drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]" 
-            />
-            <img 
-              src="/dgym.png" 
-              alt="Gym" 
-              loading="eager"
-              decoding="async"
-              className="h-3.5 sm:h-4 w-auto object-contain drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]" 
-            />
-          </a>
+          {/* Mobile Layout: Hamburger Menu on Left, Logo in Center, Cart on Right */}
+          <div className="md:hidden flex items-center justify-start w-10">
+            <button className="text-white cursor-pointer" onClick={() => setMobileOpen(true)} aria-label="Menu">
+              <Menu size={22} />
+            </button>
+          </div>
+
+          <div className="md:hidden flex-1 flex justify-center">
+            <a href="#" className="flex items-center gap-1 hover:scale-105 transition-transform duration-300">
+              <img 
+                src="/dangal.png" 
+                alt="Dangal" 
+                loading="eager"
+                decoding="async"
+                className="h-4 sm:h-5 w-auto object-contain drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]" 
+              />
+              <img 
+                src="/dgym.png" 
+                alt="Gym" 
+                loading="eager"
+                decoding="async"
+                className="h-4 sm:h-5 w-auto object-contain drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]" 
+              />
+            </a>
+          </div>
+
+          <div className="md:hidden flex items-center justify-end w-10">
+            <Link to="/register" className="text-white hover:text-brand-red transition-colors" aria-label="Checkout">
+              <ShoppingCart size={20} />
+            </Link>
+          </div>
 
           <div className="hidden md:flex items-center gap-4 flex-1 justify-end">
             <a href="#pricing" className="text-[12px] font-bold tracking-[0.2em] uppercase text-white hover:text-black transition-all duration-300 bg-white/5 hover:bg-white px-5 py-2.5 rounded-full border border-white/5">Memberships</a>
@@ -70,15 +99,6 @@ export default function Navbar() {
             <Link to="/register" className="text-white hover:text-brand-red transition-colors ml-2" aria-label="Checkout">
               <ShoppingCart size={20} />
             </Link>
-          </div>
-
-          <div className="md:hidden flex items-center gap-6 ml-auto">
-            <Link to="/register" className="text-white hover:text-brand-red transition-colors" aria-label="Checkout">
-              <ShoppingCart size={20} />
-            </Link>
-            <button className="text-white" onClick={() => setMobileOpen(true)} aria-label="Menu">
-              <Menu size={24} />
-            </button>
           </div>
         </div>
       </motion.nav>
@@ -103,28 +123,49 @@ export default function Navbar() {
               <motion.a
                 initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.1 }}
                 href="#facilities" onClick={() => setMobileOpen(false)}
-                className="font-display text-4xl tracking-widest uppercase text-white hover:text-gray-400"
+                className="font-display text-2xl sm:text-4xl tracking-widest uppercase text-white hover:text-gray-400"
               >
                 Facilities
               </motion.a>
               <motion.a
                 initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.2 }}
                 href="#programs" onClick={() => setMobileOpen(false)}
-                className="font-display text-4xl tracking-widest uppercase text-white hover:text-gray-400"
+                className="font-display text-2xl sm:text-4xl tracking-widest uppercase text-white hover:text-gray-400"
               >
                 Programs
               </motion.a>
               <motion.a
+                initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.22 }}
+                href="#transformations" onClick={() => setMobileOpen(false)}
+                className="font-display text-2xl sm:text-4xl tracking-widest uppercase text-white hover:text-gray-400"
+              >
+                Transformations
+              </motion.a>
+              <motion.a
+                initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.26 }}
+                href="#interior" onClick={() => setMobileOpen(false)}
+                className="font-display text-2xl sm:text-4xl tracking-widest uppercase text-white hover:text-gray-400"
+              >
+                Interior
+              </motion.a>
+              <motion.a
                 initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.3 }}
+                href="#gallery" onClick={() => setMobileOpen(false)}
+                className="font-display text-2xl sm:text-4xl tracking-widest uppercase text-white hover:text-gray-400"
+              >
+                Gallery
+              </motion.a>
+              <motion.a
+                initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.34 }}
                 href="#pricing" onClick={() => setMobileOpen(false)}
-                className="font-display text-4xl tracking-widest uppercase text-white hover:text-gray-400"
+                className="font-display text-2xl sm:text-4xl tracking-widest uppercase text-white hover:text-gray-400"
               >
                 Memberships
               </motion.a>
               <motion.a
-                initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.4 }}
+                initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.38 }}
                 href="#reviews" onClick={() => setMobileOpen(false)}
-                className="font-display text-4xl tracking-widest uppercase text-white hover:text-gray-400"
+                className="font-display text-2xl sm:text-4xl tracking-widest uppercase text-white hover:text-gray-400"
               >
                 Reviews
               </motion.a>

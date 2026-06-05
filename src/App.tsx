@@ -3,8 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Lenis from '@studio-freight/lenis';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import VideoShowcase from './components/VideoShowcase';
 import GymGallery from './components/GymGallery';
+import GymInterior from './components/GymInterior';
 import Marquee from './components/Marquee';
 import Facilities from './components/Facilities';
 import Transformation from './components/Transformation';
@@ -16,6 +16,7 @@ import Location from './components/Location';
 import Footer from './components/Footer';
 import FloatingSocials from './components/FloatingSocials';
 import Register from './components/Register';
+import VideoIntro from './components/VideoIntro';
 
 function Home() {
   return (
@@ -26,7 +27,8 @@ function Home() {
         <Marquee />
         <Facilities />
         <Transformation />
-        <VideoShowcase />
+        <VideoIntro />
+        <GymInterior />
         <GymGallery />
         <Programs />
         <Pricing />
@@ -58,7 +60,27 @@ function App() {
 
     requestAnimationFrame(raf);
 
+    // Global interceptor for relative anchor link clicks to enable smooth scrolling via Lenis
+    const handleAnchorClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      const anchor = target.closest('a');
+      if (anchor && anchor.hash && anchor.origin === window.location.origin) {
+        const targetElement = document.querySelector(anchor.hash) as HTMLElement;
+        if (targetElement) {
+          e.preventDefault();
+          lenis.scrollTo(targetElement, {
+            offset: -80, // Adjust scroll offset to clear the fixed navbar
+            duration: 1.5,
+            easing: (t) => 1 - Math.pow(1 - t, 4),
+          });
+        }
+      }
+    };
+
+    document.addEventListener('click', handleAnchorClick);
+
     return () => {
+      document.removeEventListener('click', handleAnchorClick);
       lenis.destroy();
     };
   }, []);
@@ -76,3 +98,4 @@ function App() {
 }
 
 export default App;
+

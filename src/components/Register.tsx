@@ -178,9 +178,75 @@ export default function Register() {
           
           {/* Left Column: Form Details */}
           <div className="lg:col-span-7 space-y-8 order-2 lg:order-1">
+            
+            {/* Step 1: Select Plan */}
+            <div className="bg-zinc-900/50 border border-white/5 rounded-3xl p-6 md:p-8 shadow-xl backdrop-blur-sm relative">
+              <h2 className="text-lg font-bold uppercase tracking-widest mb-6 border-b border-white/10 pb-4 flex items-center gap-2">
+                <span className="w-6 h-6 rounded-full bg-brand-red text-white flex items-center justify-center text-xs font-bold">1</span>
+                Choose Membership Plan
+              </h2>
+              
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { key: '1 Month', label: 'Monthly', period: '1 Month', price: 1500, orig: 1500, note: 'Basic training access' },
+                  { key: '3 Months', label: 'Quarterly', period: '3 Months', price: 3500, orig: 4500, note: 'Flat ₹500 off available', badge: 'Popular' },
+                  { key: '6 Months', label: 'Half-Yearly', period: '6 Months', price: 6000, orig: 9000, note: 'Flat ₹1000 off available' },
+                  { key: '1 Year', label: 'Annual', period: '1 Year', price: 9000, orig: 18000, note: 'Flat ₹1500 off available', badge: 'Best Deal' }
+                ].map((plan) => {
+                  const isSelected = formData.plan === plan.key;
+                  return (
+                    <motion.div
+                      key={plan.key}
+                      whileTap={{ scale: 0.98 }}
+                      onClick={() => {
+                        setFormData(prev => ({ ...prev, plan: plan.key }));
+                        setCodeApplied(false);
+                        setFormData(prev => ({ ...prev, referralCode: '' }));
+                      }}
+                      className={`relative p-5 rounded-2xl border cursor-pointer transition-all duration-300 select-none flex flex-col justify-between h-[130px] sm:h-[140px] ${
+                        isSelected 
+                          ? 'border-brand-red bg-brand-red/10 shadow-[0_0_25px_rgba(255,51,51,0.15)]' 
+                          : 'border-white/10 bg-zinc-950 hover:border-white/20'
+                      }`}
+                    >
+                      {plan.badge && (
+                        <div className="absolute -top-2.5 right-4 px-2 py-0.5 rounded bg-brand-red text-[8px] uppercase tracking-widest font-black text-white shadow-md">
+                          {plan.badge}
+                        </div>
+                      )}
+                      <div>
+                        <span className="text-[9px] uppercase tracking-widest text-gray-500 font-bold block mb-1">
+                          {plan.label}
+                        </span>
+                        <span className="text-sm sm:text-base font-bold text-white block">
+                          {plan.period}
+                        </span>
+                      </div>
+                      <div className="mt-2">
+                        <div className="flex items-baseline gap-1.5">
+                          <span className="font-display font-extrabold text-base sm:text-lg text-brand-red">
+                            ₹{plan.price.toLocaleString()}
+                          </span>
+                          {plan.orig > plan.price && (
+                            <span className="text-[10px] text-gray-500 line-through">
+                              ₹{plan.orig.toLocaleString()}
+                            </span>
+                          )}
+                        </div>
+                        <span className="text-[9px] text-gray-400 block truncate mt-0.5">
+                          {plan.note}
+                        </span>
+                      </div>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Step 2: Contact Details */}
             <div className="bg-zinc-900/50 border border-white/5 rounded-3xl p-6 md:p-8 shadow-xl backdrop-blur-sm">
               <h2 className="text-lg font-bold uppercase tracking-widest mb-6 border-b border-white/10 pb-4 flex items-center gap-2">
-                <span className="w-6 h-6 rounded-full bg-brand-red text-white flex items-center justify-center text-xs">1</span>
+                <span className="w-6 h-6 rounded-full bg-brand-red text-white flex items-center justify-center text-xs font-bold">2</span>
                 Contact Details
               </h2>
               <form id="checkout-form" onSubmit={handleSubmit} className="space-y-6">

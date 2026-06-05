@@ -3,12 +3,12 @@ import { Star } from 'lucide-react';
 import { RevealText } from './RevealText';
 
 const googleReviews = [
-  { name: 'Priya S.', image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop', text: "Amazing environment and completely safe for women. Highly recommend for female fitness enthusiasts!", highlight: "Women Safety & Environment", stars: 5 },
-  { name: 'Rahul V.', image: 'https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=100&h=100&fit=crop', text: "The equipments are top-notch and international grade. Never have to wait for machines.", highlight: "Premium Equipments", stars: 5 },
-  { name: 'Neha K.', image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop', text: "Joined 6 months ago and had an unbelievable transformation. The trainers are highly supportive.", highlight: "Great Transformation", stars: 5 },
-  { name: 'Amit T.', image: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&h=100&fit=crop', text: "Best gym in Awadhpuri! The hygiene and overall vibe is just perfect for serious workouts.", highlight: "Great Environment", stars: 5 },
-  { name: 'Sneha M.', image: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=100&h=100&fit=crop', text: "Felt very secure and comfortable working out here. Very professional staff and great crowd.", highlight: "Women Safety", stars: 5 },
-  { name: 'Vikas J.', image: 'https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=100&h=100&fit=crop', text: "Lost 15kgs in 4 months. The personalized diet plans and equipment variety made it possible.", highlight: "Body Transformation", stars: 5 }
+  { name: 'Priya S.', image: 'https://res.cloudinary.com/df5q9ujfh/image/upload/q_auto/f_auto/v1780628506/WhatsApp_Image_2026-06-03_at_6.44.30_PM_4_pleu2i.jpg', text: "Amazing environment and completely safe for women. Highly recommend for female fitness enthusiasts!", highlight: "Women Safety & Environment", stars: 5 },
+  { name: 'Rahul V.', image: 'https://res.cloudinary.com/df5q9ujfh/image/upload/q_auto/f_auto/v1780628507/WhatsApp_Image_2026-06-03_at_6.44.30_PM_1_asxokk.jpg', text: "The equipments are top-notch and international grade. Never have to wait for machines.", highlight: "Premium Equipments", stars: 5 },
+  { name: 'Neha K.', image: 'https://res.cloudinary.com/df5q9ujfh/image/upload/q_auto/f_auto/v1780628506/WhatsApp_Image_2026-06-03_at_6.44.25_PM_v0dtrn.jpg', text: "Joined 6 months ago and had an unbelievable transformation. The trainers are highly supportive.", highlight: "Great Transformation", stars: 5 },
+  { name: 'Amit T.', image: 'https://res.cloudinary.com/df5q9ujfh/image/upload/q_auto/f_auto/v1780628509/WhatsApp_Image_2026-06-03_at_6.44.30_PM_7_znfpmq.jpg', text: "Best gym in Awadhpuri! The hygiene and overall vibe is just perfect for serious workouts.", highlight: "Great Environment", stars: 5 },
+  { name: 'Sneha M.', image: 'https://res.cloudinary.com/df5q9ujfh/image/upload/q_auto/f_auto/v1780628506/WhatsApp_Image_2026-06-03_at_6.44.30_PM_4_pleu2i.jpg', text: "Felt very secure and comfortable working out here. Very professional staff and great crowd.", highlight: "Women Safety", stars: 5 },
+  { name: 'Vikas J.', image: 'https://res.cloudinary.com/df5q9ujfh/image/upload/q_auto/f_auto/v1780628508/WhatsApp_Image_2026-06-03_at_6.44.30_PM_8_mbsl37.jpg', text: "Lost 15kgs in 4 months. The personalized diet plans and equipment variety made it possible.", highlight: "Body Transformation", stars: 5 }
 ];
 
 export default function Reviews() {
