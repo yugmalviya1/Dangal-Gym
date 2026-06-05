@@ -5,31 +5,36 @@ import { Maximize2, X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const galleryItems = [
   {
-    url: 'https://res.cloudinary.com/df5q9ujfh/image/upload/q_auto/f_auto/v1780625489/Your_future_self_is_watching_Don_t_stop_.............._gymm_gymmotivation_gymrat_fitnessmoti_wnwqlo.jpg',
+    thumbnailUrl: 'https://res.cloudinary.com/df5q9ujfh/image/upload/w_500,q_auto,f_auto/v1780625489/Your_future_self_is_watching_Don_t_stop_.............._gymm_gymmotivation_gymrat_fitnessmoti_wnwqlo.jpg',
+    url: 'https://res.cloudinary.com/df5q9ujfh/image/upload/w_1600,q_auto,f_auto/v1780625489/Your_future_self_is_watching_Don_t_stop_.............._gymm_gymmotivation_gymrat_fitnessmoti_wnwqlo.jpg',
     title: 'Relentless Drive',
     tag: 'Motivation',
     desc: "Your future self is watching. Don't stop.",
   },
   {
-    url: 'https://res.cloudinary.com/df5q9ujfh/image/upload/q_auto/f_auto/v1780625489/Push_harder_than_yesterday.....if_you_want_a_different_tomorrow_%EF%B8%8F_DANGAL_GYM_%EF%B8%8F_Join_us_to_uzjxvn.webp',
+    thumbnailUrl: 'https://res.cloudinary.com/df5q9ujfh/image/upload/w_500,q_auto,f_auto/v1780625489/Push_harder_than_yesterday.....if_you_want_a_different_tomorrow_%EF%B8%8F_DANGAL_GYM_%EF%B8%8F_Join_us_to_uzjxvn.webp',
+    url: 'https://res.cloudinary.com/df5q9ujfh/image/upload/w_1600,q_auto,f_auto/v1780625489/Push_harder_than_yesterday.....if_you_want_a_different_tomorrow_%EF%B8%8F_DANGAL_GYM_%EF%B8%8F_Join_us_to_uzjxvn.webp',
     title: 'Break Limits',
     tag: 'Focus',
     desc: 'Push harder than yesterday... for a different tomorrow.',
   },
   {
-    url: 'https://res.cloudinary.com/df5q9ujfh/image/upload/q_auto/f_auto/v1780625489/1_better_every_day....__GymMotivation_FitnessGoals_WorkoutRoutine_BodyTransformation___Cabl_x8x9bs.jpg',
+    thumbnailUrl: 'https://res.cloudinary.com/df5q9ujfh/image/upload/w_500,q_auto,f_auto/v1780625489/1_better_every_day....__GymMotivation_FitnessGoals_WorkoutRoutine_BodyTransformation___Cabl_x8x9bs.jpg',
+    url: 'https://res.cloudinary.com/df5q9ujfh/image/upload/w_1600,q_auto,f_auto/v1780625489/1_better_every_day....__GymMotivation_FitnessGoals_WorkoutRoutine_BodyTransformation___Cabl_x8x9bs.jpg',
     title: 'Daily Progress',
     tag: 'Consistency',
     desc: '1% better every single day.',
   },
   {
-    url: 'https://res.cloudinary.com/df5q9ujfh/image/upload/q_auto/f_auto/v1780625489/625042575_18139118380488472_5109039207719911252_n_g65ckc.jpg',
+    thumbnailUrl: 'https://res.cloudinary.com/df5q9ujfh/image/upload/w_500,q_auto,f_auto/v1780625489/625042575_18139118380488472_5109039207719911252_n_g65ckc.jpg',
+    url: 'https://res.cloudinary.com/df5q9ujfh/image/upload/w_1600,q_auto,f_auto/v1780625489/625042575_18139118380488472_5109039207719911252_n_g65ckc.jpg',
     title: 'The Squad',
     tag: 'Community',
     desc: 'Dangal Gym core fitness squad.',
   },
   {
-    url: 'https://res.cloudinary.com/df5q9ujfh/image/upload/q_auto/f_auto/v1780625489/Breaking_my_own_records_because_i_can_%EF%B8%8FJoin_us_Today_%EF%B8%8F_Dangal_Gym_Near_SBI_Bank_Awadhpu_wcewzy.webp',
+    thumbnailUrl: 'https://res.cloudinary.com/df5q9ujfh/image/upload/w_500,q_auto,f_auto/v1780625489/Breaking_my_own_records_because_i_can_%EF%B8%8FJoin_us_Today_%EF%B8%8F_Dangal_Gym_Near_SBI_Bank_Awadhpu_wcewzy.webp',
+    url: 'https://res.cloudinary.com/df5q9ujfh/image/upload/w_1600,q_auto,f_auto/v1780625489/Breaking_my_own_records_because_i_can_%EF%B8%8FJoin_us_Today_%EF%B8%8F_Dangal_Gym_Near_SBI_Bank_Awadhpu_wcewzy.webp',
     title: 'Victory Mindset',
     tag: 'Determination',
     desc: 'Breaking my own records because I can.',
@@ -73,6 +78,7 @@ export default function GymGallery() {
   const activeItem = lightboxIndex !== null ? galleryItems[lightboxIndex] : null;
 
   return (
+    <>
     <section id="gallery" className="py-32 bg-black relative z-10 border-b border-white/5">
       <div className="max-w-[1400px] mx-auto px-8 md:px-12">
         <div className="flex flex-col items-start mb-16">
@@ -105,7 +111,7 @@ export default function GymGallery() {
                 {/* Image Container */}
                 <div className="absolute inset-0 w-full h-full overflow-hidden">
                   <img
-                    src={item.url}
+                    src={item.thumbnailUrl}
                     alt={item.title}
                     loading="lazy"
                     decoding="async"
@@ -160,7 +166,7 @@ export default function GymGallery() {
                 {/* Image Container */}
                 <div className="absolute inset-0 w-full h-full overflow-hidden">
                   <img
-                    src={item.url}
+                    src={item.thumbnailUrl}
                     alt={item.title}
                     loading="lazy"
                     decoding="async"
@@ -202,6 +208,7 @@ export default function GymGallery() {
           })}
         </div>
       </div>
+    </section>
 
       {/* Lightbox Modal */}
       <AnimatePresence>
@@ -274,6 +281,6 @@ export default function GymGallery() {
           </motion.div>
         )}
       </AnimatePresence>
-    </section>
+    </>
   );
 }

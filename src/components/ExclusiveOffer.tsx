@@ -34,7 +34,7 @@ export default function ExclusiveOffer() {
 
   return (
     <section className="py-20 relative overflow-hidden bg-brand-red">
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center mix-blend-overlay opacity-20" />
+      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=1000&auto=format&fit=crop')] bg-cover bg-center mix-blend-overlay opacity-20" />
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-10">
         
         <div className="flex-1 text-center md:text-left">

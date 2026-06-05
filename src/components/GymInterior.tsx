@@ -5,37 +5,43 @@ import { Maximize2, ZoomIn, ZoomOut, RotateCcw, X, ChevronLeft, ChevronRight } f
 
 const galleryItems = [
   {
-    url: 'https://res.cloudinary.com/df5q9ujfh/image/upload/w_1200,q_auto,f_auto/v1779780776/gym22_nagqtv.png',
+    thumbnailUrl: 'https://res.cloudinary.com/df5q9ujfh/image/upload/w_1000,q_auto,f_auto/v1779780776/gym22_nagqtv.png',
+    url: 'https://res.cloudinary.com/df5q9ujfh/image/upload/w_1600,q_auto,f_auto/v1779780776/gym22_nagqtv.png',
     title: 'The Arena',
     subtitle: '3-Floor Elite Fitness Landmark (Exterior)',
     size: 'md:col-span-2 md:row-span-2',
   },
   {
-    url: 'https://res.cloudinary.com/df5q9ujfh/image/upload/w_800,q_auto,f_auto/v1779780759/gym26_kri48e.png',
+    thumbnailUrl: 'https://res.cloudinary.com/df5q9ujfh/image/upload/w_600,q_auto,f_auto/v1779780759/gym26_kri48e.png',
+    url: 'https://res.cloudinary.com/df5q9ujfh/image/upload/w_1600,q_auto,f_auto/v1779780759/gym26_kri48e.png',
     title: 'Strength Zone',
     subtitle: 'Hammer Strength & Being Strong Equipments',
     size: 'md:col-span-1 md:row-span-1',
   },
   {
-    url: 'https://res.cloudinary.com/df5q9ujfh/image/upload/w_800,q_auto,f_auto/v1779780790/gym27_rpmtj5.png',
+    thumbnailUrl: 'https://res.cloudinary.com/df5q9ujfh/image/upload/w_600,q_auto,f_auto/v1779780790/gym27_rpmtj5.png',
+    url: 'https://res.cloudinary.com/df5q9ujfh/image/upload/w_1600,q_auto,f_auto/v1779780790/gym27_rpmtj5.png',
     title: 'Cardio Deck',
     subtitle: 'Premium Treadmills & HIIT Stations',
     size: 'md:col-span-1 md:row-span-1',
   },
   {
-    url: 'https://res.cloudinary.com/df5q9ujfh/image/upload/w_800,q_auto,f_auto/v1779780780/gym24.jpg_jxuwwv.jpg',
+    thumbnailUrl: 'https://res.cloudinary.com/df5q9ujfh/image/upload/w_600,q_auto,f_auto/v1779780780/gym24.jpg_jxuwwv.jpg',
+    url: 'https://res.cloudinary.com/df5q9ujfh/image/upload/w_1600,q_auto,f_auto/v1779780780/gym24.jpg_jxuwwv.jpg',
     title: 'CrossFit Arena',
     subtitle: 'Functional Training & Turf Area',
     size: 'md:col-span-1 md:row-span-1',
   },
   {
-    url: 'https://res.cloudinary.com/df5q9ujfh/image/upload/q_auto/f_auto/v1780627983/gym13_fg4zyk.png',
+    thumbnailUrl: 'https://res.cloudinary.com/df5q9ujfh/image/upload/w_600,q_auto,f_auto/v1780627983/gym13_fg4zyk.png',
+    url: 'https://res.cloudinary.com/df5q9ujfh/image/upload/w_1600,q_auto,f_auto/v1780627983/gym13_fg4zyk.png',
     title: 'Free Weights',
     subtitle: 'Heavy Dumbbells & Custom Benches',
     size: 'md:col-span-1 md:row-span-1',
   },
   {
-    url: 'https://res.cloudinary.com/df5q9ujfh/image/upload/q_auto/f_auto/v1780627982/WhatsApp_Image_2026-06-03_at_8.57.25_PM_2_ah57gb.jpg',
+    thumbnailUrl: 'https://res.cloudinary.com/df5q9ujfh/image/upload/w_600,q_auto,f_auto/v1780627982/WhatsApp_Image_2026-06-03_at_8.57.25_PM_2_ah57gb.jpg',
+    url: 'https://res.cloudinary.com/df5q9ujfh/image/upload/w_1600,q_auto,f_auto/v1780627982/WhatsApp_Image_2026-06-03_at_8.57.25_PM_2_ah57gb.jpg',
     title: 'Lifting Platform',
     subtitle: 'Olympic Platforms & Squat Racks',
     size: 'md:col-span-1 md:row-span-1',
@@ -97,6 +103,7 @@ export default function GymInterior() {
   const activeItem = lightboxIndex !== null ? galleryItems[lightboxIndex] : null;
 
   return (
+    <>
     <section id="interior" className="py-32 bg-brand-surface relative z-10 border-b border-white/5">
       <div className="max-w-[1400px] mx-auto px-8 md:px-12">
         <div className="flex flex-col items-start mb-20">
@@ -126,7 +133,7 @@ export default function GymInterior() {
               {/* Image Container */}
               <div className="absolute inset-0 w-full h-full overflow-hidden">
                 <img
-                  src={item.url}
+                  src={item.thumbnailUrl}
                   alt={item.title}
                   loading="lazy"
                   decoding="async"
@@ -160,6 +167,7 @@ export default function GymInterior() {
           ))}
         </div>
       </div>
+    </section>
 
       {/* Lightbox Modal with Zoom */}
       <AnimatePresence>
@@ -296,6 +304,6 @@ export default function GymInterior() {
           </motion.div>
         )}
       </AnimatePresence>
-    </section>
+    </>
   );
 }

@@ -65,14 +65,27 @@ function App() {
       const target = e.target as HTMLElement;
       const anchor = target.closest('a');
       if (anchor && anchor.hash && anchor.origin === window.location.origin) {
-        const targetElement = document.querySelector(anchor.hash) as HTMLElement;
-        if (targetElement) {
+        // Handle bare '#' links — scroll to top smoothly
+        if (anchor.hash === '#') {
           e.preventDefault();
-          lenis.scrollTo(targetElement, {
-            offset: -80, // Adjust scroll offset to clear the fixed navbar
+          lenis.scrollTo(0, {
             duration: 1.5,
             easing: (t) => 1 - Math.pow(1 - t, 4),
           });
+          return;
+        }
+        try {
+          const targetElement = document.querySelector(anchor.hash) as HTMLElement;
+          if (targetElement) {
+            e.preventDefault();
+            lenis.scrollTo(targetElement, {
+              offset: -80, // Adjust scroll offset to clear the fixed navbar
+              duration: 1.5,
+              easing: (t) => 1 - Math.pow(1 - t, 4),
+            });
+          }
+        } catch (_) {
+          // Invalid selector — let browser handle it
         }
       }
     };

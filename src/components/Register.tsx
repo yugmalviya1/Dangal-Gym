@@ -177,7 +177,7 @@ export default function Register() {
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12">
           
           {/* Left Column: Form Details */}
-          <div className="lg:col-span-7 space-y-8 order-2 lg:order-1">
+          <div className="lg:col-span-7 space-y-8 order-1 lg:order-1">
             
             {/* Step 1: Select Plan */}
             <div className="bg-zinc-900/50 border border-white/5 rounded-3xl p-6 md:p-8 shadow-xl backdrop-blur-sm relative">
@@ -283,43 +283,37 @@ export default function Register() {
                 </div>
               </form>
             </div>
-          </div>
 
-          {/* Right Column: Order Summary (Cart) */}
-          <div className="lg:col-span-5 order-1 lg:order-2">
-            <div className="bg-zinc-900 border border-white/10 rounded-3xl overflow-hidden shadow-2xl sticky top-8">
+            {/* Step 3: Selected Plan */}
+            <div className="bg-zinc-900/50 border border-white/5 rounded-3xl p-6 md:p-8 shadow-xl backdrop-blur-sm">
+              <h2 className="text-lg font-bold uppercase tracking-widest mb-6 border-b border-white/10 pb-4 flex items-center gap-2">
+                <span className="w-6 h-6 rounded-full bg-brand-red text-white flex items-center justify-center text-xs font-bold">3</span>
+                Selected Plan
+              </h2>
               
-              {/* Cart Item */}
-              <div className="p-6 md:p-8 bg-zinc-800/30">
-                <h2 className="text-sm font-bold uppercase tracking-widest mb-6 flex items-center justify-between">
-                  Plan Summary
-                  <span className="bg-white/10 text-xs px-2 py-1 rounded-md">1 Plan</span>
-                </h2>
-                
-                <div className="flex gap-4 items-center bg-zinc-950 p-4 rounded-2xl border border-white/5">
-                  <img src={currentPlanData.image} alt={currentPlanData.name} className="w-20 h-20 rounded-xl object-cover border border-white/10" />
-                  <div className="flex-1">
-                    <select
-                      value={formData.plan}
-                      onChange={handlePlanChange}
-                      className="bg-transparent text-sm font-bold text-white focus:outline-none uppercase tracking-wide cursor-pointer w-full mb-1"
-                    >
-                      {Object.keys(PLAN_DATA).map(planKey => (
-                        <option key={planKey} value={planKey} className="bg-zinc-900 text-sm">{PLAN_DATA[planKey].name}</option>
-                      ))}
-                    </select>
-                    <div className="flex items-center gap-2 mt-1">
-                      <span className="font-display font-bold text-lg text-brand-red">₹{currentPlanData.fakePrice.toLocaleString()}</span>
-                      {currentPlanData.originalValue > currentPlanData.fakePrice && (
-                        <span className="text-xs text-gray-500 line-through">₹{currentPlanData.originalValue.toLocaleString()}</span>
-                      )}
-                    </div>
+              <div className="flex gap-4 items-center bg-zinc-950 p-4 rounded-2xl border border-white/5">
+                <img src={currentPlanData.image} alt={currentPlanData.name} className="w-20 h-20 rounded-xl object-cover border border-white/10" />
+                <div className="flex-1">
+                  <h3 className="text-sm font-bold text-white uppercase tracking-wide mb-1">
+                    {currentPlanData.name}
+                  </h3>
+                  <div className="flex items-center gap-2 mt-1">
+                    <span className="font-display font-bold text-lg text-brand-red">₹{currentPlanData.fakePrice.toLocaleString()}</span>
+                    {currentPlanData.originalValue > currentPlanData.fakePrice && (
+                      <span className="text-xs text-gray-500 line-through">₹{currentPlanData.originalValue.toLocaleString()}</span>
+                    )}
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
 
+          {/* Right Column: Order Summary (Cart) */}
+          <div className="lg:col-span-5 order-2 lg:order-2">
+            <div className="bg-zinc-900 border border-white/10 rounded-3xl overflow-hidden shadow-2xl sticky top-8">
+              
               {/* Coupons Section */}
-              <div className="p-6 md:p-8 border-t border-white/5 bg-zinc-900/50">
+              <div className="p-6 md:p-8 bg-zinc-900/50">
                 {!codeApplied ? (
                   <div className="space-y-4">
                     {potentialSavings > 0 ? (

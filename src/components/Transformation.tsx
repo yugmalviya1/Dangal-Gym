@@ -5,17 +5,17 @@ import { RevealText } from './RevealText';
 const transformations = [
   {
     id: 1,
-    url: 'https://res.cloudinary.com/df5q9ujfh/image/upload/q_auto/f_auto/v1780576682/WhatsApp_Image_2026-06-02_at_9.11.59_PM_qb4r6n.jpg',
+    url: 'https://res.cloudinary.com/df5q9ujfh/image/upload/w_600,q_auto,f_auto/v1780576682/WhatsApp_Image_2026-06-02_at_9.11.59_PM_qb4r6n.jpg',
     alt: 'Transformation 1'
   },
   {
     id: 2,
-    url: 'https://res.cloudinary.com/df5q9ujfh/image/upload/q_auto/f_auto/v1780576682/WhatsApp_Image_2026-06-02_at_9.11.59_PM_1_jxp20v.jpg',
+    url: 'https://res.cloudinary.com/df5q9ujfh/image/upload/w_600,q_auto,f_auto/v1780576682/WhatsApp_Image_2026-06-02_at_9.11.59_PM_1_jxp20v.jpg',
     alt: 'Transformation 2'
   },
   {
     id: 3,
-    url: 'https://res.cloudinary.com/df5q9ujfh/image/upload/q_auto/f_auto/v1780576682/WhatsApp_Image_2026-06-02_at_9.12.00_PM_d5kp2d.jpg',
+    url: 'https://res.cloudinary.com/df5q9ujfh/image/upload/w_600,q_auto,f_auto/v1780576682/WhatsApp_Image_2026-06-02_at_9.12.00_PM_d5kp2d.jpg',
     alt: 'Transformation 3'
   }
 ];
@@ -25,7 +25,7 @@ export default function Transformation() {
   const isInView = useInView(headingRef, { once: true, margin: "-50px" });
 
   return (
-    <section id="transformations" className="py-32 bg-black relative z-10 border-b border-white/5" style={{ contentVisibility: 'visible' }}>
+    <section id="transformations" className="py-32 bg-black relative z-10 border-b border-white/5">
       <div className="max-w-[1400px] mx-auto px-8 md:px-12">
         <div className="flex flex-col items-start mb-20" ref={headingRef}>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-normal sm:tracking-[0.8px] uppercase mb-4 flex flex-col items-start leading-[0.9]">

@@ -41,14 +41,14 @@ export default function Facilities() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.8, delay: i * 0.1, ease: [0.32, 0.72, 0, 1] }}
-                className="group relative flex flex-col items-start w-full h-full rounded-lg overflow-hidden bg-white/[0.03] backdrop-blur-md"
+                className="group relative flex flex-col items-start w-full h-full rounded-lg overflow-hidden bg-zinc-900/50"
               >
                 {/* Static subtle border */}
                 <div className="absolute inset-0 rounded-lg border border-white/10 transition-colors duration-500 z-10 pointer-events-none" />
                 
                 {/* Animated running glow border */}
                 <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-                  <div className="absolute inset-[-2px] rounded-lg animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,transparent_0%,rgba(255,51,51,0.6)_25%,transparent_50%)]" />
+                  <div className="absolute inset-[-2px] rounded-lg group-hover:animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,transparent_0%,rgba(255,51,51,0.6)_25%,transparent_50%)]" />
                   <div className="absolute inset-[1px] rounded-[7px] bg-black" />
                 </div>
                 
