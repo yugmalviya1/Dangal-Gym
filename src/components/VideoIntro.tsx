@@ -30,14 +30,13 @@ export default function VideoIntro() {
               className="w-full h-full absolute inset-0 cursor-pointer"
               onClick={() => setIsPlaying(true)}
             >
-              {/* Vimeo Video Loop as Cover (using CSS object-cover logic) */}
-              <iframe
-                src="https://player.vimeo.com/video/1195536044?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1"
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-auto h-auto aspect-video pointer-events-none scale-125"
-                frameBorder="0"
-                allow="autoplay; fullscreen"
-                title="Dangal_Gym 4k Cover"
-              ></iframe>
+              {/* Static Cover Image */}
+              <img
+                src="https://i.vimeocdn.com/video/2161426831-1d68bf66aae34c60a55a5191cfd28a78c72be45043b3e464751d910dc33487ab-d_1280"
+                alt="Dangal Gym Video Cover"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                loading="eager"
+              />
               <div className="absolute inset-0 bg-black/45 transition-opacity duration-300 group-hover:bg-black/35" />
               
               <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
