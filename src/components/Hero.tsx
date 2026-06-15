@@ -117,14 +117,15 @@ export default function Hero({ isAppLoaded = true }: HeroProps) {
 
       {/* Bottom Elements */}
       <div className="relative z-10 w-full px-8 md:px-12 pb-12 flex justify-center md:justify-between items-end mt-auto max-w-[1400px] mx-auto">
-        <motion.div
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={isAppLoaded ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 1, delay: 0.4, ease: 'easeOut' }}
-          className="text-white text-xs sm:text-sm font-semibold tracking-widest uppercase leading-loose"
+          className="text-white text-xs sm:text-sm font-semibold tracking-widest uppercase leading-loose flex flex-col items-center md:items-start"
         >
-          Embrace the power within
-        </motion.div>
+          <span>Embrace the power within</span>
+          <span className="text-brand-red font-bold">Best gym in awadhpuri</span>
+        </motion.h2>
 
       </div>
     </section>
