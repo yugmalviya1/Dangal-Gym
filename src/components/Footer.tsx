@@ -55,7 +55,7 @@ export default function Footer() {
             <ul className="space-y-4 text-sm text-gray-400 font-medium">
               <li>House No 2 B, near SBI Bank, Awadhpuri, Bhopal</li>
               <li>+91 9977437487</li>
-              <li>info@dangalgym.in</li>
+              <li>dangalgymbpl@gmail.com</li>
               <li className="mt-6 pt-6 border-t border-white/5">
                 <span className="block text-white font-bold uppercase tracking-widest text-[10px] mb-3 text-brand-red">Gym Timings</span>
                 <div className="space-y-2">
