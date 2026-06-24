@@ -17,6 +17,8 @@ import Footer from './components/Footer';
 import FloatingSocials from './components/FloatingSocials';
 import Register from './components/Register';
 import VideoIntro from './components/VideoIntro';
+import BlogList from './components/BlogList';
+import BlogPost from './components/BlogPost';
 
 function Home() {
   return (
@@ -104,6 +106,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/blog" element={<BlogList />} />
+          <Route path="/blog/:id" element={<BlogPost />} />
         </Routes>
       </BrowserRouter>
     </div>
