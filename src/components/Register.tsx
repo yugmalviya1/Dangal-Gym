@@ -273,9 +273,13 @@ export default function Register() {
                       <input
                         required
                         type="tel"
-                        placeholder="+91 98765 43210"
+                        pattern="[0-9]{10}"
+                        maxLength={10}
+                        minLength={10}
+                        title="Please enter a valid 10-digit phone number"
+                        placeholder="9876543210"
                         value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value.replace(/\D/g, '') })}
                         className="w-full bg-zinc-950 border border-white/10 p-4 pl-14 rounded-2xl focus:outline-none focus:border-brand-red transition-all text-sm font-medium"
                       />
                     </div>
