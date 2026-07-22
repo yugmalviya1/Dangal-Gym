@@ -26,9 +26,9 @@ function Home() {
     "@context": "https://schema.org",
     "@type": "HealthAndBeautyBusiness",
     "name": "Dangal Gym",
-    "image": "https://dangalgym.com/dangal.png",
+    "image": "https://dangalgym.xyz/dangal.png",
     "@id": "",
-    "url": "https://dangalgym.com",
+    "url": "https://dangalgym.xyz",
     "telephone": "",
     "address": {
       "@type": "PostalAddress",

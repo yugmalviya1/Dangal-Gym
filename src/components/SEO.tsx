@@ -14,8 +14,8 @@ const SEO: React.FC<SEOProps> = ({
   title = "Dangal Gym - Best Gym in Awadhpuri | Fitness Centre in Bhopal",
   description = "Join Dangal Gym, the best gym in Awadhpuri, Bhopal. We offer Personal Training, Yoga Classes, Zumba, and Aerobics to help you become unstoppable.",
   keywords = "Best Gym in Awadhpuri, Fitness Center, Gym in Awadhpuri, Gym in Bhopal, Yoga Classes, Zumba, Aerobics, Personal Training, Gym Near Me, Dangal Gym",
-  url = "https://dangalgym.com",
-  image = "https://dangalgym.com/dangal.png",
+  url = "https://dangalgym.xyz",
+  image = "https://dangalgym.xyz/dangal.png",
   schema
 }) => {
   return (
