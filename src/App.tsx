@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Lenis from '@studio-freight/lenis';
+import SEO from './components/SEO';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import GymGallery from './components/GymGallery';
@@ -21,8 +22,26 @@ import BlogList from './components/BlogList';
 import BlogPost from './components/BlogPost';
 
 function Home() {
+  const localBusinessSchema = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "HealthAndBeautyBusiness",
+    "name": "Dangal Gym",
+    "image": "https://dangalgym.com/dangal.png",
+    "@id": "",
+    "url": "https://dangalgym.com",
+    "telephone": "",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Awadhpuri",
+      "addressLocality": "Bhopal",
+      "addressRegion": "MP",
+      "addressCountry": "IN"
+    }
+  });
+
   return (
     <>
+      <SEO schema={localBusinessSchema} />
       <Navbar />
       <main>
         <Hero />
@@ -105,8 +124,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/blog" element={<BlogList />} />
+          <Route path="/register" element={<><SEO title="Register - Dangal Gym | Join the Best Gym in Awadhpuri" description="Register at Dangal Gym today. Join the best fitness centre in Bhopal and start your fitness journey." /><Register /></>} />
+          <Route path="/blog" element={<><SEO title="Fitness Blog - Dangal Gym | Gym Near Me" description="Read the latest fitness tips, workout routines, and diet plans from Dangal Gym experts." /><BlogList /></>} />
           <Route path="/blog/:id" element={<BlogPost />} />
         </Routes>
       </BrowserRouter>

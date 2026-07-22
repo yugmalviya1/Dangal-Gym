@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Replace with your actual domain when deploying
+Sitemap: https://dangalgym.com/sitemap.xml
