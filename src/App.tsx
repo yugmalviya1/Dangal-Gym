@@ -11,6 +11,7 @@ import Facilities from './components/Facilities';
 import Transformation from './components/Transformation';
 import Programs from './components/Programs';
 import Pricing from './components/Pricing';
+import VideoTestimonials from './components/VideoTestimonials';
 import Reviews from './components/Reviews';
 import Offer from './components/Offer';
 import Location from './components/Location';
@@ -53,6 +54,7 @@ function Home() {
         <GymGallery />
         <Programs />
         <Pricing />
+        <VideoTestimonials />
         <Reviews />
         <Offer />
         <Location />

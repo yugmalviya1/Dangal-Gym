@@ -170,6 +170,13 @@ export default function Navbar() {
               >
                 Reviews
               </motion.a>
+              <motion.a
+                initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.40 }}
+                href="/#stories" onClick={() => setMobileOpen(false)}
+                className="font-display text-2xl sm:text-4xl tracking-widest uppercase text-white hover:text-gray-400"
+              >
+                Member Stories
+              </motion.a>
               <motion.div
                 initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.42 }}
               >
