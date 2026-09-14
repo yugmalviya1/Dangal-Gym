@@ -31,6 +31,10 @@ export default async function handler(req, res) {
     if (prerenderRes.ok) {
       const html = await prerenderRes.text();
       res.setHeader('Content-Type', 'text/html');
+      const prerenderId = prerenderRes.headers.get('x-prerender-request-id');
+      if (prerenderId) res.setHeader('x-prerender-request-id', prerenderId);
+      const prerenderStatus = prerenderRes.headers.get('x-prerender-render-status');
+      if (prerenderStatus) res.setHeader('x-prerender-render-status', prerenderStatus);
       return res.status(200).send(html);
     }
 

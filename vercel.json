@@ -6,7 +6,7 @@
         {
           "type": "header",
           "key": "user-agent",
-          "value": "(googlebot|bingbot|yandexbot|duckduckbot|slurp|twitterbot|facebookexternalhit|linkedinbot|whatsapp)"
+          "value": "(googlebot|bingbot|yandexbot|duckduckbot|slurp|twitterbot|facebookexternalhit|linkedinbot|whatsapp|prerender|rogerbot|w3c_validator|baiduspider)"
         }
       ],
       "destination": "/api/prerender?path=$1"
