@@ -1,12 +1,16 @@
 {
   "rewrites": [
     {
-      "source": "/((?!api/).*)",
+      "source": "/api/(.*)",
+      "destination": "/api/$1"
+    },
+    {
+      "source": "/(.*)",
       "has": [
         {
           "type": "header",
           "key": "user-agent",
-          "value": "(googlebot|bingbot|yandexbot|duckduckbot|slurp|twitterbot|facebookexternalhit|linkedinbot|whatsapp|prerender|rogerbot|w3c_validator|baiduspider)"
+          "value": ".*([Gg]ooglebot|[Bb]ingbot|[Yy]andex|[Dd]uck[Dd]uck[Bb]ot|[Ss]lurp|[Tt]witterbot|[Ff]acebookexternalhit|[Ll]inkedinbot|[Ww]hats[Aa]pp|[Pp]rerender|[Rr]ogerbot|[Ww]3[Cc]_[Vv]alidator|[Bb]aiduspider).*"
         }
       ],
       "destination": "/api/prerender?path=$1"
