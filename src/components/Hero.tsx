@@ -70,6 +70,7 @@ export default function Hero({ isAppLoaded = true }: HeroProps) {
            transition={{ duration: 1.5, ease: "easeOut" }}
            className="text-[20vw] sm:text-[10vw] leading-[0.9] font-bold text-white text-center tracking-normal w-full max-w-[100vw] px-4"
          >
+            <span className="sr-only">Dangal Gym Awadhpuri Bhopal</span>
             Sculpt <span className="text-brand-red">Your</span> Body<br/>
             Elevate <span className="text-brand-red">Your</span> Spirit
          </motion.h1>

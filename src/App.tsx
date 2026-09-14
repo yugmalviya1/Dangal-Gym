@@ -25,19 +25,59 @@ import BlogPost from './components/BlogPost';
 function Home() {
   const localBusinessSchema = JSON.stringify({
     "@context": "https://schema.org",
-    "@type": "HealthAndBeautyBusiness",
+    "@type": "ExerciseGym",
     "name": "Dangal Gym",
-    "image": "https://dangalgym.xyz/dangal.png",
-    "@id": "",
+    "alternateName": "Dangal Gym Awadhpuri Bhopal",
+    "image": [
+      "https://dangalgym.xyz/dangal.png",
+      "https://dangalgym.xyz/muscle-man-no-bg.png"
+    ],
+    "@id": "https://dangalgym.xyz/#gym",
     "url": "https://dangalgym.xyz",
-    "telephone": "",
+    "telephone": "+919977437487",
+    "priceRange": "₹₹",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Awadhpuri",
+      "streetAddress": "House No 2 B, near SBI Bank, Awadhpuri",
       "addressLocality": "Bhopal",
-      "addressRegion": "MP",
+      "addressRegion": "Madhya Pradesh",
+      "postalCode": "462022",
       "addressCountry": "IN"
-    }
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 23.2380599,
+      "longitude": 77.4878235
+    },
+    "hasMap": "https://www.google.com/maps/search/?api=1&query=Dangal+Gym+Awadhpuri+Bhopal",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "05:00",
+        "closes": "11:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "17:00",
+        "closes": "22:00"
+      }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/dangal_gym_?igsh=c3hrdmIxenE4MWM=",
+      "https://www.facebook.com/people/Dangal-Gym/100063989178490/",
+      "https://youtube.com/@dangalgym09?si=B0Sv8UHQaU6VZP_A"
+    ],
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "3-Floor Gym (3500 sqft)", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "2-Floor Strength Training Area", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Cardio Section", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Zumba & Aerobics Studio", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Certified Personal Trainers", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Steam Bath", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Fully Air Conditioned", "value": true }
+    ]
   });
 
   return (

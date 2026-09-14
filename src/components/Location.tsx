@@ -15,7 +15,7 @@ export default function Location() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-          <div className="lg:col-span-2 bg-zinc-900/50 p-2 rounded-2xl border border-white/5 h-[400px] overflow-hidden relative">
+          <div className="lg:col-span-2 bg-zinc-900/50 p-2 rounded-2xl border border-white/5 h-[400px] overflow-hidden relative shadow-2xl">
             <iframe 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.3881475713437!2d77.4878235750953!3d23.23805997902444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c419145788ce9%3A0x45f1f6b503db134b!2sDangal%20Gym%20-%20Family%20Fitness%20Club%20%7C%20Aerobic%20%7C%20Cardio%20%7C%20Gym!5e0!3m2!1sen!2sin!4v1778161303156!5m2!1sen!2sin" 
               width="100%" 
@@ -24,11 +24,10 @@ export default function Location() {
               allowFullScreen={true} 
               loading="lazy" 
               referrerPolicy="no-referrer-when-downgrade"
-              title="Gym Location"
+              title="Dangal Gym Location Awadhpuri Bhopal"
               className="transition-all duration-700"
             ></iframe>
           </div>
-
 
           <div className="flex flex-col gap-6">
             <div className="bg-zinc-900/50 p-6 rounded-2xl border border-white/5 hover:border-brand-red/30 transition-colors">
@@ -53,11 +52,12 @@ export default function Location() {
                   <Clock className="w-6 h-6 text-brand-red" />
                 </div>
                 <div>
-                  <h3 className="text-white font-bold uppercase tracking-widest text-sm mb-2">Hours</h3>
+                  <h3 className="text-white font-bold uppercase tracking-widest text-sm mb-2">Opening Hours</h3>
                   <div className="text-gray-400 text-sm leading-relaxed space-y-1">
-                    <p><span className="text-white font-bold">Mon–Sat:</span> 6AM – 11AM</p>
-                    <p><span className="text-white font-bold">Mon–Sat:</span> 5PM – 10PM</p>
-                    <p><span className="text-zinc-600 italic">Sunday: Closed</span></p>
+                    <p><span className="text-white font-bold">Morning:</span> 5:00 AM – 11:00 AM</p>
+                    <p><span className="text-white font-bold">Evening:</span> 5:00 PM – 10:00 PM</p>
+                    <p><span className="text-white font-semibold">Days:</span> Monday – Saturday</p>
+                    <p><span className="text-zinc-500 italic text-xs">Sunday: Special / Closed</span></p>
                   </div>
                 </div>
               </div>
@@ -70,7 +70,14 @@ export default function Location() {
                 </div>
                 <div>
                   <h3 className="text-white font-bold uppercase tracking-widest text-sm mb-2">Contact</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">+91 9977437487<br/>info@dangalgym.in</p>
+                  <p className="text-gray-400 text-sm leading-relaxed">
+                    <a href="tel:+919977437487" className="hover:text-brand-red transition-colors font-medium text-white block">
+                      +91 9977437487
+                    </a>
+                    <a href="mailto:info@dangalgym.in" className="hover:text-brand-red transition-colors block text-xs mt-1">
+                      info@dangalgym.in
+                    </a>
+                  </p>
                 </div>
               </div>
             </div>

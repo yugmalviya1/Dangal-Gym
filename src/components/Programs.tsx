@@ -18,9 +18,29 @@ export default function Programs() {
             <RevealText className="text-white font-semibold sm:font-normal">Training</RevealText>
             <RevealText delay={0.1} className="text-brand-red font-bold sm:font-medium">Programs</RevealText>
           </h2>
-          <p className="max-w-2xl text-gray-400 text-sm md:text-lg leading-tight md:leading-snug font-semibold md:font-medium font-['Inter']">
-            <strong className="text-white font-bold md:font-semibold">We don't do generic workouts.</strong> Pick a specialized path explicitly designed to deliver targeted results.
-          </p>
+          <div className="max-w-4xl text-gray-400 text-sm md:text-lg leading-tight md:leading-snug font-semibold md:font-medium font-['Inter'] space-y-4">
+            <p>
+              <strong className="text-white font-bold md:font-semibold">Dangal Gym in Awadhpuri</strong> offers a comprehensive 3-floor facility tailored to your fitness journey. We don't do generic workouts. Pick a specialized path explicitly designed to deliver targeted results.
+            </p>
+            <ul className="grid md:grid-cols-2 gap-4 mt-6 text-sm text-gray-300">
+              <li className="flex items-start gap-2">
+                <span className="text-brand-red">✓</span>
+                <span><strong>Strength Training & Powerlifting:</strong> A dedicated 2-floor area packed with free weights, Olympic barbells, and machines for serious muscle gain.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-brand-red">✓</span>
+                <span><strong>Personal Training (1-on-1):</strong> Certified elite coaches provide customized workout routines, form correction, and dedicated attention.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-brand-red">✓</span>
+                <span><strong>Aerobics & Zumba:</strong> High-energy group classes in our dedicated studio to burn calories while having fun.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-brand-red">✓</span>
+                <span><strong>Cardio Conditioning:</strong> Treadmills, ellipticals, and HIIT equipment to torch fat and improve heart health.</span>
+              </li>
+            </ul>
+          </div>
         </div>
 
         <div className="flex flex-col lg:flex-row gap-0 h-[800px] lg:h-[600px] w-full overflow-hidden group/container">

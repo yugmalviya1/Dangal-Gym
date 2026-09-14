@@ -37,6 +37,7 @@ export default function Footer() {
               <FooterLink href="#programs">Programs</FooterLink>
               <FooterLink href="#pricing">Pricing</FooterLink>
               <FooterLink href="#reviews">Reviews</FooterLink>
+              <FooterLink href="#location">Find Us</FooterLink>
             </ul>
           </div>
 
@@ -53,23 +54,40 @@ export default function Footer() {
           <div>
             <h4 className="font-bold text-[10px] uppercase tracking-widest text-gray-500 mb-6">Contact</h4>
             <ul className="space-y-4 text-sm text-gray-400 font-medium">
-              <li>House No 2 B, near SBI Bank, Awadhpuri, Bhopal</li>
-              <li>+91 9977437487</li>
-              <li>dangalgymbpl@gmail.com</li>
+              <li>
+                <a 
+                  href="https://maps.google.com/?q=Dangal+Gym+Family+Fitness+Club+Awadhpuri+Bhopal" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-brand-red transition-colors block"
+                >
+                  House No 2 B, near SBI Bank, Awadhpuri, Bhopal
+                </a>
+              </li>
+              <li>
+                <a href="tel:+919977437487" className="hover:text-brand-red transition-colors font-semibold text-white">
+                  +91 9977437487
+                </a>
+              </li>
+              <li>
+                <a href="mailto:dangalgymbpl@gmail.com" className="hover:text-brand-red transition-colors">
+                  dangalgymbpl@gmail.com
+                </a>
+              </li>
               <li className="mt-6 pt-6 border-t border-white/5">
                 <span className="block text-white font-bold uppercase tracking-widest text-[10px] mb-3 text-brand-red">Gym Timings</span>
                 <div className="space-y-2">
                   <div className="flex justify-between items-center">
                     <span className="text-xs">Mon–Sat</span>
-                    <span className="text-xs text-white">6AM - 11AM</span>
+                    <span className="text-xs text-white font-semibold">5:00 AM – 11:00 AM</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-xs">Mon–Sat</span>
-                    <span className="text-xs text-white">5PM - 10PM</span>
+                    <span className="text-xs text-white font-semibold">5:00 PM – 10:00 PM</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-xs">Sunday</span>
-                    <span className="text-xs text-zinc-600 italic">Closed</span>
+                    <span className="text-xs text-zinc-500 italic">Closed</span>
                   </div>
                 </div>
               </li>
