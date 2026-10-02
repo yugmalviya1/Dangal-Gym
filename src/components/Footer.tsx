@@ -23,7 +23,7 @@ export default function Footer() {
               Bhopal's most elite fitness facility. Train hard. Stay hungry. Fight strong.
             </p>
             <div className="flex gap-4">
-              <SocialLink icon={Instagram} href="https://www.instagram.com/dangal_gym_?igsh=c3hrdmIxenE4MWM=" />
+              <SocialLink icon={Instagram} href="https://www.instagram.com/dangalgymbhopal?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==" />
               <SocialLink icon={Facebook} />
               <SocialLink icon={Youtube} href="https://youtube.com/@dangalgym09?si=B0Sv8UHQaU6VZP_A" />
             </div>

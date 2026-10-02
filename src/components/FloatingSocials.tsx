@@ -33,7 +33,7 @@ export default function FloatingSocials() {
       </a>
       
       <a
-        href="https://www.instagram.com/dangal_gym_?igsh=c3hrdmIxenE4MWM="
+        href="https://www.instagram.com/dangalgymbhopal?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw=="
         target="_blank"
         rel="noopener noreferrer"
         className="w-14 h-14 bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-500 text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform hover:shadow-pink-500/50 hover:shadow-2xl"
