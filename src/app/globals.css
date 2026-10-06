@@ -1,0 +1,240 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("/fonts/Neue Montreal/NeueMontreal-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("/fonts/Neue Montreal/NeueMontreal-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("/fonts/Neue Montreal/NeueMontreal-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("/fonts/Neue Montreal/NeueMontreal-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --color-brand-red: #ff3333;
+  --color-brand-red-dark: #cc0000;
+  --color-brand-dark: #000000;
+  --color-brand-surface: #0a0a0a;
+  --color-brand-border: #1a1a1a;
+
+  --font-display: "Neue Montreal", sans-serif;
+  --font-sans: "Neue Montreal", sans-serif;
+
+  --ease-in: cubic-bezier(.42, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, .58, 1);
+  --ease-out-gentle: cubic-bezier(.32, .72, 0, 1);
+  --ease-out-quad: cubic-bezier(.25, .46, .45, .94);
+  --ease-out-back: cubic-bezier(0, 0, .85, 1.25);
+  --ease-out-cubic: cubic-bezier(.215, .61, .355, 1);
+  --ease-in-out: cubic-bezier(.45, 0, .55, 1);
+  --ease-in-out-sharp: cubic-bezier(.83, 0, .17, 1);
+  --ease-in-out-quad: cubic-bezier(.455, .03, .515, .955);
+  --ease-in-out-gentle: cubic-bezier(.42, 0, .58, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: auto; /* Use lenis */
+  }
+  body {
+    @apply bg-brand-dark text-white font-sans overflow-x-hidden antialiased;
+  }
+  
+  html.lenis, html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+  .lenis.lenis-scrolling iframe {
+    pointer-events: none;
+  }
+
+  img {
+    image-rendering: auto;
+  }
+}
+
+@layer utilities {
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .text-outline {
+    -webkit-text-stroke: 1.5px white;
+    color: transparent;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px rgba(255, 51, 51, 0.5);
+  }
+  
+  .box-glow {
+    box-shadow: 0 0 30px rgba(255, 51, 51, 0.2);
+  }
+  
+  .box-glow-hover:hover {
+    box-shadow: 0 0 40px rgba(255, 51, 51, 0.4);
+  }
+
+  .glass {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10;
+  }
+  
+  .clip-slant {
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  }
+
+  .animated-border-container {
+    position: relative;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+  
+  .animated-border-container::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    background: linear-gradient(45deg, transparent, rgba(255, 51, 51, 0.3), transparent);
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    will-change: opacity;
+  }
+
+  .animated-border-container:hover::before {
+    opacity: 1;
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+  .marquee-inner {
+    will-change: transform;
+    transform: translateZ(0);
+  }
+
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(200%); }
+  }
+  .animate-shimmer {
+    animation: shimmer 2.5s infinite linear;
+  }
+
+  .animated-border-content {
+    position: relative;
+    z-index: 1;
+    background: black;
+    height: calc(100% - 4px);
+    width: calc(100% - 4px);
+    margin: 2px;
+    border-radius: calc(0.5rem - 2px);
+  }
+
+  /* Distressed textures etc if needed */
+  .noise {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 50;
+    opacity: 0.4;
+  }
+
+  /* Disable heavy continuous animations on mobile for performance */
+  @media (max-width: 768px) {
+    .animated-border-container::before {
+      display: none !important;
+    }
+    .animate-shimmer {
+      animation: none !important;
+    }
+  }
+
+  /* Text Reveal Animation */
+  .reveal-text-container {
+    overflow: hidden;
+    display: block;
+  }
+  
+  .reveal-text-content {
+    display: block;
+    will-change: transform;
+  }
+
+  /* ─── Program Cards: GPU-Optimized ─── */
+  .program-card {
+    position: relative;
+    flex: 1 1 0%;
+    min-width: 0;
+    overflow: hidden;
+    transform: skewX(-5deg) translateZ(0);
+    transition: flex 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: flex-grow;
+    contain: layout style;
+    margin-left: -2%;
+  }
+
+  .program-card:first-child {
+    margin-left: 0;
+  }
+
+  .program-card:hover {
+    flex: 2 1 0%;
+  }
+
+  .program-card-inner {
+    position: absolute;
+    inset: 0;
+    /* Counter-skew so images/content stay upright */
+    transform: skewX(5deg) scale(1.15) translateZ(0);
+    overflow: hidden;
+  }
+
+  /* On mobile, stack vertically without skew */
+  @media (max-width: 1023px) {
+    .program-card {
+      transform: skewX(0) translateZ(0);
+      margin-left: 0;
+    }
+    .program-card-inner {
+      transform: skewX(0) scale(1) translateZ(0);
+    }
+  }
+}

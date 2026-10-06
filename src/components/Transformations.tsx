@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState, useRef } from 'react';
 import { motion, useInView } from 'motion/react';
 import { GripVertical } from 'lucide-react';

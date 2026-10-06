@@ -1,13 +1,17 @@
 import React from 'react';
-import { Instagram, Facebook, Youtube } from 'lucide-react';
+import Link from 'next/link';
+import { Instagram, Facebook, Youtube, MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { GMB_DATA } from './StructuredData';
 
 export default function Footer() {
   return (
-    <footer className="bg-black pt-24 pb-8 border-t border-white/5 relative z-10">
-      <div className="max-w-[1400px] mx-auto px-8 md:px-12">
-        <div className="grid lg:grid-cols-4 gap-12 mb-24">
-          <div className="lg:col-span-1">
-            <a href="#" className="mb-6 flex items-center gap-1.5 hover:scale-105 transition-transform duration-300">
+    <footer className="bg-black pt-24 pb-12 border-t border-white/5 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-16">
+          
+          {/* Brand Info */}
+          <div className="lg:col-span-2">
+            <Link href="/" className="mb-6 inline-flex items-center gap-1.5 hover:scale-105 transition-transform duration-300">
               <img 
                 src="/dangal.png" 
                 alt="Dangal" 
@@ -18,88 +22,98 @@ export default function Footer() {
                 alt="Gym" 
                 className="h-5 lg:h-6 w-auto object-contain drop-shadow-[0_0_10px_rgba(255,255,255,0.15)]" 
               />
-            </a>
-            <p className="text-gray-500 text-sm leading-relaxed mb-8 pr-4 font-medium">
-              Bhopal's most elite fitness facility. Train hard. Stay hungry. Fight strong.
+            </Link>
+            <p className="text-gray-400 text-sm leading-relaxed mb-6 font-medium max-w-sm">
+              Awadhpuri Bhopal's top-rated 3-floor fitness landmark. 3500 sqft facility engineered for strength training, fat loss, powerlifting, Zumba, and women's wellness.
             </p>
-            <div className="flex gap-4">
-              <SocialLink icon={Instagram} href="https://www.instagram.com/dangalgymbhopal?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==" />
-              <SocialLink icon={Facebook} />
-              <SocialLink icon={Youtube} href="https://youtube.com/@dangalgym09?si=B0Sv8UHQaU6VZP_A" />
+            <div className="flex gap-3 mb-6">
+              <SocialLink icon={Instagram} href={GMB_DATA.sameAs[0]} label="Instagram" />
+              <SocialLink icon={Facebook} href={GMB_DATA.sameAs[1]} label="Facebook" />
+              <SocialLink icon={Youtube} href={GMB_DATA.sameAs[2]} label="YouTube" />
+            </div>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-zinc-900 border border-white/10 text-xs text-gray-300">
+              <span className="text-yellow-400 font-bold">★ 4.9 / 5</span>
+              <span>•</span>
+              <span>180+ Google Reviews</span>
             </div>
           </div>
 
+          {/* Programs */}
           <div>
-            <h4 className="font-bold text-[10px] uppercase tracking-widest text-gray-500 mb-6">Navigate</h4>
-            <ul className="space-y-4">
-              <FooterLink href="#home">Home</FooterLink>
-              <FooterLink href="#facilities">Facilities</FooterLink>
-              <FooterLink href="#programs">Programs</FooterLink>
-              <FooterLink href="#pricing">Pricing</FooterLink>
-              <FooterLink href="#reviews">Reviews</FooterLink>
-              <FooterLink href="#location">Find Us</FooterLink>
+            <h4 className="font-bold text-[11px] uppercase tracking-widest text-brand-red mb-5">Programs</h4>
+            <ul className="space-y-3">
+              <li><Link href="/personal-training" className="text-sm font-medium text-gray-400 hover:text-white transition-colors">Personal Training</Link></li>
+              <li><Link href="/weight-training" className="text-sm font-medium text-gray-400 hover:text-white transition-colors">Weight Training</Link></li>
+              <li><Link href="/weight-loss" className="text-sm font-medium text-gray-400 hover:text-white transition-colors">Weight Loss & Fat Burn</Link></li>
+              <li><Link href="/zumba" className="text-sm font-medium text-gray-400 hover:text-white transition-colors">Zumba Dance Classes</Link></li>
+              <li><Link href="/yoga" className="text-sm font-medium text-gray-400 hover:text-white transition-colors">Yoga & Mobility</Link></li>
+              <li><Link href="/womens-fitness" className="text-sm font-medium text-gray-400 hover:text-white transition-colors">Women's Fitness</Link></li>
             </ul>
           </div>
 
+          {/* Quick Links */}
           <div>
-            <h4 className="font-bold text-[10px] uppercase tracking-widest text-gray-500 mb-6">Programs</h4>
-            <ul className="space-y-4">
-              <FooterLink href="#programs">Weight Loss</FooterLink>
-              <FooterLink href="#programs">Muscle Gain</FooterLink>
-              <FooterLink href="#programs">Strength Training</FooterLink>
-              <FooterLink href="#programs">Personal Coaching</FooterLink>
+            <h4 className="font-bold text-[11px] uppercase tracking-widest text-brand-red mb-5">Explore</h4>
+            <ul className="space-y-3">
+              <li><Link href="/gym-in-awadhpuri" className="text-sm font-medium text-gray-400 hover:text-white transition-colors">Gym in Awadhpuri</Link></li>
+              <li><Link href="/trainers" className="text-sm font-medium text-gray-400 hover:text-white transition-colors">Certified Trainers</Link></li>
+              <li><Link href="/gallery" className="text-sm font-medium text-gray-400 hover:text-white transition-colors">Facility Gallery</Link></li>
+              <li><Link href="/reviews" className="text-sm font-medium text-gray-400 hover:text-white transition-colors">Member Reviews</Link></li>
+              <li><Link href="/#pricing" className="text-sm font-medium text-gray-400 hover:text-white transition-colors">Membership Fees</Link></li>
+              <li><Link href="/blog" className="text-sm font-medium text-gray-400 hover:text-white transition-colors">Fitness Blog</Link></li>
             </ul>
           </div>
 
+          {/* Contact & NAP for Local SEO */}
           <div>
-            <h4 className="font-bold text-[10px] uppercase tracking-widest text-gray-500 mb-6">Contact</h4>
-            <ul className="space-y-4 text-sm text-gray-400 font-medium">
-              <li>
+            <h4 className="font-bold text-[11px] uppercase tracking-widest text-brand-red mb-5">Location & Contact</h4>
+            <ul className="space-y-3 text-sm text-gray-400 font-medium">
+              <li className="flex items-start gap-2.5">
+                <MapPin size={16} className="text-brand-red flex-shrink-0 mt-0.5" />
                 <a 
-                  href="https://maps.google.com/?q=Dangal+Gym+Family+Fitness+Club+Awadhpuri+Bhopal" 
+                  href={GMB_DATA.googleMapsUrl} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="hover:text-brand-red transition-colors block"
+                  className="hover:text-brand-red transition-colors text-xs leading-relaxed"
                 >
-                  House No 2 B, near SBI Bank, Awadhpuri, Bhopal
+                  {GMB_DATA.streetAddress}, {GMB_DATA.addressLocality}, {GMB_DATA.addressRegion} {GMB_DATA.postalCode}
                 </a>
               </li>
-              <li>
-                <a href="tel:+919977437487" className="hover:text-brand-red transition-colors font-semibold text-white">
-                  +91 9977437487
+              <li className="flex items-center gap-2.5">
+                <Phone size={16} className="text-brand-red flex-shrink-0" />
+                <a href={`tel:${GMB_DATA.telephone}`} className="hover:text-brand-red transition-colors text-white font-semibold text-xs">
+                  {GMB_DATA.telephone}
                 </a>
               </li>
-              <li>
-                <a href="mailto:dangalgymbpl@gmail.com" className="hover:text-brand-red transition-colors">
-                  dangalgymbpl@gmail.com
+              <li className="flex items-center gap-2.5">
+                <Mail size={16} className="text-brand-red flex-shrink-0" />
+                <a href={`mailto:${GMB_DATA.email}`} className="hover:text-brand-red transition-colors text-xs">
+                  {GMB_DATA.email}
                 </a>
               </li>
-              <li className="mt-6 pt-6 border-t border-white/5">
-                <span className="block text-white font-bold uppercase tracking-widest text-[10px] mb-3 text-brand-red">Gym Timings</span>
-                <div className="space-y-2">
-                  <div className="flex justify-between items-center">
-                    <span className="text-xs">Mon–Sat</span>
-                    <span className="text-xs text-white font-semibold">5:00 AM – 11:00 AM</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-xs">Mon–Sat</span>
-                    <span className="text-xs text-white font-semibold">5:00 PM – 10:00 PM</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-xs">Sunday</span>
-                    <span className="text-xs text-zinc-500 italic">Closed</span>
-                  </div>
+              <li className="pt-2 border-t border-white/5">
+                <div className="flex items-center gap-2 text-xs text-white font-semibold mb-1">
+                  <Clock size={14} className="text-brand-red" />
+                  <span>Timings (Mon–Sat)</span>
+                </div>
+                <div className="text-xs text-gray-400 pl-6 space-y-0.5">
+                  <p>Morning: 5:00 AM – 11:00 AM</p>
+                  <p>Evening: 5:00 PM – 10:00 PM</p>
+                  <p className="text-zinc-500 italic">Sunday: Closed</p>
                 </div>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 border-t border-white/5 text-[10px] uppercase tracking-widest font-bold text-gray-600">
-          <div>© {new Date().getFullYear()} Dangal Gym. All rights reserved.</div>
+        {/* Bottom Bar */}
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 border-t border-white/5 text-[11px] uppercase tracking-wider font-semibold text-gray-500">
+          <div>
+            © {new Date().getFullYear()} Dangal Gym Awadhpuri Bhopal. All rights reserved.
+          </div>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition-colors">Privacy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms</a>
+            <Link href="/contact" className="hover:text-white transition-colors">Find Us on Maps</Link>
+            <Link href="/register" className="hover:text-white transition-colors">Join Online</Link>
           </div>
         </div>
       </div>
@@ -107,20 +121,16 @@ export default function Footer() {
   );
 }
 
-function SocialLink({ icon: Icon, href }: { icon: any, href?: string }) {
+function SocialLink({ icon: Icon, href, label }: { icon: any, href?: string, label: string }) {
   return (
-    <a href={href || "#"} target={href ? "_blank" : undefined} rel={href ? "noopener noreferrer" : undefined} className="w-10 h-10 border border-white/10 flex items-center justify-center text-gray-400 hover:bg-brand-red hover:border-brand-red hover:text-white transition-all rounded-full">
-      <Icon size={18} />
+    <a 
+      href={href || "#"} 
+      target={href ? "_blank" : undefined} 
+      rel={href ? "noopener noreferrer" : undefined} 
+      aria-label={label}
+      className="w-9 h-9 border border-white/10 flex items-center justify-center text-gray-400 hover:bg-brand-red hover:border-brand-red hover:text-white transition-all rounded-full"
+    >
+      <Icon size={16} />
     </a>
-  );
-}
-
-function FooterLink({ href, children }: { href: string, children: React.ReactNode }) {
-  return (
-    <li>
-      <a href={href} className="text-sm font-medium text-gray-400 hover:text-white transition-colors flex items-center group">
-        {children}
-      </a>
-    </li>
   );
 }

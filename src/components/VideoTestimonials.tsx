@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useRef, useState } from 'react';
 import { Play, ChevronLeft, ChevronRight } from 'lucide-react';
 import { RevealText } from './RevealText';

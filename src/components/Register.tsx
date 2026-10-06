@@ -1,7 +1,10 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { ChevronLeft, User, Phone, CheckCircle2, ShoppingBag, ShieldCheck, Tag } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 
 const PLAN_DATA: Record<string, { name: string, fakePrice: number, realPrice: number, originalValue: number, image: string }> = {
   '1 Month': { name: '1 Month Membership', fakePrice: 1500, realPrice: 1500, originalValue: 1500, image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=300&auto=format&fit=crop' },
@@ -18,7 +21,7 @@ const COUPONS_BY_PLAN: Record<string, { code: string, description: string }[]> =
 };
 
 export default function Register() {
-  const location = useLocation();
+  const searchParams = useSearchParams();
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -34,14 +37,15 @@ export default function Register() {
 
   useEffect(() => {
     let initialPlan = '3 Months';
-    if (location.state?.selectedPlan) {
-      if (location.state.selectedPlan === 'Monthly') initialPlan = '1 Month';
-      else if (location.state.selectedPlan === 'Yearly') initialPlan = '1 Year';
-      else initialPlan = location.state.selectedPlan;
+    const planParam = searchParams ? searchParams.get('plan') : null;
+    if (planParam) {
+      if (planParam === 'Monthly') initialPlan = '1 Month';
+      else if (planParam === 'Yearly') initialPlan = '1 Year';
+      else if (PLAN_DATA[planParam]) initialPlan = planParam;
     }
     setFormData(prev => ({ ...prev, plan: initialPlan }));
     window.scrollTo(0, 0);
-  }, [location.state]);
+  }, [searchParams]);
 
   const currentPlanData = PLAN_DATA[formData.plan as keyof typeof PLAN_DATA] || PLAN_DATA['3 Months'];
   
@@ -70,7 +74,7 @@ export default function Register() {
     setSubmitError('');
 
     try {
-      const scriptUrl = import.meta.env.VITE_GOOGLE_SHEETS_URL;
+      const scriptUrl = process.env.NEXT_PUBLIC_GOOGLE_SHEETS_URL || process.env.VITE_GOOGLE_SHEETS_URL;
       
       if (scriptUrl) {
         // Create FormData to send as POST request
@@ -137,7 +141,7 @@ export default function Register() {
           </div>
 
           <Link 
-            to="/" 
+            href="/" 
             className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-brand-red hover:text-white transition-colors"
           >
             <ChevronLeft className="w-4 h-4" /> Back to Home
@@ -155,7 +159,7 @@ export default function Register() {
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-red/5 blur-[150px] rounded-full -translate-y-1/2 translate-x-1/3"></div>
 
       <header className="relative z-10 p-6 md:p-8 flex items-center justify-between w-full max-w-7xl mx-auto border-b border-white/5">
-        <Link to="/" className="flex items-center gap-2 group">
+        <Link href="/" className="flex items-center gap-2 group">
           <div className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center group-hover:bg-brand-red transition-colors">
             <ChevronLeft className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
           </div>

@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { motion } from 'motion/react';
 import { Dumbbell, Users, Activity, Flame, Salad, Droplet, Wind, Droplets, Layers, LineChart } from 'lucide-react';

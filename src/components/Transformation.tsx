@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
 import { RevealText } from './RevealText';

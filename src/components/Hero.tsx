@@ -1,5 +1,8 @@
+'use client';
+
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, useSpring, useMotionValue } from 'motion/react';
+import Link from 'next/link';
 import { RevealText } from './RevealText';
 
 interface HeroProps {
@@ -101,7 +104,7 @@ export default function Hero({ isAppLoaded = true }: HeroProps) {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="relative z-20 pointer-events-auto mt-0 md:mt-4 mb-8"
         >
-          <a
+          <Link
             href="/register"
             className="group relative inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-brand-red to-red-700 hover:from-red-600 hover:to-brand-red text-white font-bold text-xs sm:text-sm rounded-full transition-all duration-500 hover:scale-[1.05] shadow-[0_0_30px_rgba(230,57,70,0.4)] hover:shadow-[0_0_50px_rgba(230,57,70,0.7)] cursor-pointer overflow-hidden border border-brand-red/50 hover:border-white/50 uppercase tracking-wider font-display"
           >
@@ -112,7 +115,7 @@ export default function Hero({ isAppLoaded = true }: HeroProps) {
               <span className="text-yellow-400 drop-shadow-[0_0_12px_rgba(250,204,21,0.4)] font-bold mr-1.5">3 DAYS</span>
               <span className="font-medium tracking-widest">FREE TRIAL</span>
             </span>
-          </a>
+          </Link>
         </motion.div>
       </div>
 

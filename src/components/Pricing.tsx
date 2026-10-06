@@ -1,7 +1,8 @@
+'use client';
+
 import React from 'react';
 import { motion } from 'motion/react';
-import { Check } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { RevealText } from './RevealText';
 
 const plans = [
@@ -106,8 +107,7 @@ export default function Pricing() {
                 </ul>
 
                 <Link
-                  to="/register"
-                  state={{ selectedPlan: plan.name }}
+                  href={`/register?plan=${encodeURIComponent(plan.name)}`}
                   className="w-full py-4 text-xs font-bold uppercase tracking-widest transition-all z-10 rounded-full border border-white/20 hover:bg-brand-red hover:border-brand-red hover:text-white flex items-center justify-center bg-transparent text-white"
                 >
                   Select This Plan

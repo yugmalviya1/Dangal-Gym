@@ -1,26 +1,3 @@
 {
-  "routes": [
-    {
-      "src": "^/api/(.*)",
-      "dest": "/api/$1"
-    },
-    {
-      "src": "^/(.*)",
-      "has": [
-        {
-          "type": "header",
-          "key": "user-agent",
-          "value": ".*([Gg]ooglebot|[Bb]ingbot|[Yy]andex|[Dd]uck[Dd]uck[Bb]ot|[Ss]lurp|[Tt]witterbot|[Ff]acebookexternalhit|[Ll]inkedinbot|[Ww]hats[Aa]pp|[Pp]rerender|[Rr]ogerbot|[Ww]3[Cc]_[Vv]alidator|[Bb]aiduspider).*"
-        }
-      ],
-      "dest": "/api/prerender?path=$1"
-    },
-    {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/.*",
-      "dest": "/index.html"
-    }
-  ]
+  "framework": "nextjs"
 }

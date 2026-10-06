@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import ProgramCard from './ProgramCard';
 import { RevealText } from './RevealText';
