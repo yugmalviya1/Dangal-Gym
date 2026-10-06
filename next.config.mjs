@@ -10,6 +10,14 @@ const nextConfig = {
       { protocol: 'https', hostname: 'dangalgym.xyz' },
     ],
   },
+  async rewrites() {
+    return [
+      {
+        source: '/sitemap.xml/googled977258c75314787.html',
+        destination: '/googled977258c75314787.html',
+      },
+    ];
+  },
 };
 
 export default nextConfig;
