@@ -33,7 +33,7 @@ const allReviews = [
   { 
     name: 'Priya S.', 
     image: 'https://res.cloudinary.com/df5q9ujfh/image/upload/w_100,h_100,c_fill,g_face,q_auto,f_auto/v1780628506/WhatsApp_Image_2026-06-03_at_6.44.30_PM_4_pleu2i.jpg', 
-    text: "Amazing environment and completely safe for women. The trainers provide tailored guidance and the steam bath is a fantastic recovery bonus. Highly recommend for female fitness enthusiasts!", 
+    text: "Amazing environment and completely safe for women. The trainers provide tailored guidance and the facilities are always spotless and well-maintained. Highly recommend for female fitness enthusiasts!", 
     highlight: "Women Safety & Environment", 
     stars: 5,
     tag: 'Verified Google Review'

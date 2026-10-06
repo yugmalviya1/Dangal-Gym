@@ -38,7 +38,7 @@ export function LocalBusinessSchema() {
     "name": GMB_DATA.name,
     "legalName": GMB_DATA.legalName,
     "alternateName": GMB_DATA.alternateName,
-    "description": "Dangal Gym is a premier 3-floor fitness club in Awadhpuri, Bhopal. Featuring 2 floors of strength training, Olympic powerlifting, cardio arena, Zumba & aerobics studio, certified 1-on-1 personal trainers, and steam bath.",
+    "description": "Dangal Gym is a premier 3-floor fitness club in Awadhpuri, Bhopal. Featuring 2 floors of strength training, Olympic powerlifting, cardio arena, Zumba & aerobics studio, certified 1-on-1 personal trainers, and secure lockers.",
     "url": GMB_DATA.url,
     "telephone": GMB_DATA.telephone,
     "email": GMB_DATA.email,
@@ -87,7 +87,7 @@ export function LocalBusinessSchema() {
       { "@type": "LocationFeatureSpecification", "name": "Cardio Deck & HIIT Stations", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "Certified Zumba & Aerobics Studio", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "1-on-1 Certified Personal Trainers", "value": true },
-      { "@type": "LocationFeatureSpecification", "name": "Steam Bath & Muscle Recovery", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Locker & Changing Facilities", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "100% Air Conditioned", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "Safe & Comfortable Environment for Women", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "Diet Counseling & InBody Composition", "value": true }

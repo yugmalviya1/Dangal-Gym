@@ -8,7 +8,7 @@ import { ShieldCheck, Heart, Star, Sparkles, ChevronRight, CheckCircle2 } from '
 
 export const metadata: Metadata = {
   title: "Women's Fitness & Gym in Awadhpuri Bhopal | Dangal Gym",
-  description: 'Empowering, safe, and supportive fitness centre for women in Awadhpuri, Bhopal. Female-friendly training, Zumba, glute sculpting, certified trainers, and steam bath.',
+  description: 'Empowering, safe, and supportive fitness centre for women in Awadhpuri, Bhopal. Female-friendly training, Zumba, glute sculpting, certified trainers, and secure facilities.',
   keywords: [
     'Ladies Gym in Awadhpuri',
     'Womens Gym Bhopal',
@@ -163,7 +163,7 @@ export default function WomensFitnessPage() {
                   {[...Array(5)].map((_, i) => <Star key={i} size={14} fill="currentColor" />)}
                 </div>
                 <p className="text-gray-300 text-sm leading-relaxed mb-4 italic">
-                  &ldquo;Felt very secure and comfortable working out here. Very professional staff and great crowd. The steam bath and Zumba classes are fantastic!&rdquo;
+                  &ldquo;Felt very secure and comfortable working out here. Very professional staff and great crowd. The personalized coaching and Zumba classes are fantastic!&rdquo;
                 </p>
                 <div className="text-xs font-bold uppercase tracking-wider text-white">Sneha M. — Bhopal Member</div>
               </div>

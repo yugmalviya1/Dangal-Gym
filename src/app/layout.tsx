@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     default: 'Dangal Gym - Best Gym in Awadhpuri | Fitness Centre in Bhopal',
     template: '%s | Dangal Gym Awadhpuri Bhopal'
   },
-  description: 'Dangal Gym - Top-rated 3-floor gym & fitness centre in Awadhpuri, Bhopal. Strength training, personal coaching, Zumba, yoga, aerobics, and steam bath. Call +91 9977437487.',
+  description: 'Dangal Gym - Top-rated 3-floor gym & fitness centre in Awadhpuri, Bhopal. Strength training, personal coaching, Zumba, yoga, and aerobics. Call +91 9977437487.',
   keywords: [
     'Gym in Awadhpuri',
     'Best Gym in Awadhpuri Bhopal',
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     url: 'https://dangalgym.xyz',
     siteName: 'Dangal Gym - Family Fitness Club',
     title: 'Dangal Gym - Best Gym in Awadhpuri | Fitness Centre in Bhopal',
-    description: 'Awadhpuri Bhopal\'s elite 3-floor fitness landmark. 3500 sqft facility featuring 2 floors of strength training, personal coaching, Zumba, and steam bath. 3-day free trial available.',
+    description: 'Awadhpuri Bhopal\'s elite 3-floor fitness landmark. 3500 sqft facility featuring 2 floors of strength training, personal coaching, Zumba, and aerobics. 3-day free trial available.',
     images: [
       {
         url: 'https://dangalgym.xyz/dangal.png',

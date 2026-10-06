@@ -8,7 +8,7 @@ import { MapPin, Phone, Star, ShieldCheck, Dumbbell, Clock, CheckCircle2, Chevro
 
 export const metadata: Metadata = {
   title: 'Best Gym in Awadhpuri Bhopal | 3-Floor Fitness Club | Dangal Gym',
-  description: 'Looking for the best gym in Awadhpuri Bhopal? Dangal Gym is a premier 3-floor, 3500 sqft fitness facility near SBI Bank. Strength training, personal coaching, Zumba, yoga, and steam bath. Call +91 9977437487.',
+  description: 'Looking for the best gym in Awadhpuri Bhopal? Dangal Gym is a premier 3-floor, 3500 sqft fitness facility near SBI Bank. Strength training, personal coaching, Zumba, and yoga. Call +91 9977437487.',
   keywords: [
     'Gym in Awadhpuri',
     'Best Gym in Awadhpuri Bhopal',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Best Gym in Awadhpuri Bhopal - Dangal Gym',
-    description: 'Awadhpuri\'s top-rated 3-floor gym. 3500 sq ft training area, Olympic strength gear, certified trainers, and steam bath.',
+    description: 'Awadhpuri\'s top-rated 3-floor gym. 3500 sq ft training area, Olympic strength gear, certified trainers, and full cardio deck.',
     url: 'https://dangalgym.xyz/gym-in-awadhpuri',
     images: [{ url: 'https://dangalgym.xyz/dangal.png', width: 1200, height: 630 }],
   }
@@ -42,7 +42,7 @@ const faqs = [
   },
   {
     question: 'What makes Dangal Gym the best gym in Awadhpuri?',
-    answer: 'Dangal Gym spans 3 full floors (3500 sqft), featuring 2 dedicated floors for heavy strength training and powerlifting, an elite cardio deck, certified 1-on-1 personal coaches, a Zumba & Aerobics studio, steam bath recovery, and 100% air-conditioned comfort.'
+    answer: 'Dangal Gym spans 3 full floors (3500 sqft), featuring 2 dedicated floors for heavy strength training and powerlifting, an elite cardio deck, certified 1-on-1 personal coaches, a Zumba & Aerobics studio, and 100% air-conditioned comfort.'
   },
   {
     question: 'Is Dangal Gym safe and welcoming for women in Awadhpuri?',
@@ -182,7 +182,7 @@ export default function GymInAwadhpuriPage() {
                   High-energy group fitness studio for Zumba and Aerobics classes, commercial treadmills, cross-trainers, spin cycles, and functional CrossFit turf for high calorie burn.
                 </p>
                 <div className="text-xs text-gray-300 font-semibold flex items-center gap-2">
-                  <CheckCircle2 size={16} className="text-brand-red" /> Steam Bath Recovery
+                  <CheckCircle2 size={16} className="text-brand-red" /> Clean & Sanitized Facilities
                 </div>
               </div>
             </div>

@@ -11,7 +11,7 @@ import { Camera, ChevronRight } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Gym Gallery & Facility Tour | Dangal Gym Awadhpuri Bhopal',
-  description: 'Take a virtual tour of Dangal Gym Awadhpuri, Bhopal. Photos of our 3-floor facility, 2-floor heavy strength zone, Olympic barbells, Zumba studio, and steam bath.',
+  description: 'Take a virtual tour of Dangal Gym Awadhpuri, Bhopal. Photos of our 3-floor facility, 2-floor heavy strength zone, Olympic barbells, and Zumba studio.',
   keywords: [
     'Dangal Gym Photos',
     'Gym Interior Awadhpuri',

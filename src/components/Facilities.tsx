@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'motion/react';
-import { Dumbbell, Users, Activity, Flame, Salad, Droplet, Wind, Droplets, Layers, LineChart } from 'lucide-react';
+import { Dumbbell, Users, Activity, Flame, Salad, Droplet, Wind, Droplets, Layers, LineChart, Lock } from 'lucide-react';
 import { RevealText } from './RevealText';
 
 const facilities = [
@@ -12,7 +12,7 @@ const facilities = [
   { icon: Users, title: 'Aerobics, Zumba & CrossFit', desc: 'High-energy group classes to keep your workouts dynamic.' },
   { icon: LineChart, title: 'Body Analysis', desc: 'Track your progress with advanced body composition testing.' },
   { icon: Salad, title: 'Diet Counseling', desc: 'Expert nutrition guidance tailored to your fitness goals.' },
-  { icon: Droplet, title: 'Steam Bath', desc: 'Recover faster and relax your muscles post-workout.' },
+  { icon: Lock, title: 'Locker & Changing Space', desc: 'Secure storage and clean private changing areas for members.' },
   { icon: Wind, title: 'Fully Air Conditioned', desc: 'Train in comfort with 100% climate-controlled environments.' },
   { icon: Droplets, title: 'Mineral RO Water', desc: 'Stay hydrated with purified, safe drinking water.' },
 ];
