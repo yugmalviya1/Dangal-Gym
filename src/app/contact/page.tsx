@@ -143,7 +143,10 @@ export default function ContactPage() {
               </div>
 
               {/* Map Embed Column */}
-              <div className="lg:col-span-2 bg-zinc-900 p-2 rounded-3xl border border-white/10 h-[550px] overflow-hidden shadow-2xl relative">
+              <div 
+                className="lg:col-span-2 bg-zinc-900 p-2 rounded-3xl border border-white/10 h-[550px] overflow-hidden shadow-2xl relative"
+                suppressHydrationWarning
+              >
                 <iframe 
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.3881475713437!2d77.4878235750953!3d23.23805997902444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c419145788ce9%3A0x45f1f6b503db134b!2sDangal%20Gym%20-%20Family%20Fitness%20Club%20%7C%20Aerobic%20%7C%20Cardio%20%7C%20Gym!5e0!3m2!1sen!2sin!4v1778161303156!5m2!1sen!2sin" 
                   width="100%" 
@@ -154,6 +157,7 @@ export default function ContactPage() {
                   referrerPolicy="no-referrer-when-downgrade"
                   title="Dangal Gym Location Awadhpuri Bhopal"
                   className="rounded-2xl w-full h-full"
+                  suppressHydrationWarning
                 />
               </div>
             </div>

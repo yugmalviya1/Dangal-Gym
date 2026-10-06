@@ -61,6 +61,7 @@ export default function Hero({ isAppLoaded = true }: HeroProps) {
 
       {/* BACKGROUND TEXT */}
       <motion.div 
+        suppressHydrationWarning
         style={isMobile ? {} : {
           x: bgX,
           y: bgY,

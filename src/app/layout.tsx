@@ -89,7 +89,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -102,7 +102,7 @@ export default function RootLayout({
         <link rel="preload" href="/fonts/Neue Montreal/NeueMontreal-Bold.otf" as="font" type="font/otf" crossOrigin="anonymous" />
         <LocalBusinessSchema />
       </head>
-      <body className="bg-brand-dark text-white font-sans overflow-x-hidden antialiased">
+      <body className="bg-brand-dark text-white font-sans overflow-x-hidden antialiased" suppressHydrationWarning>
         <SmoothScroll>
           {children}
         </SmoothScroll>

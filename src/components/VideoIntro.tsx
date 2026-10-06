@@ -26,6 +26,7 @@ export default function VideoIntro() {
               allowFullScreen
               referrerPolicy="strict-origin-when-cross-origin"
               title="Dangal_Gym 4k"
+              suppressHydrationWarning
             ></iframe>
           ) : (
             <div 

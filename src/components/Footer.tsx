@@ -108,7 +108,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 border-t border-white/5 text-[11px] uppercase tracking-wider font-semibold text-gray-500">
-          <div>
+          <div suppressHydrationWarning>
             © {new Date().getFullYear()} Dangal Gym Awadhpuri Bhopal. All rights reserved.
           </div>
           <div className="flex gap-6">

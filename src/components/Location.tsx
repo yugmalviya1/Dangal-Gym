@@ -1,11 +1,16 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { MapPin, Phone, Clock } from 'lucide-react';
-import { motion } from 'motion/react';
 import { RevealText } from './RevealText';
 
 export default function Location() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <section id="location" className="py-20 bg-zinc-950 relative overflow-hidden border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -17,18 +22,28 @@ export default function Location() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-          <div className="lg:col-span-2 bg-zinc-900/50 p-2 rounded-2xl border border-white/5 h-[400px] overflow-hidden relative shadow-2xl">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.3881475713437!2d77.4878235750953!3d23.23805997902444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c419145788ce9%3A0x45f1f6b503db134b!2sDangal%20Gym%20-%20Family%20Fitness%20Club%20%7C%20Aerobic%20%7C%20Cardio%20%7C%20Gym!5e0!3m2!1sen!2sin!4v1778161303156!5m2!1sen!2sin" 
-              width="100%" 
-              height="100%" 
-              style={{ border: 0 }} 
-              allowFullScreen={true} 
-              loading="lazy" 
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Dangal Gym Location Awadhpuri Bhopal"
-              className="transition-all duration-700"
-            ></iframe>
+          <div 
+            className="lg:col-span-2 bg-zinc-900/50 p-2 rounded-2xl border border-white/5 h-[400px] overflow-hidden relative shadow-2xl"
+            suppressHydrationWarning
+          >
+            {mounted ? (
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.3881475713437!2d77.4878235750953!3d23.23805997902444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c419145788ce9%3A0x45f1f6b503db134b!2sDangal%20Gym%20-%20Family%20Fitness%20Club%20%7C%20Aerobic%20%7C%20Cardio%20%7C%20Gym!5e0!3m2!1sen!2sin!4v1778161303156!5m2!1sen!2sin" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen={true} 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Dangal Gym Location Awadhpuri Bhopal"
+                className="transition-all duration-700"
+                suppressHydrationWarning
+              />
+            ) : (
+              <div className="w-full h-full bg-zinc-900/80 rounded-xl flex items-center justify-center text-gray-500 text-sm">
+                Loading Map...
+              </div>
+            )}
           </div>
 
           <div className="flex flex-col gap-6">
@@ -76,8 +91,8 @@ export default function Location() {
                     <a href="tel:+919977437487" className="hover:text-brand-red transition-colors font-medium text-white block">
                       +91 9977437487
                     </a>
-                    <a href="mailto:info@dangalgym.in" className="hover:text-brand-red transition-colors block text-xs mt-1">
-                      info@dangalgym.in
+                    <a href="mailto:dangalgymbpl@gmail.com" className="hover:text-brand-red transition-colors block text-xs mt-1">
+                      dangalgymbpl@gmail.com
                     </a>
                   </p>
                 </div>
