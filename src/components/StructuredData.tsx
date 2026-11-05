@@ -1,9 +1,9 @@
 import React from 'react';
 
 export const GMB_DATA = {
-  name: "Dangal Gym",
-  legalName: "Dangal Gym - Family Fitness Club",
-  alternateName: "Dangal Gym Awadhpuri Bhopal",
+  name: "Dangal Gym Awadhpuri Bhopal",
+  legalName: "Dangal Gym Awadhpuri Bhopal",
+  alternateName: "Dangal Gym - Family Fitness Club",
   url: "https://dangalgym.xyz",
   telephone: "+919977437487",
   email: "pankajs9098@gmail.com",
@@ -37,7 +37,13 @@ export function LocalBusinessSchema() {
     "@id": `${GMB_DATA.url}/#gym`,
     "name": GMB_DATA.name,
     "legalName": GMB_DATA.legalName,
-    "alternateName": ["Dangal Gym Awadhpuri", "Gym in Awadhpuri", "Best Gym in Awadhpuri Bhopal"],
+    "alternateName": [
+      "Dangal Gym - Family Fitness Club",
+      "Dangal Gym",
+      "Dangal Gym Awadhpuri",
+      "Gym in Awadhpuri",
+      "Best Gym in Awadhpuri Bhopal"
+    ],
     "description": "Dangal Gym is the premier 3-floor gym in Awadhpuri, Bhopal located at 2 B, near SBI Bank, Samanvay Nagar. Featuring 3500 sqft with 2 floors of strength training, Olympic powerlifting, cardio arena, Zumba & aerobics studio, and certified 1-on-1 personal trainers.",
     "keywords": "Gym in Awadhpuri, Best Gym in Awadhpuri, Gym near SBI Bank Awadhpuri, Gym in Samanvay Nagar Awadhpuri, Fitness Centre Awadhpuri Bhopal, Dangal Gym Awadhpuri",
     "url": GMB_DATA.url,

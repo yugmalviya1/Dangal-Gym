@@ -55,7 +55,7 @@ export default function Location() {
                 <div>
                   <h3 className="text-white font-bold uppercase tracking-widest text-sm mb-2">Address</h3>
                   <p className="text-gray-400 text-sm leading-relaxed">
-                    Dangal Gym - Family Fitness Club<br/>
+                    Dangal Gym Awadhpuri Bhopal<br/>
                     2 B, near SBI Bank, Samanvay Nagar<br/>
                     Awadhpuri, Bhopal, Madhya Pradesh 462022
                   </p>

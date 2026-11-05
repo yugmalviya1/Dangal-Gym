@@ -28,9 +28,9 @@ export const metadata: Metadata = {
     'Dangal Gym Awadhpuri',
     'Fitness Club Bhopal'
   ],
-  authors: [{ name: 'Dangal Gym' }],
-  creator: 'Dangal Gym',
-  publisher: 'Dangal Gym',
+  authors: [{ name: 'Dangal Gym Awadhpuri Bhopal' }],
+  creator: 'Dangal Gym Awadhpuri Bhopal',
+  publisher: 'Dangal Gym Awadhpuri Bhopal',
   formatDetection: {
     telephone: true,
     address: true,
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_IN',
     url: 'https://dangalgym.xyz',
-    siteName: 'Dangal Gym - Family Fitness Club',
+    siteName: 'Dangal Gym Awadhpuri Bhopal',
     title: 'Gym in Awadhpuri - Dangal Gym | Best Fitness Centre in Bhopal',
     description: 'Awadhpuri Bhopal\'s premier 3-floor fitness powerhouse located at 2 B, near SBI Bank, Samanvay Nagar. 3500 sqft facility for strength training, personal coaching, Zumba, and aerobics. 3-day free trial available.',
     images: [
