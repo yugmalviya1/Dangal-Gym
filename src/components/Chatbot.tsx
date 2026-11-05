@@ -20,11 +20,11 @@ export default function Chatbot() {
     setTimeout(() => {
       let reply = "Stay strong! Let me get a trainer to answer that for you.";
       if (userMsg.includes('price') || userMsg.includes('plan') || userMsg.includes('cost')) {
-        reply = "Our plans start at $45/mo. We have an Elite plan at $120/mo which includes Personal Training! Check the Pricing section for details.";
-      } else if (userMsg.includes('time') || userMsg.includes('hour') || userMsg.includes('open')) {
-        reply = "We are open 24/7. No excuses, train whenever you want!";
-      } else if (userMsg.includes('location') || userMsg.includes('where')) {
-        reply = "We are located in the heart of Downtown. See you on the floor!";
+        reply = "Our plans start at ₹1,500/month. We also offer 3 months at ₹3,500, 6 months at ₹6,000, and 1 year at ₹9,000 (just ₹25/day!). Check our Memberships section for details.";
+      } else if (userMsg.includes('time') || userMsg.includes('hour') || userMsg.includes('open') || userMsg.includes('timing')) {
+        reply = "Our timings are Monday to Saturday: Morning 5:30 AM – 11:00 AM, Evening 5:00 PM – 10:00 PM (Sunday Closed).";
+      } else if (userMsg.includes('location') || userMsg.includes('where') || userMsg.includes('address')) {
+        reply = "We are located at 2 B, near SBI Bank, Samanvay Nagar, Awadhpuri, Bhopal, Madhya Pradesh 462022. Come visit us!";
       }
 
       setMessages(prev => [...prev, { text: reply, isBot: true }]);

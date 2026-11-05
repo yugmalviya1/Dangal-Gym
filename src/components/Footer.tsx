@@ -97,7 +97,7 @@ export default function Footer() {
                   <span>Timings (Mon–Sat)</span>
                 </div>
                 <div className="text-xs text-gray-400 pl-6 space-y-0.5">
-                  <p>Morning: 5:00 AM – 11:00 AM</p>
+                  <p>Morning: 5:30 AM – 11:00 AM</p>
                   <p>Evening: 5:00 PM – 10:00 PM</p>
                   <p className="text-zinc-500 italic">Sunday: Closed</p>
                 </div>

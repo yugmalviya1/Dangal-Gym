@@ -8,7 +8,7 @@ export const GMB_DATA = {
   telephone: "+919977437487",
   email: "dangalgymbpl@gmail.com",
   priceRange: "₹₹",
-  streetAddress: "House No 2 B, near SBI Bank, Awadhpuri",
+  streetAddress: "2 B, near SBI Bank, Samanvay Nagar, Awadhpuri",
   addressLocality: "Bhopal",
   addressRegion: "Madhya Pradesh",
   postalCode: "462022",
@@ -37,8 +37,9 @@ export function LocalBusinessSchema() {
     "@id": `${GMB_DATA.url}/#gym`,
     "name": GMB_DATA.name,
     "legalName": GMB_DATA.legalName,
-    "alternateName": GMB_DATA.alternateName,
-    "description": "Dangal Gym is a premier 3-floor fitness club in Awadhpuri, Bhopal. Featuring 2 floors of strength training, Olympic powerlifting, cardio arena, Zumba & aerobics studio, certified 1-on-1 personal trainers, and secure lockers.",
+    "alternateName": ["Dangal Gym Awadhpuri", "Gym in Awadhpuri", "Best Gym in Awadhpuri Bhopal"],
+    "description": "Dangal Gym is the premier 3-floor gym in Awadhpuri, Bhopal located at 2 B, near SBI Bank, Samanvay Nagar. Featuring 3500 sqft with 2 floors of strength training, Olympic powerlifting, cardio arena, Zumba & aerobics studio, and certified 1-on-1 personal trainers.",
+    "keywords": "Gym in Awadhpuri, Best Gym in Awadhpuri, Gym near SBI Bank Awadhpuri, Gym in Samanvay Nagar Awadhpuri, Fitness Centre Awadhpuri Bhopal, Dangal Gym Awadhpuri",
     "url": GMB_DATA.url,
     "telephone": GMB_DATA.telephone,
     "email": GMB_DATA.email,
@@ -58,12 +59,26 @@ export function LocalBusinessSchema() {
       "latitude": GMB_DATA.latitude,
       "longitude": GMB_DATA.longitude
     },
+    "areaServed": [
+      {
+        "@type": "AdministrativeArea",
+        "name": "Awadhpuri, Bhopal"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Samanvay Nagar, Awadhpuri"
+      },
+      {
+        "@type": "City",
+        "name": "Bhopal"
+      }
+    ],
     "hasMap": GMB_DATA.googleMapsUrl,
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-        "opens": "05:00",
+        "opens": "05:30",
         "closes": "11:00"
       },
       {

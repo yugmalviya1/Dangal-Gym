@@ -7,21 +7,23 @@ import { BreadcrumbSchema, FAQSchema, GMB_DATA } from '@/components/StructuredDa
 import { MapPin, Phone, Mail, Clock, MessageSquare, Navigation, ChevronRight, CheckCircle2 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Contact Dangal Gym Awadhpuri Bhopal | Map, Phone & Timings',
-  description: 'Visit Dangal Gym in Awadhpuri Bhopal. Located near SBI Bank, House No 2 B. Call +91 9977437487 or WhatsApp for membership queries, gym timings, and 3-day free passes.',
+  title: 'Contact Dangal Gym Awadhpuri Bhopal | Gym in Awadhpuri | Timings & Map',
+  description: 'Visit Dangal Gym, premier gym in Awadhpuri Bhopal located at 2 B, near SBI Bank, Samanvay Nagar, Awadhpuri, MP 462022. Morning: 5:30 am - 11 am. Call +91 9977437487.',
   keywords: [
+    'gym in awadhpuri',
+    'Gym in Awadhpuri',
     'Contact Dangal Gym',
     'Dangal Gym Address Bhopal',
-    'Dangal Gym Phone Number',
     'Gym near SBI Bank Awadhpuri',
+    'Gym in Samanvay Nagar Awadhpuri',
     'Dangal Gym Timings Awadhpuri'
   ],
   alternates: {
     canonical: '/contact',
   },
   openGraph: {
-    title: 'Contact Dangal Gym Awadhpuri Bhopal',
-    description: 'Get directions, call +91 9977437487, or visit Dangal Gym near SBI Bank Awadhpuri Bhopal.',
+    title: 'Contact Dangal Gym - Gym in Awadhpuri Bhopal',
+    description: 'Get directions, call +91 9977437487, or visit Dangal Gym at 2 B, near SBI Bank, Samanvay Nagar, Awadhpuri, Bhopal.',
     url: 'https://dangalgym.xyz/contact',
     images: [{ url: 'https://dangalgym.xyz/dangal.png', width: 1200, height: 630 }],
   }
@@ -30,11 +32,11 @@ export const metadata: Metadata = {
 const contactFaqs = [
   {
     question: 'How do I reach Dangal Gym in Awadhpuri?',
-    answer: 'Dangal Gym is situated at House No 2 B, right next to the State Bank of India (SBI) branch on the Awadhpuri main corridor. Easily reachable via public or private transport with available member parking.'
+    answer: 'Dangal Gym is situated at 2 B, near SBI Bank, Samanvay Nagar, Awadhpuri, Bhopal, Madhya Pradesh 462022, right next to the State Bank of India (SBI) branch on the Awadhpuri main corridor. Easily reachable via public or private transport with available member parking.'
   },
   {
     question: 'Can I visit the gym directly without booking an appointment?',
-    answer: 'Yes! Walk-ins are always welcomed during our working hours: 5:00 AM – 11:00 AM in the morning and 5:00 PM – 10:00 PM in the evening from Monday to Saturday.'
+    answer: 'Yes! Walk-ins are always welcomed during our working hours: 5:30 AM – 11:00 AM in the morning and 5:00 PM – 10:00 PM in the evening from Monday to Saturday.'
   }
 ];
 
@@ -90,7 +92,7 @@ export default function ContactPage() {
                   </div>
                   <h3 className="font-display text-lg font-bold uppercase text-white mb-2">Our Address</h3>
                   <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                    House No 2 B, near SBI Bank, Awadhpuri, Bhopal, Madhya Pradesh 462022
+                    2 B, near SBI Bank, Samanvay Nagar, Awadhpuri, Bhopal, Madhya Pradesh 462022
                   </p>
                   <a 
                     href={GMB_DATA.googleMapsUrl}
@@ -135,7 +137,7 @@ export default function ContactPage() {
                   </div>
                   <h3 className="font-display text-lg font-bold uppercase text-white mb-2">Gym Working Hours</h3>
                   <div className="text-sm text-gray-400 space-y-1">
-                    <p><strong className="text-white">Morning:</strong> 5:00 AM – 11:00 AM</p>
+                    <p><strong className="text-white">Morning:</strong> 5:30 AM – 11:00 AM</p>
                     <p><strong className="text-white">Evening:</strong> 5:00 PM – 10:00 PM</p>
                     <p className="text-xs text-gray-500 pt-1">Monday through Saturday (Sunday Closed)</p>
                   </div>

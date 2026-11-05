@@ -7,13 +7,16 @@ import { BreadcrumbSchema, FAQSchema, GMB_DATA } from '@/components/StructuredDa
 import { MapPin, Phone, Star, ShieldCheck, Dumbbell, Clock, CheckCircle2, ChevronRight, Navigation, MessageCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Best Gym in Awadhpuri Bhopal | 3-Floor Fitness Club | Dangal Gym',
-  description: 'Looking for the best gym in Awadhpuri Bhopal? Dangal Gym is a premier 3-floor, 3500 sqft fitness facility near SBI Bank. Strength training, personal coaching, Zumba, and yoga. Call +91 9977437487.',
+  title: 'Gym in Awadhpuri | Best Gym in Awadhpuri Bhopal - Dangal Gym',
+  description: 'Looking for the best gym in Awadhpuri Bhopal? Dangal Gym is a premier 3-floor, 3500 sqft fitness facility at 2 B, near SBI Bank, Samanvay Nagar. Morning: 5:30 am - 11 am. Call +91 9977437487.',
   keywords: [
+    'gym in awadhpuri',
     'Gym in Awadhpuri',
+    'best gym in awadhpuri',
     'Best Gym in Awadhpuri Bhopal',
     'Fitness Centre Awadhpuri',
     'Gym near SBI Bank Awadhpuri',
+    'Gym in Samanvay Nagar Awadhpuri',
     'Top Gym in Bhopal',
     'Ladies Gym Awadhpuri',
     'Weight Training Gym Awadhpuri',
@@ -24,8 +27,8 @@ export const metadata: Metadata = {
     canonical: '/gym-in-awadhpuri',
   },
   openGraph: {
-    title: 'Best Gym in Awadhpuri Bhopal - Dangal Gym',
-    description: 'Awadhpuri\'s top-rated 3-floor gym. 3500 sq ft training area, Olympic strength gear, certified trainers, and full cardio deck.',
+    title: 'Gym in Awadhpuri - Dangal Gym Bhopal',
+    description: 'Awadhpuri\'s top-rated 3-floor gym located at 2 B, near SBI Bank, Samanvay Nagar. 3500 sq ft training area, Olympic strength gear, certified trainers, and morning timings 5:30 am - 11 am.',
     url: 'https://dangalgym.xyz/gym-in-awadhpuri',
     images: [{ url: 'https://dangalgym.xyz/dangal.png', width: 1200, height: 630 }],
   }
@@ -34,11 +37,11 @@ export const metadata: Metadata = {
 const faqs = [
   {
     question: 'Where is Dangal Gym located in Awadhpuri, Bhopal?',
-    answer: 'Dangal Gym is located at House No 2 B, near SBI Bank, Awadhpuri, Bhopal, MP 462022. It is conveniently situated on the main road, making it easily accessible for residents of Awadhpuri, BDA Colony, and Khajuri Kalan.'
+    answer: 'Dangal Gym is located at 2 B, near SBI Bank, Samanvay Nagar, Awadhpuri, Bhopal, Madhya Pradesh 462022. It is conveniently situated on the main road, making it easily accessible for residents of Awadhpuri, Samanvay Nagar, BDA Colony, and Khajuri Kalan.'
   },
   {
     question: 'What are the opening timings of Dangal Gym Awadhpuri?',
-    answer: 'We operate Monday through Saturday with two slots: Morning from 5:00 AM to 11:00 AM and Evening from 5:00 PM to 10:00 PM. We are closed on Sundays for routine maintenance.'
+    answer: 'We operate Monday through Saturday with two slots: Morning from 5:30 AM to 11:00 AM and Evening from 5:00 PM to 10:00 PM. We are closed on Sundays for routine maintenance.'
   },
   {
     question: 'What makes Dangal Gym the best gym in Awadhpuri?',
@@ -196,10 +199,10 @@ export default function GymInAwadhpuriPage() {
               <div>
                 <span className="text-brand-red font-bold text-xs uppercase tracking-widest block mb-2">Prime Bhopal Location</span>
                 <h2 className="font-display text-3xl sm:text-5xl font-black uppercase tracking-tight mb-6">
-                  Find Us Near SBI Bank, Awadhpuri
+                  Find Us Near SBI Bank, Samanvay Nagar, Awadhpuri
                 </h2>
                 <p className="text-gray-300 text-base leading-relaxed mb-6">
-                  Centrally located in Awadhpuri with ample parking space, convenient road connectivity, and high visibility right next to the State Bank of India branch.
+                  Centrally located in Samanvay Nagar, Awadhpuri with ample parking space, convenient road connectivity, and high visibility right next to the State Bank of India branch.
                 </p>
 
                 <div className="space-y-4 mb-8">
@@ -207,7 +210,7 @@ export default function GymInAwadhpuriPage() {
                     <MapPin className="text-brand-red flex-shrink-0 mt-1" size={20} />
                     <div>
                       <strong className="text-white block text-sm">Exact Address:</strong>
-                      <span className="text-gray-400 text-sm">House No 2 B, near SBI Bank, Awadhpuri, Bhopal, MP 462022</span>
+                      <span className="text-gray-400 text-sm">2 B, near SBI Bank, Samanvay Nagar, Awadhpuri, Bhopal, Madhya Pradesh 462022</span>
                     </div>
                   </div>
 
@@ -215,7 +218,7 @@ export default function GymInAwadhpuriPage() {
                     <Clock className="text-brand-red flex-shrink-0 mt-1" size={20} />
                     <div>
                       <strong className="text-white block text-sm">Operating Timings:</strong>
-                      <span className="text-gray-400 text-sm">Morning: 5:00 AM – 11:00 AM | Evening: 5:00 PM – 10:00 PM (Mon–Sat)</span>
+                      <span className="text-gray-400 text-sm">Morning: 5:30 AM – 11:00 AM | Evening: 5:00 PM – 10:00 PM (Mon–Sat)</span>
                     </div>
                   </div>
 

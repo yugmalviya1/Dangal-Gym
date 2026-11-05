@@ -35,7 +35,7 @@ export default function Location() {
                 allowFullScreen={true} 
                 loading="lazy" 
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Dangal Gym Location Awadhpuri Bhopal"
+                title="Dangal Gym - Gym in Awadhpuri Bhopal"
                 className="transition-all duration-700"
                 suppressHydrationWarning
               />
@@ -56,8 +56,8 @@ export default function Location() {
                   <h3 className="text-white font-bold uppercase tracking-widest text-sm mb-2">Address</h3>
                   <p className="text-gray-400 text-sm leading-relaxed">
                     Dangal Gym - Family Fitness Club<br/>
-                    House No 2 B, near SBI Bank<br/>
-                    Awadhpuri, Bhopal, MP 462022
+                    2 B, near SBI Bank, Samanvay Nagar<br/>
+                    Awadhpuri, Bhopal, Madhya Pradesh 462022
                   </p>
                 </div>
               </div>
@@ -71,7 +71,7 @@ export default function Location() {
                 <div>
                   <h3 className="text-white font-bold uppercase tracking-widest text-sm mb-2">Opening Hours</h3>
                   <div className="text-gray-400 text-sm leading-relaxed space-y-1">
-                    <p><span className="text-white font-bold">Morning:</span> 5:00 AM – 11:00 AM</p>
+                    <p><span className="text-white font-bold">Morning:</span> 5:30 AM – 11:00 AM</p>
                     <p><span className="text-white font-bold">Evening:</span> 5:00 PM – 10:00 PM</p>
                     <p><span className="text-white font-semibold">Days:</span> Monday – Saturday</p>
                     <p><span className="text-zinc-500 italic text-xs">Sunday: Special / Closed</span></p>

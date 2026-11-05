@@ -6,13 +6,17 @@ import { LocalBusinessSchema } from '@/components/StructuredData';
 export const metadata: Metadata = {
   metadataBase: new URL('https://dangalgym.xyz'),
   title: {
-    default: 'Dangal Gym - Best Gym in Awadhpuri | Fitness Centre in Bhopal',
-    template: '%s | Dangal Gym Awadhpuri Bhopal'
+    default: 'Gym in Awadhpuri - Dangal Gym | Best Fitness Centre in Bhopal',
+    template: '%s | Dangal Gym - Gym in Awadhpuri Bhopal'
   },
-  description: 'Dangal Gym - Top-rated 3-floor gym & fitness centre in Awadhpuri, Bhopal. Strength training, personal coaching, Zumba, yoga, and aerobics. Call +91 9977437487.',
+  description: 'Dangal Gym is the premier gym in Awadhpuri, Bhopal located at 2 B, near SBI Bank, Samanvay Nagar. 3 floors, 3500 sqft, strength training, personal coaching, Zumba, and yoga. Morning: 5:30 am - 11 am. Call +91 9977437487.',
   keywords: [
+    'gym in awadhpuri',
     'Gym in Awadhpuri',
+    'best gym in awadhpuri',
     'Best Gym in Awadhpuri Bhopal',
+    'gym near me in awadhpuri',
+    'gym in samanvay nagar awadhpuri',
     'Fitness Centre Awadhpuri',
     'Gym near SBI Bank Awadhpuri',
     'Personal Training Bhopal',
@@ -39,27 +43,27 @@ export const metadata: Metadata = {
     locale: 'en_IN',
     url: 'https://dangalgym.xyz',
     siteName: 'Dangal Gym - Family Fitness Club',
-    title: 'Dangal Gym - Best Gym in Awadhpuri | Fitness Centre in Bhopal',
-    description: 'Awadhpuri Bhopal\'s elite 3-floor fitness landmark. 3500 sqft facility featuring 2 floors of strength training, personal coaching, Zumba, and aerobics. 3-day free trial available.',
+    title: 'Gym in Awadhpuri - Dangal Gym | Best Fitness Centre in Bhopal',
+    description: 'Awadhpuri Bhopal\'s premier 3-floor fitness powerhouse located at 2 B, near SBI Bank, Samanvay Nagar. 3500 sqft facility for strength training, personal coaching, Zumba, and aerobics. 3-day free trial available.',
     images: [
       {
         url: 'https://dangalgym.xyz/dangal.png',
         width: 1200,
         height: 630,
-        alt: 'Dangal Gym Awadhpuri Bhopal',
+        alt: 'Dangal Gym - Gym in Awadhpuri Bhopal',
       },
       {
         url: 'https://dangalgym.xyz/muscle-man-no-bg.png',
         width: 800,
         height: 800,
-        alt: 'Dangal Gym Fitness',
+        alt: 'Dangal Gym Fitness Awadhpuri',
       }
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Dangal Gym - Best Gym in Awadhpuri, Bhopal',
-    description: 'Awadhpuri\'s elite 3-floor gym. Strength training, certified personal coaches, Zumba & aerobics.',
+    title: 'Gym in Awadhpuri - Dangal Gym Bhopal',
+    description: 'Premier 3-floor gym in Awadhpuri, Bhopal near SBI Bank, Samanvay Nagar. Strength training, certified personal coaches, Zumba & aerobics.',
     images: ['https://dangalgym.xyz/dangal.png'],
   },
   icons: {
@@ -76,7 +80,7 @@ export const metadata: Metadata = {
   other: {
     'google-site-verification': 'mANwjSFjJojuZKHRZG2hbfUf0jqRXQkv4sW8-izWgJ8',
     'geo.region': 'IN-MP',
-    'geo.placename': 'Awadhpuri, Bhopal',
+    'geo.placename': 'Awadhpuri, Samanvay Nagar, Bhopal',
     'geo.position': '23.23806;77.48782',
     'ICBM': '23.23806, 77.48782',
     'telephone': '+919977437487',
