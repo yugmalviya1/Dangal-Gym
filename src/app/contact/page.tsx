@@ -108,9 +108,12 @@ export default function ContactPage() {
                   <div className="w-12 h-12 rounded-xl bg-brand-red/10 flex items-center justify-center text-brand-red mb-4">
                     <Phone size={24} />
                   </div>
-                  <h3 className="font-display text-lg font-bold uppercase text-white mb-2">Direct Phone & WhatsApp</h3>
+                  <h3 className="font-display text-lg font-bold uppercase text-white mb-2">Contact & Inquiries</h3>
                   <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                    +91 9977437487
+                    +91 9977437487<br/>
+                    <a href={`mailto:${GMB_DATA.email}`} className="text-xs hover:text-brand-red transition-colors text-gray-400">
+                      {GMB_DATA.email}
+                    </a>
                   </p>
                   <div className="flex gap-4">
                     <a 

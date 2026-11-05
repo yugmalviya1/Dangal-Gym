@@ -6,7 +6,7 @@ export const GMB_DATA = {
   alternateName: "Dangal Gym Awadhpuri Bhopal",
   url: "https://dangalgym.xyz",
   telephone: "+919977437487",
-  email: "dangalgymbpl@gmail.com",
+  email: "pankajs9098@gmail.com",
   priceRange: "₹₹",
   streetAddress: "2 B, near SBI Bank, Samanvay Nagar, Awadhpuri",
   addressLocality: "Bhopal",

@@ -91,8 +91,8 @@ export default function Location() {
                     <a href="tel:+919977437487" className="hover:text-brand-red transition-colors font-medium text-white block">
                       +91 9977437487
                     </a>
-                    <a href="mailto:dangalgymbpl@gmail.com" className="hover:text-brand-red transition-colors block text-xs mt-1">
-                      dangalgymbpl@gmail.com
+                    <a href="mailto:pankajs9098@gmail.com" className="hover:text-brand-red transition-colors block text-xs mt-1">
+                      pankajs9098@gmail.com
                     </a>
                   </p>
                 </div>
